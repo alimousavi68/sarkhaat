@@ -10,7 +10,7 @@ if ($hide_title != 'on') {
 
 // نمایش محتویات ویجت- نمایش پست ها
 $category_posts = new WP_Query(array(
-    'posts_per_page' => $num,
+    'posts_per_page' => $num, 
     'cat'            => $cat,
     'order' => 'DESC',
     'orderby'=> $orderby
