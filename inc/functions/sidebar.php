@@ -80,34 +80,48 @@ function i8_add_custom_sidebar()
         'show_in_rest'   => false,
     ));
 
-        //  home main bar - right - سایدبار اصلی صفحه نخست زیر ویژه  سمت راست
-        register_sidebar(array(
-            'name'           => 'ستون اصلی - صفحه نخست زیر ویژه سمت راست',
-            'id'             => 'hmer-sidebar',
-            'class'          => 'hmer-sidebar',
-            'description'    => 'این ستون در صفحه اصلی و در سمت راست زیر ویژه قرار میگیرد.',
-            'before_widget'  => '<div class="widget">',
-            'after_widget'   => '</div>',
-            'before_title'   => '',
-            'after_title'    => '',
-            'before_sidebar' => '',
-            'after_sidebar'  => '',
-            'show_in_rest'   => false,
-        ));
-        //  home main bar - left - سایدبار اصلی صفحه نخست
-        register_sidebar(array(
-            'name'           => 'ستون اصلی - صفحه نخست زیر ویژه سمت چپ',
-            'id'             => 'hmel-sidebar',
-            'class'          => 'hmel-sidebar',
-            'description'    => 'این ستون در صفحه اصلی و در سمت راست زیر ویژه قرار میگیرد.',
-            'before_widget'  => '<div class="widget bg-grey">',
-            'after_widget'   => '</div>',
-            'before_title'   => '',
-            'after_title'    => '',
-            'before_sidebar' => '',
-            'after_sidebar'  => '',
-            'show_in_rest'   => false,
-        ));
+    //  home main bar - right - سایدبار اصلی صفحه نخست زیر ویژه  سمت راست
+    register_sidebar(array(
+        'name'           => 'ستون اصلی - صفحه نخست زیر ویژه سمت راست',
+        'id'             => 'hmer-sidebar',
+        'class'          => 'hmer-sidebar',
+        'description'    => 'این ستون در صفحه اصلی و در سمت راست زیر ویژه قرار میگیرد.',
+        'before_widget'  => '<div class="widget">',
+        'after_widget'   => '</div>',
+        'before_title'   => '',
+        'after_title'    => '',
+        'before_sidebar' => '',
+        'after_sidebar'  => '',
+        'show_in_rest'   => false,
+    ));
+    //  home main bar - left - سایدبار اصلی صفحه نخست
+    register_sidebar(array(
+        'name'           => 'ستون اصلی - صفحه نخست زیر ویژه سمت چپ',
+        'id'             => 'hmel-sidebar',
+        'class'          => 'hmel-sidebar',
+        'description'    => 'این ستون در صفحه اصلی و در سمت راست زیر ویژه قرار میگیرد.',
+        'before_widget'  => '<div class="widget">',
+        'after_widget'   => '</div>',
+        'before_title'   => '',
+        'after_title'    => '',
+        'before_sidebar' => '',
+        'after_sidebar'  => '',
+        'show_in_rest'   => false,
+    ));
+    //  home main bar - bottom - انتهای صفحه اصلی
+    register_sidebar(array(
+        'name'           => 'انتهای صفحه اصلی - تمام عرض',
+        'id'             => 'hf-sidebar',
+        'class'          => 'hf-sidebar',
+        'description'    => 'این ستون در صفحه اصلی و در زیر همه بخش ها و بالای فوتر قرار میگیرد.',
+        'before_widget'  => '<div class="widget ">',
+        'after_widget'   => '</div>',
+        'before_title'   => '',
+        'after_title'    => '',
+        'before_sidebar' => '',
+        'after_sidebar'  => '',
+        'show_in_rest'   => false,
+    ));
 
 
     //  archive left sidebar - ساید بار کناری صفحه آرشیو
@@ -177,6 +191,21 @@ function i8_add_custom_sidebar()
         'class'          => 'fr-sidebar',
         'description'    => 'این سایدبار در فوتر تمامی صفحات و در سمت راست قرار می گیرد.',
         'before_widget'  => '<div class="widget">',
+        'after_widget'   => '</div>',
+        'before_title'   => '',
+        'after_title'    => '',
+        'before_sidebar' => '',
+        'after_sidebar'  => '',
+        'show_in_rest'   => false,
+    ));
+
+    //  footer right sidebar - ساید بار فوتر - وسط
+    register_sidebar(array(
+        'name'           => 'ساید بار فوتر - وسط',
+        'id'             => 'fc-sidebar',
+        'class'          => 'fc-sidebar',
+        'description'    => 'این سایدبار در فوتر تمامی صفحات و در وسط قرار می گیرد.',
+        'before_widget'  => '<div class="widget menu-fix">',
         'after_widget'   => '</div>',
         'before_title'   => '',
         'after_title'    => '',

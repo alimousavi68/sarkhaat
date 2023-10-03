@@ -376,7 +376,7 @@ header #headContact:hover #headAssistants {
 }
 
 .archive-thumb img {
-  height: 210px;
+  height: 140px;
 }
 
 .pagination-archive {
@@ -427,11 +427,10 @@ span.page-numbers.current {
 
 .box {
   background-color: var(--i8-light-fg-color);
-  padding: 24px;
-  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0),
-    0px 0px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  overflow: hidden;
+  padding: 24px 24px;
+  box-shadow: 0px 1px 3px 0 rgb(61 61 61 / 8%), 0 0 1px 0 rgba(0,0,0,.1);
+  border-radius: 3px;
+  overflow: hidden; 
 }
 
 .comment-avatar {
@@ -1201,7 +1200,7 @@ tr th:last-child {
     /* padding: 0 ; */
   }
 
-
+ 
 
 
   .darkmode-btn {}
@@ -1268,7 +1267,7 @@ tr th:last-child {
   }
 
   .h-fs-7 {
-    font-size: 28px;
+    font-size: 25px;
     line-height: 170%;
   }
 
@@ -1498,7 +1497,13 @@ body.bg-main.dark-mode a:hover,
   font-size: 40px;
   font-weight: 900;
 }
-
+.box-title-mini::before{
+    content: '-' !important;
+    padding-left: 5px;
+    color: var(--i8-dark-complete-color);
+    font-size: 40px;
+    font-weight: 900;
+}
 .box-title {
   color: #6A6A6A;
 }
@@ -1588,7 +1593,9 @@ body.bg-main.dark-mode a:hover,
 
   ;
 }
-
+.navbar-nav .dropdown-menu {
+  position:absolute !important;
+}
 /*  add Custom style for bootstrap borders */
 
 /* special style for this theme */
@@ -1714,3 +1721,16 @@ h2.post-flip-box-title {
 }
 
 /* flip box style */
+
+/* gallery */
+.gallery .post-flip-box-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(3, 7, 10, 0.80) 73.79%);
+}
+
+.menu-fix{
+  min-width : 25%;
+}
+
+.breadcrumb {
+  padding: 15px 0 !important;
+}

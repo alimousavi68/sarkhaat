@@ -47,8 +47,8 @@ function i8_custom_pagination()
 
     if ($paginate_links) {
 ?>
-        <div class="row box mt-3 py-2 mx-0 d-flex align-content-center justify-content-center">
-            <div class="number-pagintion">
+        <div class="row mt-3 py-2 mx-0 d-flex align-content-center justify-content-center">
+            <div class="number-pagintion py-2 my-2">
                 <div class="pagination pagination-archive">
                     <small>تعداد کل مطالب: <?php echo $total_posts; ?></small>
                     <?php echo $paginate_links; ?>
@@ -240,7 +240,7 @@ function is_current_page($url)
 }
 
 // فراخوانی منو های که در یک لوکیشن ثبت شده اند و ساخت منو
-function build_custom_menu_by_location($location)
+function build_custom_menu_by_location($location, $style_type = 'row')
 {
     $locations = get_nav_menu_locations();
     $menu_id = $locations[$location];
@@ -248,7 +248,22 @@ function build_custom_menu_by_location($location)
     $menu_items = wp_get_nav_menu_items($menu_id);
 
     if ($menu_items) {
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex flex-row g-2  px-0 gap-3">';
+        $type_class = ($style_type == 'column') ? 'flex-column' : 'flex-row';
+        $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 '. $gap .' ">';
+        echo build_custom_menu($menu_items);
+        echo '</ul>';
+    }
+}
+// فراخوانی منو های که در یک لوکیشن ثبت شده اند و ساخت منو
+function build_custom_menu_by_id($menu_id, $style_type = 'row')
+{
+    $menu_items = wp_get_nav_menu_items($menu_id);
+
+    if ($menu_items) {
+        $type_class = ($style_type == 'column') ? 'flex-column menu-fix' : 'flex-row';
+        $gap = ($style_type == 'column') ? 'column-gap-0' : 'column-gap-3';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 flex-wrap '. $gap .' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }

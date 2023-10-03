@@ -3,33 +3,31 @@
 ?>
 <!-- footer -->
 <footer id="footer" class="mt-3 border-top">
-  <div class="container d-flex col-24 p-4 pb-3 text-white flex-md-row flex-column justify-content-center">
-    <div class="d-flex flex-column col-xl-12 col-md-12  col-sm-24 justify-content-lg-start align-items-xl-start justify-content-center align-items-center">
-      <?php
-      dynamic_sidebar('fr-sidebar');
-      ?>
-      <img width="338" height="85.63" class="footer-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/main-logo.webp" loading="lazy" alt="logo" />
-      <?php
-      $menu_args = array(
-        'theme_location' => 'footer',
-        'container' => 'ul',
-        'container_class' => '',
-        'menu_class' => 'footer-menu d-flex f14 text-black p-0 mt-3 flex-sm-row justify-content-xl-start align-items-xl-start flex-wrap justify-content-center align-items-center gap-2',
-      );
-      wp_nav_menu($menu_args);
-      ?>
-    </div>
-    <div class="col-xl-12 col-md-12  col-sm-24 d-flex justify-content-lg-end justify-content-center">
-      <?php
-      dynamic_sidebar('fl-sidebar');
-      ?>
+  <div class="container py-3">
+    <div class="row ">
+      <div class="d-flex flex-column col-xl-5 col-md-5 col-sm-24 justify-content-lg-start align-items-xl-start justify-content-center align-items-center">
+        <?php
+        dynamic_sidebar('fr-sidebar');
+        ?>
+
+      </div>
+      <div class="col-14 col-xl-14 col-lg-14 col-md-14 d-flex flex-row  gap-3">
+        <?php
+        dynamic_sidebar('fc-sidebar');
+        ?>
+      </div>
+      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-24 d-flex justify-content-lg-end justify-content-center ">
+        <?php
+        dynamic_sidebar('fl-sidebar');
+        ?>
+      </div>
     </div>
   </div>
 
   <!-- footer menu -->
   <div class="row">
     <div class="col-24 bottom-menu ">
-      <div class="container row d-flex justify-content-center justify-content-between p-1 align-items-center">
+      <div class="container d-flex justify-content-center justify-content-between p-1 align-items-center">
         <span class="d-flex f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی رصد روز می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
         <div class="d-flex">
           <div class="col-auto d-none d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
@@ -38,7 +36,7 @@
         </div>
 
       </div>
-    </div>   
+    </div>
   </div>
   <!-- End - footer menu -->
 </footer>

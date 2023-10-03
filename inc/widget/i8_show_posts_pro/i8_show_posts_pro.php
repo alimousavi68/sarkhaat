@@ -13,7 +13,9 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش  به صورت افقی' => 'mod3',
         'نمایش  به صورت افکت روی تصویر' => 'mod4',
         '۲ نمایش به صورت عمودی + ویژه' => 'mod5',
-        'نمایش به صورت گالری' => 'mod6'
+        'نمایش به صورت گالری' => 'mod6',
+        'نمایش به لیست عددی'=> 'mod7'
+
     );
     public $orderby = array(
         'تصادفی' => 'rand',
@@ -218,9 +220,16 @@ class i8_show_posts_pro extends WP_Widget
         }
         elseif ($display_style == $values[5]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
-                require('content/gallery_post.php.php');
+                require('content/gallery_post.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
-                require('content/gallery_post.php.php');
+                require('content/gallery_post.php');
+            }
+        }
+        elseif ($display_style == $values[6]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/numeric_list.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/numeric_list.php');
             }
         }
     }

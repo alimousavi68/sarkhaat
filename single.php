@@ -9,10 +9,8 @@ get_header();
             
 
         <!-- sidebar  -->
-        <div class="col-xl-7 col-md-24 col-sm-24 ps-0 pt-4 pt-xl-0 pt-md-4 pt-sm-4 pe-xl-3 pe-0 pe-sm-0 i8-sticky">
-            <div class="box">
+        <div class="col-xl-7 col-md-24 col-sm-24 ps-0 pe-xl-2 pe-0 pe-sm-0 i8-sticky border-end sl-sidebar">
                 <?php dynamic_sidebar('sl-sidebar'); ?>
-            </div>
         </div>
 
     </div>

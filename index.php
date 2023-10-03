@@ -12,8 +12,12 @@ get_header();
         <?php
         // // Main box
         get_template_part('template-parts/home-main-box');
-
         ?>
+    </div>
+    <div class="page-bottom-sidebar">
+            <?php
+            dynamic_sidebar('hf-sidebar');
+            ?>
     </div>
 </div>
 <?php

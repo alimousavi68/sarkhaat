@@ -52,7 +52,7 @@ add_image_size('i8-sm-85-67'  , 85, 67, true);
  */
 function i8_Add_stylesheets()
 {
-    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/assets/css/main.min.css', '', '3.6');
+    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/assets/css/main.min.css', '', '3.8');
 }
 add_action('wp_enqueue_scripts', 'i8_Add_stylesheets');
 

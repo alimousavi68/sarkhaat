@@ -2,7 +2,7 @@
 echo $args['before_widget'];
 echo '<div class="row box mx-0 d-flex row-gap-3 ">';
 if ($hide_title != 'on') {
-    echo '<div class="title-icon d-flex align-items-center mb-3">';
+    
     echo '<p class="text-title f24 fw-7 m-0 me-2">';
     echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
     echo $sub_title_print . '</p></div>';
