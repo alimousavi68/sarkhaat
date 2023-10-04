@@ -28,8 +28,8 @@ if ($category_posts->have_posts()) {
     while ($category_posts->have_posts()) {
         $category_posts->the_post();
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');
-        $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
-        $primary_cat_color_transparent = $primary_cat_color . 'c4';
+        // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
+        // $primary_cat_color_transparent = $primary_cat_color . 'c4';
 ?>
         <div class="<?php echo $col; ?> px-1">
             <div class="post-flip-box-container">
@@ -55,8 +55,8 @@ if ($category_posts2->have_posts()) {
     while ($category_posts2->have_posts()) {
         $category_posts2->the_post();
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');
-        $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
-        $primary_cat_color_transparent = $primary_cat_color . 'c4';
+        // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
+        // $primary_cat_color_transparent = $primary_cat_color . 'c4';
     ?>
         <div class="col-12 px-1">
             <div class="post-flip-box-container">

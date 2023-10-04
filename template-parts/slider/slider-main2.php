@@ -109,7 +109,7 @@ $two_post_query = new WP_Query($two_post_query_args);
   <!--  top-left-sidebar -->
   <div class="col-24 col-lg-6 col-md-24">
     <?php
-    dynamic_sidebar('sub-slider');
+    dynamic_sidebar('top_section_left');
     ?>
   </div>
 </div>

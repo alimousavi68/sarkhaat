@@ -61,6 +61,87 @@
     localStorage.setItem("darkMode", isActive);
   });
 </script>
+<?php if (is_singular()) : ?>
+  <!-- shared button -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // cache dom
+      var shareBtn = document.querySelector('.share-btn-mini');
+      var shareBtn = document.querySelector('.share-btn');
+      var shareUrl = document.querySelector('.share-url');
+      var shareContainer = document.querySelector('.share-container');
+      var notificationButton = document.querySelector('.notification-button');
+
+      // set data
+      var url = '<?php echo esc_url(get_permalink()); ?>';
+      var shared = false;
+
+      /**
+       * Share link function
+       */
+      function shareLink(e) {
+        e.preventDefault(); // Prevent the default click behavior
+
+        // set active class
+        shareBtn.classList.toggle('active');
+        shareUrl.classList.toggle('active');
+        shareContainer.classList.toggle('active');
+
+        if (shared === false) {
+
+          // trigger notification alert
+          notificationButton.classList.add('active');
+          shared = true;
+          shareBtn.textContent = 'بستن';
+          shareUrl.textContent = url;
+
+          // Create a temporary textarea element to copy the URL to clipboard
+          var tempTextArea = document.createElement('textarea');
+          tempTextArea.value = url;
+          document.body.appendChild(tempTextArea);
+          tempTextArea.select();
+
+          try {
+            // Execute the copy command
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'موفق' : 'ناموفق';
+            console.log('Copy email command was ' + msg);
+
+          } catch (err) {
+            console.log('Oops, unable to copy');
+          } finally {
+            // Remove the temporary textarea
+            document.body.removeChild(tempTextArea);
+          }
+
+        } else {
+          shared = false;
+          shareBtn.textContent = 'کپی لینک';
+        }
+      }
+
+      /**
+       * Removes the active class after a set period of time
+       */
+      function fadeOutNotification() {
+        notificationButton.classList.remove('active');
+      }
+
+      // bind events
+      shareBtn.addEventListener('click', shareLink);
+      notificationButton.addEventListener('transitionend', fadeOutNotification);
+    });
+
+
+    // print button
+    document.getElementById('printButton').addEventListener('click', function() {
+      window.print();
+    });
+  </script>
+
+
+
+<?php endif; ?>
 </body>
 
 </html>

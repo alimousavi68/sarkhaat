@@ -6,7 +6,7 @@ get_header();
     <div class="hero-box container d-flex flex-column my-4 gap-4 px-2">
         <?php
         // // todo: if top main is active
-        get_template_part('template-parts/slider/slider-main2'); ?>
+        get_template_part('template-parts/top_section'); ?>
     </div>
     <div class="home-main-box">
         <?php

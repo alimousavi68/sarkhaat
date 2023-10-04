@@ -445,29 +445,29 @@ function customizeSVG($svg, $fill = '#000000', $stroke = '#000000', $width = 32,
 
 
 
-function add_html_to_paragraph($content)
-{
-    // بررسی آیا ما در صفحه نوشته هستیم و دارای پاراگراف‌ها هستیم
-    if (is_single()) {
+// function add_html_to_paragraph($content)
+// {
+//     // بررسی آیا ما در صفحه نوشته هستیم و دارای پاراگراف‌ها هستیم
+//     if (is_single()) {
 
-        // رشته کد HTML که می‌خواهیم اضافه کنیم
-        $html_code1 = '<div class="yn-bnr" id="ynpos-10546"></div>';
-        $html_code2 = '<div class="yn-bnr" id="ynpos-10767"></div>';
-        $html_code3 = '<div class="yn-bnr" id="ynpos-15072"></div>';
+//         // رشته کد HTML که می‌خواهیم اضافه کنیم
+//         $html_code1 = '<div class="yn-bnr" id="ynpos-10546"></div>';
+//         $html_code2 = '<div class="yn-bnr" id="ynpos-10767"></div>';
+//         $html_code3 = '<div class="yn-bnr" id="ynpos-15072"></div>';
 
-        // تفکیک محتوا به پاراگراف‌ها
-        $paragraphs = explode('</p>', $content);
-        $paragraphs_count = count($paragraphs);
-        $ads1_pos =  ceil($paragraphs_count / 2);
-        // $ads2_pos =  floor($paragraphs_count / 4);
-        $paragraphs[3] .= $html_code1;
-        $paragraphs[12] .= $html_code2;
-        $paragraphs[($paragraphs_count - 1)] .= $html_code3;
+//         // تفکیک محتوا به پاراگراف‌ها
+//         $paragraphs = explode('</p>', $content);
+//         $paragraphs_count = count($paragraphs);
+//         $ads1_pos =  ceil($paragraphs_count / 2);
+//         // $ads2_pos =  floor($paragraphs_count / 4);
+//         $paragraphs[3] .= $html_code1;
+//         $paragraphs[12] .= $html_code2;
+//         $paragraphs[($paragraphs_count - 1)] .= $html_code3;
 
 
-        // ایجاد محتوای جدید با پاراگراف‌های ویرایش شده
-        $content = implode('</p>', $paragraphs);
-    }
-    return $content;
-}
-add_filter('the_content', 'add_html_to_paragraph');
+//         // ایجاد محتوای جدید با پاراگراف‌های ویرایش شده
+//         $content = implode('</p>', $paragraphs);
+//     }
+//     return $content;
+// }
+// add_filter('the_content', 'add_html_to_paragraph');

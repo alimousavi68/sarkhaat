@@ -1,11 +1,11 @@
 <?php
 echo $args['before_widget'];
 
-echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-2">';
 if ($hide_title != 'on') {
+    echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-2">';
     echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
+    echo $sub_title_print . '</div>';
 }
-echo $sub_title_print . '</div>';
 
 if ($hide_thumb != 'on') :
     echo '<div class="row mini-article ">';
@@ -26,8 +26,8 @@ if ($category_posts->have_posts()) {
         $category_posts->the_post();
 
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');
-        $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
-        $primary_cat_color_transparent = $primary_cat_color . 'c4';
+        // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
+        // $primary_cat_color_transparent = $primary_cat_color . 'c4';
 ?>
         <div class="<?php echo $col; ?> px-1">
             <div class="post-flip-box-container">

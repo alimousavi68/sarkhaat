@@ -8,6 +8,20 @@
     <meta name="theme-color" content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#0A93CD'; ?>" />
     <title><?php bloginfo('title'); ?></title>
     <?php wp_head(); ?>
+    <?php if (is_singular()) : ?>
+        <style media="print">
+            .sl-sidebar,
+            .sub-header,
+            .breadcrumb,
+            .bottom-content-bar,
+            .related-post,
+            #footer,
+            .top-menu,#comments {
+                display: none !important;
+            }
+        </style>
+
+    <?php endif; ?>
     <style>
         .top-menu {
             display: flex;
@@ -19,7 +33,8 @@
             height: 29px;
             color: white;
         }
-        .bottom-menu{
+
+        .bottom-menu {
             display: flex;
             padding: 1px;
             justify-content: space-between;

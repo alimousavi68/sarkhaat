@@ -158,5 +158,5 @@ $sub_post_query = new WP_Query($sub_post_query_args);
 ?>
 
 <?php
-dynamic_sidebar('sub-slider');
+dynamic_sidebar('top_section_left');
 ?>

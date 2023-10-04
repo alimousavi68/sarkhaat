@@ -14,8 +14,10 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش  به صورت افکت روی تصویر' => 'mod4',
         '۲ نمایش به صورت عمودی + ویژه' => 'mod5',
         'نمایش به صورت گالری' => 'mod6',
-        'نمایش به لیست عددی'=> 'mod7'
-
+        'نمایش به لیست عددی'=> 'mod7',
+        'نمایش به صورت هیرو باکس مدل ۱'=> 'mod8',
+        'نمایش به صورت هیرو باکس مدل ۲'=> 'mod9',
+        
     );
     public $orderby = array(
         'تصادفی' => 'rand',
@@ -230,6 +232,20 @@ class i8_show_posts_pro extends WP_Widget
                 require('content/numeric_list.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/numeric_list.php');
+            }
+        }
+        elseif ($display_style == $values[7]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/hero_section1.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/hero_section1.php');
+            }
+        }
+        elseif ($display_style == $values[8]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/hero_section2.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/hero_section2.php');
             }
         }
     }

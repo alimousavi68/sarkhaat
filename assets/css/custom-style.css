@@ -514,8 +514,8 @@ textarea {
 }
 
 .tag-item {
-  border-radius: 50px;
-  background: #f5fbff;
+  border-radius: 3px;
+  background: #f5f5f5;
   padding: 2px 8px;
   margin-left: 15px;
   color: var(--i8-light-primary);
@@ -946,7 +946,7 @@ img.hover:hover {
 }
 
 .content-entry a:hover {
-  border-bottom: 3px solid #FFECB3;
+  border-bottom: 3px solid #DE424F; 
   color: var(--bs-info);
 }
 
@@ -1008,17 +1008,14 @@ img.hover:hover {
 }
 
 .content-entry blockquote {
-  display: flex;
   align-items: center;
-  border-radius: 15px;
-  margin: 30px auto;
   background-position: top right;
   background-repeat: no-repeat;
   padding: 24px;
-  background-color: #f9fdff;
+  background-color: #F6F6F6;
   color: #292929;
-  border: 1px dashed var(--bs-info);
   position: relative;
+  margin:40px 0 25px ;
 }
 
 blockquote p,
@@ -1029,12 +1026,13 @@ blockquote p i {
 
 blockquote p::before {
   content: "\201C";
-  color: #81c7ec;
-  font-size: 13rem;
-  padding-top: 2.8rem;
+  color: #DE424F;
+  font-size: 10rem;
+  padding-top: 10px;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 10px;
+  font-family: sans-serif !important;
 }
 
 a svg.bi:hover {
@@ -1734,3 +1732,108 @@ h2.post-flip-box-title {
 .breadcrumb {
   padding: 15px 0 !important;
 }
+/* share Copy button */
+
+.share-container {
+  border-radius: 15px;
+  display: flex;
+  padding-right: 0;
+  text-align: center;
+  transition: width 0.5s;
+  width: 80px;
+  background-color: #eeeeee;
+}
+
+.share-container.active {
+  width: 100%;
+}
+
+.share-btn {
+  width: 90px;
+  padding: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #777777;
+  border-radius: 15px;
+  background-color: #eeeeee;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.share-btn:hover {
+  color: #343a40;
+  cursor: pointer;
+}
+
+.share-btn.active {
+  color: #ffffff;
+  background-color: #dc3545;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding: 5px 5px 5px 12px;
+}
+
+.share-btn.active:hover {
+  background-color: #cf2838;
+}
+
+.share-url {
+  width: 0;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 10px;
+  color: #eeeeee;
+  transition: all 0.2s;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.share-url.active {
+  width: 100%;
+  color: #343a40;
+  padding: 6px;
+}
+
+/*fade*/
+.animate {
+  opacity: 0;
+  transition: all 1s;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animate.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.slide-in-down {
+  transform: translateY(-100%) translateX(-50%);
+}
+
+/*notification*/
+.copy-link{
+  direction: ltr;
+}
+.container-share-button {
+  margin: 0 auto;
+  width: 300px;
+}
+.notification-button {
+  position: fixed;
+  top: 40px;
+  left: 50%;
+  padding: 10px 20px;
+  background: #343a40;
+  color: #eeeeee;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
+}
+/* share copy button */

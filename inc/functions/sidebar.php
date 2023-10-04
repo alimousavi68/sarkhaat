@@ -6,12 +6,26 @@
 add_action('widgets_init', 'i8_add_custom_sidebar');
 function i8_add_custom_sidebar()
 {
-    //  subslider - زیر اسلایدر 
+    //  hero section -  بخش بالای سایت - راست 
     register_sidebar(array(
-        'name'           => 'زیر اسلایدر - صفحه نخست',
-        'id'             => 'sub-slider',
-        'class'          => 'sub-slider',
-        'description'    => 'این ساید بار در زیر اسلایدر اصلی و در صفحه نخست قرار دارد.',
+        'name'           => ' بخش بالای سایت / راست - صفحه نخست',
+        'id'             => 'top_section_right',
+        'class'          => 'top_section_right',
+        'description'    => 'این ساید بار در بالای سایت و سمت راست صفحه نخست قرار دارد.',
+        'before_widget'  => '',
+        'after_widget'   => '',
+        'before_title'   => '',
+        'after_title'    => '',
+        'before_sidebar' => '',
+        'after_sidebar'  => '',
+        'show_in_rest'   => false,
+    ));
+    //  hero section -  بخش بالای سایت - چپ 
+    register_sidebar(array(
+        'name'           => ' بخش بالای سایت / چپ - صفحه نخست',
+        'id'             => 'top_section_left',
+        'class'          => 'top_section_left',
+        'description'    => 'این ساید بار در بالای سایت و سمت چپ صفحه نخست قرار دارد.',
         'before_widget'  => '<div class="widget">',
         'after_widget'   => '</div>',
         'before_title'   => '',
@@ -20,6 +34,8 @@ function i8_add_custom_sidebar()
         'after_sidebar'  => '',
         'show_in_rest'   => false,
     ));
+
+
 
     //  home left sidebar - ساید بار کناری صفحه نخست
     register_sidebar(array(
@@ -130,7 +146,7 @@ function i8_add_custom_sidebar()
         'id'             => 'al-sidebar',
         'class'          => 'al-sidebar',
         'description'    => 'این ساید بار در صفحه آرشیو و در سمت چپ قرار می گیرد.',
-        'before_widget'  => '<div class="widget">',
+        'before_widget'  => '<div class="widget bg-grey">',
         'after_widget'   => '</div>',
         'before_title'   => '',
         'after_title'    => '',
@@ -145,7 +161,7 @@ function i8_add_custom_sidebar()
         'id'             => 'sl-sidebar',
         'class'          => 'sl-sidebar',
         'description'    => 'این ساید بار در صفحه نوشته و در سمت چپ قرار می گیرد.',
-        'before_widget'  => '<div class="widget">',
+        'before_widget'  => '<div class="widget bg-grey">',
         'after_widget'   => '</div>',
         'before_title'   => '',
         'after_title'    => '',

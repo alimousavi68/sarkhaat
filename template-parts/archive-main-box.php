@@ -2,7 +2,7 @@
 <div class="row mx-0">
   <div class="col-xl-17 col-md-24 col-sm-24 d-flex flex-column ps-4 pe-0">
 
-    <div class="row d-flex py-3 align-content-center">
+    <div class="row d-flex py-3 align-content-center border-bottom">
       <div class="col-md-12 col-sm-24  box-title text-center text-md-end">
         <?php
         $cat = get_queried_object();
