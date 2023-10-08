@@ -26,7 +26,7 @@
 
   <!-- footer menu -->
   <div class="row">
-    <div class="col-24 bottom-menu ">
+    <div class="col-24 bottom-menu pt-2 pb-5">
       <div class="container d-flex justify-content-center justify-content-between p-1 align-items-center">
         <span class="d-flex f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی رصد روز می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
         <div class="d-flex">

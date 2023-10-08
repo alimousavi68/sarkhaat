@@ -20,6 +20,7 @@
   --i8-dark-bg-color: #171c28;
   --i8-light-fg-color: #ffffff;
   --i8-dark-fg-color: #222740;
+  --i8-light-blue : #00C2FF;
 }
 
 .container {
@@ -43,6 +44,14 @@
 
 .f15 {
   font-size: 15px !important;
+}
+
+.f16 {
+  font-size: 16px !important;
+}
+
+.f17 {
+  font-size: 16px !important;
 }
 
 .f18 {
@@ -1275,7 +1284,13 @@ tr th:last-child {
   }
 }
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+  .top-section {
+    border: 1px solid  var(--bs-border-color) ;
+    border-top: 0;
+    border-bottom: 0;
+  }
+}
 
 @media (min-width: 1400px) {}
 
@@ -1468,7 +1483,7 @@ body.bg-main.dark-mode a:hover,
   overflow: hidden;
   color: #535353;
   font-weight: bold;
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
 .list-number {
@@ -1476,9 +1491,9 @@ body.bg-main.dark-mode a:hover,
 }
 
 .numeric-list-item .list-number {
-  color: var(--primary-color);
-  margin-left: 15px;
-  font-size: 38px;
+  color: var(--i8-dark-complete-color);
+  margin-left: 13px;
+  font-size: 32px;
 }
 
 .list-number {
@@ -1503,7 +1518,7 @@ body.bg-main.dark-mode a:hover,
     font-weight: 900;
 }
 .box-title {
-  color: #6A6A6A;
+  color: var(--i8-light-primary);
 }
 
 /* box title */
@@ -1527,6 +1542,7 @@ body.bg-main.dark-mode a:hover,
   .container-sm {
     max-width: 99% !important;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -1594,6 +1610,9 @@ body.bg-main.dark-mode a:hover,
 .navbar-nav .dropdown-menu {
   position:absolute !important;
 }
+.nav-link {
+    text-align: right !important;
+}
 /*  add Custom style for bootstrap borders */
 
 /* special style for this theme */
@@ -1601,7 +1620,17 @@ body.bg-main.dark-mode a:hover,
   border-bottom: 1px solid #ccc;
   padding-bottom: 15px;
 }
+.post-title a {
+  color: rgb(43, 43, 43) !important;
+}
+.post-title a:hover {
+  color: var(--i8-light-primary) !important; 
+}
 
+
+.special_post_list_items > div:last-child {
+  border-bottom: none !important;
+}
 .widget {
   margin-bottom: 12px;
 }
@@ -1651,6 +1680,7 @@ body.bg-main.dark-mode a:hover,
 
 .post-flip-box-container:hover .post-flip-box-image {
   transform: scale(1.05); 
+  transition-duration: (1.2s);
 }
 
 /* سبک لینک */
@@ -1698,6 +1728,20 @@ body.bg-main.dark-mode a:hover,
 .post-flip-box-container:hover .post-title a {
   padding-right: 0;
   /* حذف پدینگ راست هنگام هاور */
+}
+
+/*  تنظیمات حالت اولیه   */
+.post-flip-box-container .post-flip-box-title0,
+.post-flip-box-container .post-flip-box-overlay > .post-flip-box-title {
+  transform: translateY(2px);
+  transition-duration: 0.7s;
+}
+/* هاور */
+.post-flip-box-container:hover .post-flip-box-title0 ,
+.post-flip-box-container:hover .post-flip-box-overlay>.post-flip-box-title
+{
+  transform: translateY(-15px);
+  transition-duration: 0.7s;
 }
 
 /* تغییرات در لینک هنگام هاور */

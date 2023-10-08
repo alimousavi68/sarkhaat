@@ -16,6 +16,10 @@ if ($hide_title != 'on') {
   .single-item-data {
     height: 100%;
   }
+
+  .hero-small-column>div:first-child {
+    border-bottom: 1px solid #ccc;
+  }
 </style>
 
 <?php
@@ -29,7 +33,7 @@ $category_posts = new WP_Query(array(
   'orderby' => $orderby
 ));
 if ($category_posts->have_posts()) : ?>
-  <div class="col-24 col-xl-12  col-lg-12 col-md-12 col-sm-24 single-item d-flex flex-column gap-1 ps-2 border-start i8-border-md-none">
+  <div class="border-start col-24 col-lg-12 col-md-12 col-sm-24 col-xl-12 d-flex flex-column gap-0 i8-border-md-none ps-0 ps-lg-2 ps-md-2 px-0 px-sm-0 single-item">
     <?php
     while ($category_posts->have_posts()) :
       $category_posts->the_post();
@@ -37,11 +41,11 @@ if ($category_posts->have_posts()) : ?>
       <a href="<?php the_permalink(); ?>">
         <?php echo i8_the_thumbnail('i8-lg-440-310', 'single-item-thumb w-100 i8-img-fit i8-img-fit', $dimenition = array('width' => 462, 'height' => 340), true, '', false, true); ?>
       </a>
-      <div class="single-item-data d-flex flex-column gap-1">
-        <span class="post-category f15"><?php echo i8_primary_category(get_the_ID()) ?></span>
-        <h1 class="post-title <?php echo $title_font_size; ?> l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+      <div class="single-item-data d-flex flex-column gap-0">
+        <span class="post-category f16 pt-2"><?php echo i8_primary_category(get_the_ID()) ?></span>
+        <h1 class="post-title f32 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
         <?php if ($hide_excerpt != 'on') : ?>
-          <p class="post-excerpt f15"><?php i8_limit_text(the_excerpt(), 120, '...'); ?></p>
+          <p class="post-excerpt f15"><?php i8_limit_text(get_the_excerpt(), 120, '...'); ?></p>
         <?php endif; ?>
         <p class="post-publish-date f12 text-start text-subtitle"><?php the_date() ?></p>
       </div>
@@ -61,20 +65,19 @@ if ($category_posts->have_posts()) : ?>
       'orderby' => $orderby
     ));
     if ($category_posts2->have_posts()) : ?>
-      <div class="col-12 d-flex flex-column gap-3 ps-2 border-start">
+      <div class="col-12 d-flex flex-column gap-3 ps-2 border-start hero-small-column">
         <?php
         while ($category_posts2->have_posts()) :
           $category_posts2->the_post();
         ?>
-          <div class="multi-item d-flex flex-column gap-2" style="border-bottom: 1px solid #ccc;">
+          <div class="multi-item d-flex flex-column gap-2">
             <a href="<?php the_permalink(); ?>">
               <?php echo i8_the_thumbnail('i8-lg-440-310', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
             </a>
-            <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
+            <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
               <div class="title-box">
-                <span class="post-category f15"><?php echo i8_primary_category(get_the_ID()) ?></span>
-                <h1 class="post-title f15 <?php //echo $title_font_size; 
-                                          ?> l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+                <span class="post-category f16"><?php echo i8_primary_category(get_the_ID()) ?></span>
+                <h1 class="post-title f18 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
               </div>
               <p class="post-publish-date f12 text-start text-subtitle my-0"><?php the_date() ?></p>
             </div>
@@ -87,43 +90,42 @@ if ($category_posts->have_posts()) : ?>
       </div>
 
 
-    <?php
-    $category_posts3 = new WP_Query(array(
-      'posts_per_page' => 2,
-      'cat'            => $cat,
-      'order' => 'DESC',
-      'offset' => '3',
-      'orderby' => $orderby
-    ));
-    if ($category_posts3->have_posts()) : ?>
-      <div class="col-12 d-flex flex-column gap-3 ps-2 i8-border-md-none" style="border-left: 1px solid #ccc;">
+      <?php
+      $category_posts3 = new WP_Query(array(
+        'posts_per_page' => 2,
+        'cat'            => $cat,
+        'order' => 'DESC',
+        'offset' => '3',
+        'orderby' => $orderby
+      ));
+      if ($category_posts3->have_posts()) : ?>
+        <div class="col-12 d-flex flex-column gap-3 ps-2 border-start hero-small-column i8-border-md-none">
+          <?php
+          while ($category_posts3->have_posts()) :
+            $category_posts3->the_post();
+          ?>
+            <div class="multi-item d-flex flex-column gap-2">
+              <a href="<?php the_permalink(); ?>">
+                <?php echo i8_the_thumbnail('i8-lg-440-310', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+              </a>
+              <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
+                <div class="title-box">
+                  <span class="post-category f16"><?php echo i8_primary_category(get_the_ID()) ?></span>
+                  <h1 class="post-title f18 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+                </div>
+                <p class="post-publish-date f12 text-start text-subtitle my-0"><?php the_date() ?></p>
+              </div>
+            </div>
+
         <?php
-        while ($category_posts3->have_posts()) :
-          $category_posts3->the_post();
+          endwhile;
+        endif;
         ?>
-          <div class="multi-item d-flex flex-column gap-2" style="border-bottom: 1px solid #ccc;">
-            <a href="<?php the_permalink(); ?>">
-              <?php echo i8_the_thumbnail('i8-lg-440-310', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
-            </a>
-            <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
-              <div class="title-box">
-                <span class="post-category f15"><?php echo i8_primary_category(get_the_ID()) ?></span>
-                <h1 class="post-title f15 <?php //echo $title_font_size; 
-                                          ?> l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
-              </div>
-              <p class="post-publish-date f12 text-start text-subtitle my-0"><?php the_date() ?></p>
-            </div>
-          </div>
+        </div>
 
-      <?php
-        endwhile;
-      endif;
-      ?>
-      </div>
 
-    
-      </div>
+  </div>
 
-      <?php
-      echo $args['after_widget'];
-      ?>
+  <?php
+  echo $args['after_widget'];
+  ?>

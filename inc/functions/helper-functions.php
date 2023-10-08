@@ -163,7 +163,7 @@ function i8_primary_category($post_id, $string_return = false)
         $primary_cat_name = get_the_category_by_ID(intval($primary_cat_id[0]));
         $primary_cat_url =  get_category_link(intval($primary_cat_id[0]));
         if (!$string_return) :
-            return '<a class="post-category f15" href="' . $primary_cat_url . '" >' . $primary_cat_name . "</a>";
+            return '<a class="post-category" href="' . $primary_cat_url . '" >' . $primary_cat_name . "</a>";
         else :
             return array('cat_id' => $primary_cat_id[0], 'cat_name' => $primary_cat_name, 'cat_url' => $primary_cat_url);
         endif;

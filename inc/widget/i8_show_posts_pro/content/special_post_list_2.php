@@ -33,13 +33,13 @@ $category_posts = new WP_Query(array(
 
 <?php
 if ($category_posts->have_posts()) { ?>
-  <div class="col-12 d-flex flex-column gap-3 ps-2 border-start justify-content-between">
+  <div class="col-12 d-flex flex-column gap-3 ps-2 border-start justify-content-between special_post_list_items">
     <?php
     while ($category_posts->have_posts()) {
       $category_posts->the_post();
     ?>
 
-      <div class="multi-items d-flex flex-column gap-2" style="border-bottom: 1px solid #ccc;">
+      <div class="multi-items d-flex flex-column gap-2 border-bottom" >
         <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
           <div class="title-box">
             <span class="post-category f15"><?php echo i8_primary_category(get_the_ID()) ?></span>
@@ -67,13 +67,13 @@ $category_posts2 = new WP_Query(array(
 
 // left
 if ($category_posts2->have_posts()) { ?>
-  <div class="col-12 d-flex flex-column gap-3 ps-2 i8-border-md-none" style="border-left: 1px solid #ccc;">
+  <div class="col-12 d-flex flex-column gap-3 ps-2 i8-border-md-none special_post_list_items border-start" >
     <?php
     while ($category_posts2->have_posts()) {
       $category_posts2->the_post();
 
     ?>
-      <div class="multi-item d-flex flex-column gap-2" style="border-bottom: 1px solid #ccc;">
+      <div class="multi-item d-flex flex-column gap-2 border-bottom">
         <a href="<?php the_permalink(); ?>">
           <?php echo i8_the_thumbnail('i8-lg-440-310', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
         </a>

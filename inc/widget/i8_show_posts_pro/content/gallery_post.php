@@ -36,7 +36,7 @@ if ($category_posts->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-xl-625-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 651, "height" => 486)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="post1.html" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
@@ -63,7 +63,7 @@ if ($category_posts2->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-xl-625-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 231)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="post1.html" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">

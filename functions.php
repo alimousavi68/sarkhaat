@@ -27,6 +27,7 @@ require_once(get_template_directory() . '/inc/functions/helper-functions.php');
 /**
  *  Customize theme options
  */
+require_once(get_template_directory() . '/inc/functions/theme-options/general_setting.php');
 require_once(get_template_directory() . '/inc/functions/theme-options/theme_color_pallets.php');
 require_once(get_template_directory() . '/inc/functions/theme-options/theme_copy_write.php');
 require_once(get_template_directory() . '/inc/functions/theme-options/inline_ads/theme_inline_ads.php');

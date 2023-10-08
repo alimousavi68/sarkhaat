@@ -25,8 +25,8 @@ if ($category_posts->have_posts()) {
                         <span><?php echo sprintf('%02d', $category_posts->current_post + 1); ?></span>
                     </div>
                     <div class="list-title">
-                        <span class="post-category f15"><?php echo i8_primary_category(get_the_ID()) ?></span>
-                        <a href="<?php the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 55, '...'); ?></a>
+                         <span class="post-category f14"><?php echo i8_primary_category(get_the_ID()) ?></span> 
+                        <a href="<?php the_permalink(); ?>" class="f18"><?php i8_limit_text(get_the_title(), 55, '...'); ?></a>
                     </div>
                 </div>
             </article>
