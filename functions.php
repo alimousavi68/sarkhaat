@@ -19,6 +19,7 @@ require_once(get_template_directory() . '/inc/widget/i8_show_posts_two_col.php')
 require_once(get_template_directory() . '/inc/widget/i8_site_info_box.php');
 require_once(get_template_directory() . '/inc/widget/i8_menu.php');
 
+
 /**
  *  helper functions 
  */
@@ -51,3 +52,6 @@ add_filter('excerpt_length', 'custom_excerpt_length');
  * 
  */
 require_once(get_template_directory() . '/inc/functions/i8_CustomTermField.php');
+
+
+

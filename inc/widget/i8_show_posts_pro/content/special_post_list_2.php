@@ -33,7 +33,7 @@ $category_posts = new WP_Query(array(
 
 <?php
 if ($category_posts->have_posts()) { ?>
-  <div class="col-12 d-flex flex-column gap-3 ps-2 border-start justify-content-between special_post_list_items">
+  <div class="border-start i8-border-sm-none col-24 col-lg-12 col-md-12 col-xl-12 d-flex flex-column gap-3  justify-content-between ps-2 special_post_list_items">
     <?php
     while ($category_posts->have_posts()) {
       $category_posts->the_post();
@@ -67,7 +67,7 @@ $category_posts2 = new WP_Query(array(
 
 // left
 if ($category_posts2->have_posts()) { ?>
-  <div class="col-12 d-flex flex-column gap-3 ps-2 i8-border-md-none special_post_list_items border-start" >
+  <div class="col-24 col-lg-12 col-md-12 col-xl-12 d-flex flex-column gap-3 ps-2 i8-border-md-none special_post_list_items border-start" >
     <?php
     while ($category_posts2->have_posts()) {
       $category_posts2->the_post();

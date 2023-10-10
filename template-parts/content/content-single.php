@@ -7,7 +7,7 @@ $tag_icon = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill
 $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-primary)');
 
 ?>
-<div class="col-xl-17 col-md-24 col-sm-24  d-flex flex-column gap-3 ps-2 pe-0 ps-4 ps-xl-4 ps-lg-4 ps-sm-0">
+<div class="col-md-24 col-sm-24 col-xl-17 d-flex flex-column gap-3 pe-0 ps-0 ps-lg-4 ps-md-0 ps-sm-0 ps-xl-4">
     <?php
     if (is_active_sidebar('st-sidebar')) {
         echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
@@ -68,8 +68,10 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
     </div>
 
     <section class="d-flex flex-column row-gap-3 ">
-        <div class=" l2 content-entry text-justify border-bottom">
+        <div class="l2 content-entry text-justify border-bottom">
             <?php the_content(); ?>
+
+
         </div>
         <div class="bottom-content-bar d-flex flex-xxl-row flex-xl-row flex-lg-row  border-bottom pb-2 justify-content-between flex-column-reverse align-items-start">
             <div class="tags d-flex flex-wrap row-gap-2">
@@ -91,7 +93,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
                 ?>
             </div>
 
-            <div class="social-icons d-flex justify-content-center gap-2 gap-lg-2 gap-sm-1">
+            <div class="d-flex flex-wrap gap-2 gap-3 gap-lg-2 gap-sm-1 justify-content-end social-icons">
                 <div class="copy-link">
                         <div class="container-share-button">
                                     <div class="share-container">

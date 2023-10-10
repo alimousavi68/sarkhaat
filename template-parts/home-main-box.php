@@ -1,9 +1,9 @@
 <?php
 ?>
 <div class="row mx-0 ">
-  <div class="col-xl-18 col-lg-18 col-md-24 col-sm-24 ps-xl-3 d-flex flex-row flex-wrap">
+  <div class="col-lg-18 col-md-24 col-sm-24 col-xl-18 d-flex flex-row flex-wrap ps-xl-3 px-0 px-lg-2 px-md-2 px-sm-0 px-xl-2">
     <div class="row d-flex flex-row flex-wrap">
-      <div class="col-xl-16 col-lg-16 col-md-16 col-sm-24 d-flex flex-column flex-wrap ps-2 gap-4 i8-sticky">
+      <div class="col-xl-16 col-lg-16 col-md-16 col-sm-24 d-flex flex-column flex-wrap ps-lg-2 ps-md-2 px-0 gap-4 i8-sticky">
         <?php dynamic_sidebar('hmr-sidebar'); ?>
       </div>
       <div class="col-xl-8 col-lg-8 col-md-8 col-sm-24 px-0 d-flex flex-column flex-wrap gap-4 i8-sticky">
@@ -23,7 +23,7 @@
     </div>
   </div>
   <!-- sidebar  -->
-  <div class="col-24 col-xl-6 col-lg-6 col-md-24 col-sm-24 ps-0 pt-xl-0 pt-md-4 pt-4 pe-xl-3 pe-0 i8-sticky border-end i8-border-md-none">
+  <div class="border-end col-24 col-lg-6 col-md-24 col-sm-24 col-xl-6 d-flex flex-wrap gap-2 i8-border-md-none i8-sticky justify-content-center pe-0 pe-xl-3 ps-0 pt-4 pt-md-4 pt-xl-0">
     <?php
     dynamic_sidebar('hl-sidebar');
     ?>

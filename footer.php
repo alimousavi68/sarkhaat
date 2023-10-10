@@ -5,18 +5,20 @@
 <footer id="footer" class="mt-3 border-top">
   <div class="container py-3">
     <div class="row ">
-      <div class="d-flex flex-column col-xl-5 col-md-5 col-sm-24 justify-content-lg-start align-items-xl-start justify-content-center align-items-center">
+      <div class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start order-md-1">
         <?php
         dynamic_sidebar('fr-sidebar');
         ?>
 
       </div>
-      <div class="col-14 col-xl-14 col-lg-14 col-md-14 d-flex flex-row  gap-3">
-        <?php
-        dynamic_sidebar('fc-sidebar');
-        ?>
+      <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row gap-3">
+        <div class="row w-100">
+          <?php
+          dynamic_sidebar('fc-sidebar');
+          ?>
+        </div>
       </div>
-      <div class="col-xl-5 col-lg-5 col-md-5 col-sm-24 d-flex justify-content-lg-end justify-content-center ">
+      <div class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end order-md-2">
         <?php
         dynamic_sidebar('fl-sidebar');
         ?>
@@ -25,18 +27,19 @@
   </div>
 
   <!-- footer menu -->
-  <div class="row">
-    <div class="col-24 bottom-menu pt-2 pb-5">
-      <div class="container d-flex justify-content-center justify-content-between p-1 align-items-center">
-        <span class="d-flex f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی رصد روز می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
-        <div class="d-flex">
-          <div class="col-auto d-none d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
-            <span class="f13">طراحی و تولید: <a href="https://ihasht.ir/" class="text-white" title="هشت بهشت" alt="Website designer: Hasht Behesht professional website design site" target="_blank">هشت بهشت</a> </span>
+  <div class="bottom-menu pt-2 pb-5">
+
+    <div class="container p-3 ">
+      <div class="row d-flex text-center text-lg-end text-md-end text-sm-center gap-row-3 flex-wrap-reverse">
+        <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی رصد روز می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
+        <div class="col-24 col-lg-4 col-sm-24 col-md-4">
+          <div class="d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
+            <span class="f13" >طراحی و تولید: <a href="https://ihasht.ir/" class="text-white"  title="هشت بهشت" alt="Website designer: Hasht Behesht professional website design site" target="_blank">هشت بهشت</a> </span>
           </div>
         </div>
-
       </div>
     </div>
+
   </div>
   <!-- End - footer menu -->
 </footer>

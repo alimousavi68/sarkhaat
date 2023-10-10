@@ -492,9 +492,10 @@ textarea {
 }
 
 #footer .footer-logo {
-  width: 338px;
+  width: 80% !important;
   height: auto;
   object-fit: cover;
+  text-align: center;
 }
 
 #header {
@@ -916,10 +917,33 @@ img.hover:hover {
   }
 
   #footer .footer-logo {
-    width: 295;
+    width: 70% !important;
     object-fit: cover;
+    text-align: center;
   }
+  .simple-list img {
+    width: 90px !important;
+    height: 70px !important;
 }
+.simple-list .display-4 {
+  font-size: 1.0rem !important;
+}
+.i8-sticky{
+    position: inherit !important;
+}
+h2.post-flip-box-title {
+  top: 100px !important;
+}
+.post-flip-box-title a {
+  font-size: 1.4rem !important;
+}
+.post-flip-box-image {
+  width: 100%;
+  height: auto !important;
+}
+
+}
+
 
 /* Animation Effect for icons beat fade */
 @keyframes beat-fade {
@@ -1382,6 +1406,20 @@ body.bg-main.dark-mode {
   color: white;
 }
 
+.dark-mode .post-title a ,.dark-mode .list-title a ,.dark-mode .text-subtitle {
+  color: var(--i8-dark-secondary);
+}
+.dark-mode .post-title a:hover{
+
+}
+.dark-mode .bg-grey {
+  background-color: var(--i8-dark-primary) !important;
+}
+.dark-mode .mini-article li::marker {
+  color: var(--i8-dark-complete-color);
+}
+
+
 .dark-mode .card {
   background-color: transparent !important;
 }
@@ -1620,11 +1658,12 @@ body.bg-main.dark-mode a:hover,
   border-bottom: 1px solid #ccc;
   padding-bottom: 15px;
 }
-.post-title a {
-  color: rgb(43, 43, 43) !important;
+.post-title a,.list-title a {
+  color: var(--i8-light-secondary) ;
 }
+
 .post-title a:hover {
-  color: var(--i8-light-primary) !important; 
+  color: var(--i8-light-primary) ; 
 }
 
 
@@ -1881,3 +1920,10 @@ h2.post-flip-box-title {
   box-shadow: 0 0 14px rgba(0, 0, 0, 0.05);
 }
 /* share copy button */
+
+.widget {
+  overflow: hidden;
+}
+.size-full {
+  width: 100% !important;
+}

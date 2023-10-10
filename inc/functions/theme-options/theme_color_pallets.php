@@ -1,5 +1,4 @@
 <?php
-
 /**
  * 
  * Customize Theme Color Pallets

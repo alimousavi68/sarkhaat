@@ -2,7 +2,7 @@
 //header
 get_header();
 ?>
-<div class="container">
+<div class="container px-0">
     <div class="top-section container d-flex flex-column my-4 gap-4 px-2">
         <?php
         // // todo: if top main is active

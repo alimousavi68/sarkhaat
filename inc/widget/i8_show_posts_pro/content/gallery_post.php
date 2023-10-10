@@ -1,7 +1,7 @@
 <?php
 echo $args['before_widget'];
 
-echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-2">';
+echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
 if ($hide_title != 'on') {
     echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
 }
@@ -51,14 +51,14 @@ if ($category_posts->have_posts()) {
 }
 
 if ($category_posts2->have_posts()) {
-    echo '<div class="col-xl-12 col-md-12 col-sm-24 col-24 row">';
+    echo '<div class="col-xl-12 col-md-24 col-sm-24 col-24 row">';
     while ($category_posts2->have_posts()) {
         $category_posts2->the_post();
         $primary_cat = get_post_meta(get_the_ID(), 'hasht_primary_category');
         // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
     ?>
-        <div class="col-12 px-1">
+        <div class="col-24 col-lg-12 col-md-12 col-sm-24 col-xl-12 px-1">
             <div class="post-flip-box-container">
                 <?php echo i8_the_thumbnail('i8-xl-625-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 231)); ?>
 

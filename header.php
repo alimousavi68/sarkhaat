@@ -35,11 +35,11 @@
         }
 
         .bottom-menu {
-            display: flex;
+            /* display: flex;
             padding: 1px;
             justify-content: space-between;
             align-items: center;
-            align-self: stretch;
+            align-self: stretch; */
             background: #1171B7;
             color: white;
         }
@@ -103,7 +103,7 @@
                 <div class="container d-flex justify-content-center justify-content-between align-items-center px-lg-0">
                     <div class="col-18 col-md-2 d-flex w-auto gap-4">
                         <a href="<?php echo bloginfo('url') ?>" title="<?php bloginfo('title'); ?> " class="logo">
-                            <img width="177" height="70" class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/logo.png" alt="logo" />
+                            <img width="177" height="70" class="header-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/rasaderooz.ir-logo.webp" alt="logo" />
                         </a>
                         <div class="d-none d-lg-flex align-items-center">
                             <?php build_custom_menu_by_location('primary'); ?>
@@ -131,102 +131,12 @@
             </div>
 
 
-            <div class="row">
-                <div class="col-md-24  border-bottom">
-                    <div class="col-24 white-shadow rounded10 py-2 d-flex align-items-center justify-content-between sub-header">
-                        <div class="container d-flex justify-content-center justify-content-between align-items-center px-0">
-                            <div class="d-none d-lg-flex">
-                                <ul class="d-flex flex-row gap-4 px-0 my-0 f13">
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-chevron-down mx-1" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-                                            </svg>
-                                        </span>
-                                        <span>دلار</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                                            </svg>
-                                        </span>
-                                        <span>یورو</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-chevron-down mx-1" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-                                            </svg>
-                                        </span>
-                                        <span>دلار</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                                            </svg>
-                                        </span>
-                                        <span>یورو</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-chevron-down mx-1" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-                                            </svg>
-                                        </span>
-                                        <span>دلار</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                                            </svg>
-                                        </span>
-                                        <span>یورو</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-chevron-down mx-1" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path>
-                                            </svg>
-                                        </span>
-                                        <span>دلار</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-                                    <li>
-                                        <span>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-chevron-up" viewBox="0 0 16 16">
-                                                <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
-                                            </svg>
-                                        </span>
-                                        <span>یورو</span>
-                                        <span>۵۰،۰۰۰</span>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2 f13">
-                                <span>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentcolor" class="bi bi-chevron-left" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
-                                    </svg>
-                                </span>
-                                <a href="#"><span>مشاهده داده های بازار در زمان واقعی </span></a>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php
+            if(function_exists('show_market_bar'))
+            {
+                show_market_bar();
+            }
+            ?>
         </div>
     </header>
     <!-- header  -->
