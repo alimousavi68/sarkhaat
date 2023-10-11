@@ -26,17 +26,17 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
                     <div class="d-flex align-items-center gap-2">
                         <p class="text-gray f14 m-0" style="line-height: 100%;padding-top: 5px;"><?php the_date('H:i - Y/m/d ') ?></p>
                         
-                        <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="21px" height="21px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)"><path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h6"></path><path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21px" height="21px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)"><path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h6"></path><path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10Z"></path></svg>
                     </div>
                 <?php endif; ?>
                 <a class="p-0 p-lg-0 p-sm-1" href="#share-btn" alt="copy page link button" aria-label="copy page link button">
-                    <?xml version="1.0" encoding="UTF-8" ?><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)">
                         <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M14 11.998C14 9.506 11.683 7 8.857 7H7.143C4.303 7 2 9.238 2 11.998c0 2.378 1.71 4.368 4 4.873a5.3 5.3 0 0 0 1.143.124"></path>
                         <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M10 11.998c0 2.491 2.317 4.997 5.143 4.997h1.714c2.84 0 5.143-2.237 5.143-4.997 0-2.379-1.71-4.37-4-4.874A5.304 5.304 0 0 0 16.857 7"></path>
                     </svg>
                 </a>
                 <a class="p-0 p-lg-0 p-sm-1" id="printButton" href="" alt="print page button" aria-label="print page button">
-                    <?xml version="1.0" encoding="UTF-8" ?><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="var(--i8-light-primary)">
                         <path stroke="var(--i8-light-primary)" stroke-width="1.5" d="M17.571 18H20.4a.6.6 0 0 0 .6-.6V11a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v6.4a.6.6 0 0 0 .6.6h2.829M8 7V3.6a.6.6 0 0 1 .6-.6h6.8a.6.6 0 0 1 .6.6V7"></path>
                         <path stroke="var(--i8-light-primary)" stroke-width="1.5" d="M6.098 20.315 6.428 18l.498-3.485A.6.6 0 0 1 7.52 14h8.96a.6.6 0 0 1 .594.515L17.57 18l.331 2.315a.6.6 0 0 1-.594.685H6.692a.6.6 0 0 1-.594-.685Z"></path>
                         <path stroke="var(--i8-light-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="m17 10.01.01-.011"></path>
@@ -105,7 +105,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
                                     </div>
                         </div>
                         <div class="animate slide-in-down notification-button">
-                            <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="#383838"><path stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M19.4 20H9.6a.6.6 0 0 1-.6-.6V9.6a.6.6 0 0 1 .6-.6h9.8a.6.6 0 0 1 .6.6v9.8a.6.6 0 0 1-.6.6Z"></path><path stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M15 9V4.6a.6.6 0 0 0-.6-.6H4.6a.6.6 0 0 0-.6.6v9.8a.6.6 0 0 0 .6.6H9"></path></svg> در داخل کلیپ بورد ذخیره شد!
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" fill="none" stroke-width="1.5" viewBox="0 0 24 24" color="#383838"><path stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M19.4 20H9.6a.6.6 0 0 1-.6-.6V9.6a.6.6 0 0 1 .6-.6h9.8a.6.6 0 0 1 .6.6v9.8a.6.6 0 0 1-.6.6Z"></path><path stroke="#383838" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M15 9V4.6a.6.6 0 0 0-.6-.6H4.6a.6.6 0 0 0-.6.6v9.8a.6.6 0 0 0 .6.6H9"></path></svg> در داخل کلیپ بورد ذخیره شد!
                         </div>
 
                         
