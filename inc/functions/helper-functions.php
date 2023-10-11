@@ -123,10 +123,10 @@ function render_primary_category_meta_box($post)
     </div>
 
 <?php
-    $i8_show_date = (get_post_meta($post->ID, 'i8_show_date', true) == 'on') ? ' checked' : '';
-    // فیلد نمایش تاریخ دلخواه
-    echo '<div class="misc-pub-section"><label  for="i8_show_date"> نمایش تاریخ ';
-    echo '<input type="checkbox" class="widefat" name="i8_show_date" id="i8_show_date" ' . $i8_show_date . '>';
+    $i8_hide_date = (get_post_meta($post->ID, 'i8_hide_date', true) == 'on') ? ' checked' : '';
+    // فیلد مخفی سازی تاریخ دلخواه
+    echo '<div class="misc-pub-section"><label  for="i8_hide_date"> مخفی سازی تاریخ ';
+    echo '<input type="checkbox" class="widefat" name="i8_hide_date" id="i8_hide_date" ' . $i8_hide_date . '>';
     echo '</label></div>';
 }
 
@@ -138,10 +138,10 @@ function save_primary_category_meta_data($post_id)
         update_post_meta($post_id, 'hasht_primary_category', sanitize_text_field($_POST['hasht_primary_category']));
     }
 
-    if (isset($_POST['i8_show_date'])) {
-        update_post_meta($post_id, 'i8_show_date', 'on');
+    if (isset($_POST['i8_hide_date'])) {
+        update_post_meta($post_id, 'i8_hide_date', 'on');
     } else {
-        update_post_meta($post_id, 'i8_show_date', 'off');
+        update_post_meta($post_id, 'i8_hide_date', 'off');
     }
 
     if (isset($_POST['hasht-reference-name'])) {

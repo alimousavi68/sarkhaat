@@ -11,7 +11,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
     <?php
     if (is_active_sidebar('st-sidebar')) {
         echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
-        dynamic_sidebar('st-sidebar');
+            dynamic_sidebar('st-sidebar');
         echo '</div>';
     }
     ?>
@@ -22,7 +22,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
         </div>
         <div class="d-none d-xl-flex d-lg-flex d-md-flex  col-md-12 col-sm-24 mb-0 flex-row  justify-content-center justify-content-md-end text-gray f14">
             <div class="d-flex justify-content-center gap-3 gap-lg-2 gap-sm-1">
-                <?php if (get_post_meta(get_the_ID(), 'i8_show_date', true) == 'on') : ?>
+                <?php if (get_post_meta(get_the_ID(), 'i8_hide_date', true) != 'on') : ?>
                     <div class="d-flex align-items-center gap-2">
                         <p class="text-gray f14 m-0" style="line-height: 100%;padding-top: 5px;"><?php the_date('H:i - Y/m/d ') ?></p>
                         

@@ -18,25 +18,25 @@ get_header();
         border-radius: 50px;
         outline: none;
         font-size: 18px;
-        color: #37adea;
+        color: var(--i8-light-primary);
         font: 'Yekan Bakh', Yekan Bakh;
     }
 
     ::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
-        color: #37adea;
+        color: var(--i8-light-primary);
         font-family: Roboto;
         text-transform: uppercase;
     }
 
     ::-moz-placeholder {
         /* Firefox 19+ */
-        color: #37adea;
+        color: var(--i8-light-primary);
     }
 
     :-ms-input-placeholder {
         /* IE 10+ */
-        color: #37adea;
+        color: var(--i8-light-primary);
     }
 
     .i8-close-btn {
@@ -45,7 +45,7 @@ get_header();
         left: 3px;
         cursor: pointer;
         color: #fff;
-        background: #37adea;
+        background: var(--i8-light-primary);
         border: 0px;
         width: 120px;
         height: 53px;

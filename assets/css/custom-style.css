@@ -21,6 +21,7 @@
   --i8-light-fg-color: #ffffff;
   --i8-dark-fg-color: #222740;
   --i8-light-blue : #00C2FF;
+  --i8-flip-box-hover : #F44336;
 }
 
 .container {
@@ -1068,10 +1069,13 @@ blockquote p::before {
   font-family: sans-serif !important;
 }
 
-a svg.bi:hover {
-  fill: var(--bs-info);
+/* a svg.bi:hover {
+  fill: var(--i8-dark-complete-color);
+} */
+.round-icon:hover{
+  background-color: var(--i8-dark-complete-color);
+  color: var(--i8-light-fg-color);
 }
-
 
 table {
   width: 100%;
@@ -1720,6 +1724,7 @@ body.bg-main.dark-mode a:hover,
 .post-flip-box-container:hover .post-flip-box-image {
   transform: scale(1.05); 
   transition-duration: (1.2s);
+
 }
 
 /* سبک لینک */
@@ -1768,6 +1773,18 @@ body.bg-main.dark-mode a:hover,
   padding-right: 0;
   /* حذف پدینگ راست هنگام هاور */
 }
+
+
+/*  تنظیمات حالت اولیه   */
+.post-flip-box-container .post-flip-box-overlay {
+  transition-duration: 0.7s ;
+}
+/* هاور */
+.post-flip-box-container:hover .post-flip-box-overlay
+{
+  background-color: rgba(255, 0, 0, 0.6);
+}
+
 
 /*  تنظیمات حالت اولیه   */
 .post-flip-box-container .post-flip-box-title0,

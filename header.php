@@ -66,7 +66,8 @@
         <div class="row">
             <div class="col-24 top-menu ">
                 <div class="container d-flex justify-content-center justify-content-between p-1 align-items-center">
-                    <span class="d-flex f13"><?php echo date('l j F - H:i:s'); ?></span>
+                    <span class="d-flex f13"><?php echo date('l j F - H:i:s');
+ ?></span>
                     <div class="d-flex">
                         <div class="d-none d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links">
                             <a class="p-0 p-lg-0 p-sm-1" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>" alt="twitter share button" aria-label="twitter share button">

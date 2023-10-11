@@ -34,7 +34,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                     <?php i8_breadcrumb(); ?>
                 </div>
                 <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center align-item-center justify-content-xl-end justify-content-lg-end justify-content-md-end text-gray f14">
-                    <?php if (get_post_meta(get_the_ID(), 'i8_show_date', true) == 'on') : ?>
+                    <?php if ( get_post_meta(get_the_ID(), 'i8_hide_date', true) != 'on') : ?>
                         <div class="d-flex align-items-center">
                             <p class="text-gray f14 m-0" style="line-height: 100%;padding-top: 5px;"><?php the_date('H:i - Y/m/d ') ?></p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="var(--i8-light-primary)" class="bi bi-calendar2 mx-1" viewBox="0 0 16 16">

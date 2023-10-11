@@ -4,7 +4,7 @@
     </div>
     <div class="d-flex flex-column col-lg-18 col-md-18 col-sm-24  gap-1">
         <span class="text-center text-xl-end text-lg-end text-md-center text-sm-center d-flex justify-content-between flex-column">
-            <a href="<?php the_permalink(); ?>" class="h-fs-7"><?php i8_limit_text(get_the_title(), 75, '...'); ?></a>
+            <a href="<?php the_permalink(); ?>" class="h-fs-7"><?php i8_limit_text(get_the_title(), 250, '...'); ?></a>
         </span>
         <p class="text-justify f15">
             <?php i8_limit_text(get_the_excerpt(), 240, '...'); ?>
