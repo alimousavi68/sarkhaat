@@ -63,7 +63,7 @@ if ($category_posts->have_posts()) {
                 <div class="bullet-border">
                     <?php echo customizeSVG($icon_list_bullet, '#fff', '#fff', 30, 30, ''); ?>
                 </div>
-                <a class="<?php echo $title_font_size; ?> l22-05 text-normal cursor-pointer text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                 <?php if ($hide_excerpt != 'on') : ?>
                     <p><?php i8_limit_text(get_the_excerpt(), 100, '...'); ?></p>
                 <?php endif; ?>
