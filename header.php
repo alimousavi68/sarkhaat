@@ -12,7 +12,6 @@
         <style media="print">
             .sl-sidebar,
             .sub-header,
-            .breadcrumb,
             .bottom-content-bar,
             .related-post,
             #footer,

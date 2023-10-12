@@ -133,6 +133,14 @@
             <?php } ?>
         </select>
     </p>
+    <p>
+        <label for="<?php echo $this->get_field_id('title_font_weight'); ?>">وزن تیتر</label>
+        <select name="<?php echo $this->get_field_name('title_font_weight'); ?>" id="<?php echo $this->get_field_id('title_font_weight'); ?>" class="widefat">
+            <?php for ($i = 1; $i <= 10; $i++) { ?>
+                <option value='<?php echo 'fw-' . $i; ?>' <?php selected($title_font_weight, 'fw-' . $i, true); ?>><?php echo 'وزن -  ' . $i; ?></option>
+            <?php } ?>
+        </select>
+    </p>
 
     <div style="display: flex;flex-direction: row;gap: 9px;">
         <p style="width:50%;">

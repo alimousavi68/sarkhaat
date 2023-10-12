@@ -43,6 +43,7 @@ class i8_show_posts_pro extends WP_Widget
         'thumb_radius'   => 'round-2',
         'head_font_size'   => 'display-3',
         'title_font_size'   => 'display-2',
+        'title_font_weight'   => 'fw-4',
         'display_style'  => 'mod1',
         'display_column_num_desktop' => '1',
         'display_column_num_mini_desktop' => '1',
@@ -89,6 +90,7 @@ class i8_show_posts_pro extends WP_Widget
         $thumb_radius      =    esc_attr($instance['thumb_radius']);
         $head_font_size    =    esc_attr($instance['head_font_size']);
         $title_font_size   =    esc_attr($instance['title_font_size']);
+        $title_font_weight   =    esc_attr($instance['title_font_weight']);
         $orderby           =    esc_attr($instance['orderby']);
         $display_style     =    esc_attr($instance['display_style']);
         $show_desktop      =    esc_attr($instance['show_desktop']);
@@ -121,6 +123,7 @@ class i8_show_posts_pro extends WP_Widget
         $instance['thumb_radius'] = sanitize_text_field($new_instance['thumb_radius']);
         $instance['head_font_size'] = sanitize_text_field($new_instance['head_font_size']);
         $instance['title_font_size'] = sanitize_text_field($new_instance['title_font_size']);
+        $instance['title_font_weight'] = sanitize_text_field($new_instance['title_font_weight']);
         $instance['cat'] = sanitize_text_field($new_instance['cat']);
         $instance['icon'] = ($new_instance['icon']);
         $instance['icon_list_bullet'] = ($new_instance['icon_list_bullet']);
@@ -155,6 +158,7 @@ class i8_show_posts_pro extends WP_Widget
         $thumb_height = $instance['thumb_height'];
         $thumb_radius = $instance['thumb_radius'];
         $title_font_size = $instance['title_font_size'];
+        $title_font_weight = $instance['title_font_weight'];
         $head_font_size = $instance['head_font_size'];
         $icon = $instance['icon'];
         $icon_list_bullet = $instance['icon_list_bullet'];

@@ -20,7 +20,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 " aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
         </div>
-        <div class="d-none d-xl-flex d-lg-flex d-md-flex  col-md-12 col-sm-24 mb-0 flex-row  justify-content-center justify-content-md-end text-gray f14">
+        <div class="d-xl-flex d-lg-flex d-md-flex  col-md-12 col-sm-24 mb-0 flex-row  justify-content-center justify-content-md-end text-gray f14">
             <div class="d-flex justify-content-center gap-3 gap-lg-2 gap-sm-1">
                 <?php if (get_post_meta(get_the_ID(), 'i8_hide_date', true) != 'on') : ?>
                     <div class="d-flex align-items-center gap-2">
@@ -56,7 +56,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
                     <?php //i8_breadcrumb(); 
                     ?>
                 </div> -->
-                <h1 class="single-title h-fs-8 mt-md-3 text-center text-xl-end text-lg-end text-md-end text-sm-center"><?php the_title(); ?></h1>
+                <h1 class="single-title fw-7 h-fs-8 mt-md-3 text-center text-xl-end text-lg-end text-md-end text-sm-center"><?php the_title(); ?></h1>
                 <p class="f15 text-gray text-justify"><?php i8_limit_text(get_the_excerpt(), 150, '...'); ?></p>
 
 

@@ -7,7 +7,7 @@ get_header();
 
     .i8-container {
         position: relative;
-        font: 'Yekan Bakh';
+        font: 'iransansxv';
     }
 
     .i8-input {
@@ -19,7 +19,7 @@ get_header();
         outline: none;
         font-size: 18px;
         color: var(--i8-light-primary);
-        font: 'Yekan Bakh', Yekan Bakh;
+        font: 'iransansxv';
     }
 
     ::-webkit-input-placeholder {

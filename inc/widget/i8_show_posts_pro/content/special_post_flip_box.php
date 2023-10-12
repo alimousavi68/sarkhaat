@@ -38,7 +38,7 @@ if ($category_posts->have_posts()) {
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-center">
                     <h2 class="post-flip-box-title">
-                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> fd-7 post-flip-box-link  l1 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>

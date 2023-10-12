@@ -55,7 +55,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
               <p class="f13 mb-0"><?php echo i8_primary_category($post->ID); ?></p>
             </div>
           <?php endif; ?>
-          <h5><a class="card-title text-center f31 text-white l1" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h5>
+          <h5><a class="card-title text-center f31 fw-6 text-white l1" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h5>
         </div>
     <?php
       }

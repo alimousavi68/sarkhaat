@@ -36,11 +36,11 @@ if ($category_posts->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-xl-625-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 651, "height" => 486)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link "></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="f31 post-flip-box-link l1 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="f31 post-flip-box-link l1 fw-7 fd-7  text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>
@@ -67,7 +67,7 @@ if ($category_posts2->have_posts()) {
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1  fw-3 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>
@@ -83,10 +83,3 @@ echo $args['after_widget'];
 
 
 ?>
-
-<div class="row">
-    <div class="col-12">
-    </div>
-    <div class="col-12">
-    </div>
-</div>

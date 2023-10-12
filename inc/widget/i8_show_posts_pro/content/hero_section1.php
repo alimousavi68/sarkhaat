@@ -43,9 +43,9 @@ if ($category_posts->have_posts()) : ?>
       </a>
       <div class="single-item-data d-flex flex-column gap-0">
         <span class="post-category f16 pt-2"><?php echo i8_primary_category(get_the_ID()) ?></span>
-        <h1 class="post-title f32 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+        <h1 class="post-title f32 fw-6 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
         <?php if ($hide_excerpt != 'on') : ?>
-          <p class="post-excerpt f15"><?php i8_limit_text(get_the_excerpt(), 120, '...'); ?></p>
+          <p class="post-excerpt f15"><?php i8_limit_text(get_the_excerpt(), 150, '...'); ?></p>
         <?php endif; ?>
         <p class="post-publish-date f12 text-start text-subtitle"><?php the_date() ?></p>
       </div>
@@ -79,7 +79,7 @@ if ($category_posts->have_posts()) : ?>
               <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
                 <div class="title-box">
                   <span class="post-category f16"><?php echo i8_primary_category(get_the_ID()) ?></span>
-                  <h1 class="post-title f18 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+                  <h1 class="post-title f18 fw-4 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
                 </div>
                 <p class="post-publish-date f12 text-start text-subtitle my-0"><?php the_date() ?></p>
               </div>
@@ -113,7 +113,7 @@ if ($category_posts->have_posts()) : ?>
                 <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
                   <div class="title-box">
                     <span class="post-category f16"><?php echo i8_primary_category(get_the_ID()) ?></span>
-                    <h1 class="post-title f18 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+                    <h1 class="post-title f18 fw-4 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
                   </div>
                   <p class="post-publish-date f12 text-start text-subtitle my-0"><?php the_date() ?></p>
                 </div>
