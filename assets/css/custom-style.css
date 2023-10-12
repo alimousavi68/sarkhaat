@@ -1660,7 +1660,7 @@ body.bg-main.dark-mode a:hover,
 .numeric-list-item .list-number {
   color: var(--i8-dark-complete-color);
   margin-left: 13px;
-  font-size: 32px;
+  font-size: 30px;
 }
 
 .list-number {
