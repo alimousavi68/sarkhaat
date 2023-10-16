@@ -74,9 +74,9 @@
       var shareUrl = document.querySelector('.share-url');
       var shareContainer = document.querySelector('.share-container');
       var notificationButton = document.querySelector('.notification-button');
-
+      
       // set data
-      var url = '<?php echo esc_url(get_permalink()); ?>';
+      var url = '<?php echo bloginfo('url'); ?>/?p=<?php the_ID(); ?>';
       var shared = false;
 
       /**
