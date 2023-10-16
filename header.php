@@ -112,7 +112,7 @@
                     <div class="col-auto py-2 d-flex align-items-center justify-content-between gap-2 gap-lg-2 gap-sm-2">
 
                         <div class="d-flex d-lg-none">
-                            <?php i8_mobile_menu('primary'); ?>
+                            <?php i8_mobile_menu('mobile'); ?>
                         </div>
                         <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
                             <a href="#" class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center" alt="dark mode button" aria-label="dark mode button">
