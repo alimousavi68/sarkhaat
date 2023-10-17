@@ -243,7 +243,7 @@ class i8_site_info_box extends WP_Widget
         <div class="site-info-box d-flex flex-column gap-1 w-100 ">
             <?php if ($hide_logo != 'on') : ?>
                 <div class="site-info-logo text-center">
-                    <img width="auto" height="auto" class="footer-logo w-100 py-2" src="<?php echo $logo_img; ?>" loading="lazy" alt="logo" />
+                    <img  class="footer-logo w-100 py-2" src="<?php echo $logo_img; ?>" loading="lazy" alt="logo" />
                 </div>
             <?php endif; ?>
             <?php if ($hide_description != 'on') : ?>
