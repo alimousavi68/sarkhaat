@@ -21,7 +21,7 @@ if ($category_posts->have_posts()) {
         $category_posts->the_post();
 ?>
         <div class="mini-article d-flex <?php echo $col; ?>  px-0 px-xl-2 px-lg-2 px-md-2 align-items-center">
-            <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-sm-85-67', 'hover', 67); ?></a>
+            <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-sm-130-88', 'hover', 67); ?></a>
             <a class="f15 me-2 l22-05 text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
         </div>
 <?php

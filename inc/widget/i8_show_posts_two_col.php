@@ -275,7 +275,7 @@ function i8_show_post_list_creator($simple_post_list_query, $cat, $title, $sub_t
             $simple_post_list_query->the_post();
         ?>
             <div class="mini-article d-flex align-items-center mb-3">
-                <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-sm-85-67', 'hover'); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-sm-130-88', 'hover'); ?></a>
                 <a class="f15 me-2 l22-05  text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
             </div>
 <?php

@@ -41,10 +41,12 @@ add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
 /**
  * define Custom Image size
  */
-add_image_size('i8-xl-625-486', 625, 486, true);
-add_image_size('i8-lg-440-310', 440, 310, true);
-add_image_size('i8-md-228-231', 228, 231, true);
-add_image_size('i8-sm-85-67'  , 85, 67, true);
+// add_image_size('i8-xl-632-486', 632, 486, true);
+add_image_size('i8-xl-632-486', 632 , 486 , true);  // gallery bif post , 
+add_image_size('i8-lg-464-340', 464 , 340 , true);  // hero big post, special post box, 
+add_image_size('i8-md-219-140', 219 , 140 , true);  // hero box small items , special list post 2
+add_image_size('i8-sm-130-88' , 130 , 88  , true);  // sidebar most visitor  
+// add_image_size('i8-xsm-90-75' , 90  , 75  , true);  // sidebar most visitor
 
 
 /**

@@ -75,7 +75,7 @@ if ($category_posts2->have_posts()) { ?>
     ?>
       <div class="multi-item d-flex flex-column gap-2 border-bottom">
         <a href="<?php the_permalink(); ?>">
-          <?php echo i8_the_thumbnail('i8-lg-440-310', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+          <?php echo i8_the_thumbnail('i8-lg-464-340', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
         </a>
         <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
           <div class="title-box">

@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
 ?>
         <div class="<?php echo $col; ?> px-1">
             <div class="post-flip-box-container">
-                <?php echo i8_the_thumbnail('i8-xl-625-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>
+                <?php echo i8_the_thumbnail('i8-xl-632-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>
 
                 <div class="post-flip-box-link-wrapper">
                     <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>

@@ -62,7 +62,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
 
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-24 px-0 px-xl-2 px-lg-2">
-                <a href="<?php the_permalink(); ?>"> <?php echo i8_the_thumbnail('i8-lg-440-310', 'hover w-100 rounded-1 object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?></a>
+                <a href="<?php the_permalink(); ?>"> <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 rounded-1 object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?></a>
             </div>
         </div>
     </div>
