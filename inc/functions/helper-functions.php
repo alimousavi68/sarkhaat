@@ -79,6 +79,33 @@ function i8_limit_text($text, $limit_count, $ending_text)
 }
 
 
+function add_custom_subtitle_field()
+{
+    add_action('edit_form_after_title', 'custom_subtitle_field');
+}
+
+add_action('add_meta_boxes', 'add_custom_subtitle_field');
+
+function custom_subtitle_field()
+{
+
+    $value = get_post_meta(get_the_ID(), '_post_subtitle', true);
+    echo '<input type="text" class="widefat" id="post_subtitle" name="post_subtitle" value="' . esc_attr($value) . '" placeholder="روتیتر" size="25" />';
+}
+
+function save_post_subtitle($post_id)
+{
+
+    if (isset($_POST['post_subtitle'])) {
+        update_post_meta($post_id, '_post_subtitle', sanitize_text_field($_POST['post_subtitle']));
+    }
+}
+
+add_action('save_post', 'save_post_subtitle');
+
+
+
+
 /**
  * 
  * Add Primary Category meta data Feature to post page 
@@ -250,7 +277,7 @@ function build_custom_menu_by_location($location, $style_type = 'row')
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column' : 'flex-row';
         $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 '. $gap .' ">';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }
@@ -263,7 +290,7 @@ function build_custom_menu_by_id($menu_id, $style_type = 'row')
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column menu-fix' : 'flex-row';
         $gap = ($style_type == 'column') ? 'column-gap-0' : 'column-gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 flex-wrap '. $gap .' ">';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 flex-wrap ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }

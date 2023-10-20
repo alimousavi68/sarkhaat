@@ -49,7 +49,7 @@ if ($category_posts->have_posts()) {
 ?>
         <?php if ($hide_thumb != 'on') : ?>
             <div class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start px-0 px-lg-2 px-md-2 px-sm-0">
-                <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-md-228-231', 'hover ' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?></a>
+                <a href="<?php the_permalink(); ?>"><?php echo i8_the_thumbnail('i8-sm-130-88', 'hover ' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?></a>
                 <div class="d-flex flex-column gap-1">
                     <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 85, '...'); ?></a>
                     <?php if ($hide_excerpt != 'on') : ?>

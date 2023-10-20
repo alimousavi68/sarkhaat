@@ -152,7 +152,7 @@ class i8_show_ads_pro extends WP_Widget
 
         if ($file_type == $file_type_values[0]) {
 ?>
-            <a href="<?php echo $link_url; ?>">
+            <a href="<?php echo $link_url; ?>" target="_blank" >
                 <img class="<?php echo ($class)  ?  $class : '';
                             echo $thumb_radius ?> " src="<?php echo ($file_src) ? $file_src : ''; ?>" alt="<?php echo ($file_alt) ? $file_alt : ''; ?>" width="<?php echo ($width) ? $width : ''; ?>" height="<?php echo ($height) ? $height : ''; ?>" <?php echo ($load_method == 'async') ? ' decoding="async" ' : ' loading="lazy" '; ?> />
             </a>
@@ -160,7 +160,7 @@ class i8_show_ads_pro extends WP_Widget
         <?php
         } elseif ($file_type == $file_type_values[1]) {
         ?>
-            <a href="<?php echo $link_url; ?>" alt="<?php echo ($file_alt) ? $file_alt : ''; ?>">
+            <a href="<?php echo $link_url; ?>" alt="<?php echo ($file_alt) ? $file_alt : ''; ?>" target="_blank">
                 <video class="<?php echo ($class)  ?  $class : ''; echo $thumb_radius ?> " width="<?php echo ($width) ? $width : ''; ?>" height="<?php echo ($height) ? $height : ''; ?>" <?php echo ($load_method == 'async') ? ' decoding="async" ' : ' loading="lazy" '; ?> autoplay loop>
                     <source src="<?php echo ($file_src) ? $file_src : ''; ?> " type="video/mp4" >
                 </video>
