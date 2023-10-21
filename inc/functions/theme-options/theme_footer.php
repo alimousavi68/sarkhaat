@@ -30,5 +30,4 @@ function i8_footer_options($wp_customize)
         'settings' => 'i8_footer_copyright',
         'label' => __('متن کپی رایت', 'i8_theme'),
     ));
-
 }

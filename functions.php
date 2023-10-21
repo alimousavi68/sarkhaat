@@ -36,6 +36,7 @@ require_once(get_template_directory() . '/inc/functions/theme-options/inline_ads
 require_once(get_template_directory() . '/inc/functions/theme-options/theme_custom_scripts.php');
 require_once(get_template_directory() . '/inc/functions/theme-options/theme_footer.php');
 require_once(get_template_directory() . '/inc/functions/theme-options/theme_search.php');
+require_once(get_template_directory() . '/inc/functions/theme-options/theme_social_links.php');
 
 
 /**
