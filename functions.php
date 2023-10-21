@@ -56,4 +56,5 @@ add_filter('excerpt_length', 'custom_excerpt_length');
 require_once(get_template_directory() . '/inc/functions/i8_CustomTermField.php');
 
 
-
+//Include jalali-date external library 
+require_once( get_template_directory()  . '/lib/jDateTime-master/jdatetime.class.php' );

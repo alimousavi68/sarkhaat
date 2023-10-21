@@ -66,8 +66,9 @@
         <div class="row">
             <div class="col-24 top-menu ">
                 <div class="container d-flex justify-content-center justify-content-between p-1 align-items-center">
-                    <span class="d-flex f13"><?php echo date('l j F - H:i:s');
-                                                ?></span>
+                    <span class="d-flex f13"><?php
+                    $date = new jDateTime(true, true, 'Asia/Tehran');
+                    echo $date->date("l j F Y H:i"); ?></span>
                     <?php i8_show_social_icons(16, 18); ?>
 
                 </div>
