@@ -3,7 +3,8 @@ echo $args['before_widget'];
 
 echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
 if ($hide_title != 'on') {
-    echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
+    echo $args['before_title']  . $title  .  $args['after_title'];
+    // echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
 }
 echo $sub_title_print . '</div>';
 
