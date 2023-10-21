@@ -61,7 +61,7 @@ $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-prim
                 ?>
                 <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0"><?php echo $sub_title; ?></p>
                 <h1 class="single-title fw-7 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center"><?php the_title(); ?></h1>
-                <p class="f15 text-gray text-justify"><?php echo get_the_excerpt(); ?></p>
+                <p class="f15 text-gray text-justify"><?php i8_limit_text(get_the_excerpt(), 238, '...'); ?></p>
 
 
             </div>
