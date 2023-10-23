@@ -23,6 +23,13 @@
     </div>
   </div>
   <!-- sidebar  -->
+  <style>
+    .market-btn:hover .btn-svg {
+      fill: var(--i8-light-bg-color);
+      /* stroke: var(--i8-light-bg-color); */
+      transition-duration: 0.5s;
+    }
+  </style>
   <div class="border-end col-24 col-lg-6 col-md-24 col-sm-24 col-xl-6 d-flex flex-wrap gap-2 i8-border-md-none i8-sticky justify-content-center pe-0 pe-xl-3 ps-0 pt-4 pt-md-4 pt-xl-0">
     <?php
     dynamic_sidebar('hl-sidebar');

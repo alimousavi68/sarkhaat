@@ -18,6 +18,7 @@ require_once(get_template_directory() . '/inc/widget/i8_show_posts_pro/i8_show_p
 require_once(get_template_directory() . '/inc/widget/i8_show_ads_pro/i8_show_ads_pro.php');
 require_once(get_template_directory() . '/inc/widget/i8_show_posts_two_col.php');
 require_once(get_template_directory() . '/inc/widget/i8_site_info_box.php');
+require_once(get_template_directory() . '/inc/widget/i8_market_data.php');
 require_once(get_template_directory() . '/inc/widget/i8_menu.php');
 
 
