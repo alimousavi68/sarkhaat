@@ -51,8 +51,8 @@ $tag_icon= '';
 
     <!-- intro -->
     <div class="article d-flex flex-row justify-content-between  border-bottom pb-3">
-        <div class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row row-gap-3">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-24 ps-lg-2 mb-4 mb-md-4  px-0 px-md-2 px-lg-2">
+        <div class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-24 ps-lg-2 mb-4 mb-md-4 px-0 px-md-2 px-sm-2 px-lg-2">
                 <!-- <div class="mb-0 d-flex flex-row justify-content-center justify-content-md-start text-gray f13 " aria-label="breadcrumb">
                     <?php //i8_breadcrumb(); 
                     ?>
@@ -66,7 +66,7 @@ $tag_icon= '';
 
 
             </div>
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-24 px-0 px-xl-2 px-lg-2">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-24 px-0 px-xl-2 px-sm-2 px-lg-2">
                 <a href="<?php the_permalink(); ?>"> <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 rounded-1 object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?></a>
             </div>
         </div>
