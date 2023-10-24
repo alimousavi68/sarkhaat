@@ -1,128 +1,116 @@
 <?php
-/**
- * The template for displaying comments
- *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since Twenty Nineteen 1.0
- */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
-*/
-if ( post_password_required() ) {
-	return;
+if (post_password_required()) {
+    return;
 }
-
-// $discussion = twentynineteen_get_discussion_data();
 ?>
 
-<div id="comments" class="<?php echo comments_open() ? 'comments-area' : 'comments-area comments-closed'; ?>">
-	<div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-		<h2 class="comments-title">
-		<?php
-		if ( comments_open() ) {
-			if ( have_comments() ) {
-				_e( 'Join the Conversation', 'twentynineteen' );
-			} else {
-				_e( 'Leave a comment', 'twentynineteen' );
-			}
-		} else {
-			if ( '1' == $discussion->responses ) {
-				/* translators: %s: Post title. */
-				printf( _x( 'One reply on &ldquo;%s&rdquo;', 'comments title', 'twentynineteen' ), get_the_title() );
-			} else {
-				printf(
-					/* translators: 1: Number of comments, 2: Post title. */
-					_nx(
-						'%1$s reply on &ldquo;%2$s&rdquo;',
-						'%1$s replies on &ldquo;%2$s&rdquo;',
-						$discussion->responses,
-						'comments title',
-						'twentynineteen'
-					),
-					number_format_i18n( $discussion->responses ),
-					get_the_title()
-				);
-			}
-		}
-		?>
-		</h2><!-- .comments-title -->
-		<?php
-		// Only show discussion meta information when comments are open and available.
-		if ( have_comments() && comments_open() ) {
-			get_template_part( 'template-parts/post/discussion', 'meta' );
-		}
-		?>
-	</div><!-- .comments-title-flex -->
-	<?php
-	if ( have_comments() ) :
+<div id="comments" class="comments-area">
 
-		// Show comment form at top if showing newest comments at the top.
-		if ( comments_open() ) {
-			twentynineteen_comment_form( 'desc' );
-		}
 
-		?>
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'walker'      => new TwentyNineteen_Walker_Comment(),
-					'avatar_size' => twentynineteen_get_avatar_size(),
-					'short_ping'  => true,
-					'style'       => 'ol',
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
-		<?php
+    <div class="box mb-3">  
+        <?php
+        comment_form(array(
+            'comment_notes_before' => '',
+            'comment_notes_after' => '',
+            'title_reply' => '',
+            'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
+            'title_reply_after' => '</h3>',
+            'cancel_reply_link' => __('انصراف از پاسخ', 'theme-text-domain'),
+        ));
+        ?>
+    </div>
 
-		// Show comment navigation.
-		if ( have_comments() ) :
-			$prev_icon     = twentynineteen_get_icon_svg( 'chevron_left', 22 );
-			$next_icon     = twentynineteen_get_icon_svg( 'chevron_right', 22 );
-			$comments_text = __( 'Comments', 'twentynineteen' );
-			the_comments_navigation(
-				array(
-					'prev_text' => sprintf( '%s <span class="nav-prev-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span>', $prev_icon, __( 'Previous', 'twentynineteen' ), __( 'Comments', 'twentynineteen' ) ),
-					'next_text' => sprintf( '<span class="nav-next-text"><span class="primary-text">%s</span> <span class="secondary-text">%s</span></span> %s', __( 'Next', 'twentynineteen' ), __( 'Comments', 'twentynineteen' ), $next_icon ),
-				)
-			);
-		endif;
 
-		// Show comment form at bottom if showing newest comments at the bottom.
-		if ( comments_open() && 'asc' === strtolower( get_option( 'comment_order', 'asc' ) ) ) :
-			?>
-			<div class="comment-form-flex">
-				<span class="screen-reader-text"><?php _e( 'Leave a comment', 'twentynineteen' ); ?></span>
-				<?php twentynineteen_comment_form( 'asc' ); ?>
-				<h2 class="comments-title" aria-hidden="true"><?php _e( 'Leave a comment', 'twentynineteen' ); ?></h2>
-			</div>
-			<?php
-		endif;
+    <?php if (have_comments()) : ?>
+        <span class="text-grey f16 me-2 mb-1 comments-title">
+            <?php
+            $comments_number = get_comments_number();
+            printf( '%s نظر برای این مطلب ثبت شده است: ', $comments_number); 
+            ?>
+        </span  >  
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments">
-				<?php _e( 'Comments are closed.', 'twentynineteen' ); ?>
-			</p>
-			<?php
-		endif;
+        <div class="row mx-0 d-flex row-gap-3 overflow-hidden">
+            <?php
+            wp_list_comments(array(
+                'style' => 'ol',
+                'avatar_size' => 60,
+                'short_ping' => true,
+                'callback' => 'theme_comment_callback'
+            ));
+            ?>
+        </div>
 
-	else :
+        <?php
+        the_comments_pagination(array(
+            'prev_text' => '<span class="screen-reader-text">' . esc_html__('Previous', 'theme-text-domain') . '</span>',
+            'next_text' => '<span class="screen-reader-text">' . esc_html__('Next', 'theme-text-domain') . '</span>',
+        ));
+        ?>
 
-		// Show comment form.
-		twentynineteen_comment_form( true );
+    <?php endif; ?>
 
-	endif; // if have_comments();
-	?>
+    <?php
+    if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
+    ?>
+        <p class="no-comments"><?php esc_html_e('نظرات بسته شده است', 'theme-text-domain'); ?></p>
+    <?php endif; ?>
+
+
 </div><!-- #comments -->
+
+<?php
+function theme_comment_callback($comment, $args, $depth)
+{
+    $GLOBALS['comment'] = $comment;
+
+    // نمایش قسمت های مورد نظر از نظر
+    printf(
+        '<div %s>',
+        comment_class(array('comment-item d-flex comment col-24 box comments row-gap-3', 'depth-' . $depth), $comment->comment_ID, '', false)
+    );
+
+    if ($args['avatar_size'] != 0) {
+        // echo get_avatar($comment, array('class' => ''));
+        echo get_avatar(get_the_author_meta('ID'), $size = '60', $default = '', $alt = '', array('class' => 'comment-avatar rounded-circle'), $args['avatar_size']);
+    }
+
+    echo '<div class="w-100"><div class="d-flex justify-content-between align-items-center me-2">';
+    printf(
+        '<p class="text-grey fw-7 mb-0">%s</p>',
+        get_comment_author_link()
+    );
+
+    echo ('<div class="d-flex reply">');
+    comment_reply_link(
+        array_merge(
+            $args,
+            array(
+                'add_below' => 'comment',
+                'depth' => $depth, 
+                'max_depth' => $args['max_depth'],
+                'respond_id'    => 'respond',
+                'reply_text'    => __('پاسخ دادن'),
+                'reply_to_text' => __('پاسخ دادن به %s'),
+                'login_text'    => __('ورود برای پاسخ دادن'),
+                'before'        => '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--i8-light-primary )" class="bi bi-reply-all" viewBox="0 0 16 16"><path d="M8.098 5.013a.144.144 0 0 1 .202.134V6.3a.5.5 0 0 0 .5.5c.667 0 2.013.005 3.3.822.984.624 1.99 1.76 2.595 3.876-1.02-.983-2.185-1.516-3.205-1.799a8.74 8.74 0 0 0-1.921-.306 7.404 7.404 0 0 0-.798.008h-.013l-.005.001h-.001L8.8 9.9l-.05-.498a.5.5 0 0 0-.45.498v1.153c0 .108-.11.176-.202.134L4.114 8.254a.502.502 0 0 0-.042-.028.147.147 0 0 1 0-.252.497.497 0 0 0 .042-.028l3.984-2.933zM9.3 10.386c.068 0 .143.003.223.006.434.02 1.034.086 1.7.271 1.326.368 2.896 1.202 3.94 3.08a.5.5 0 0 0 .933-.305c-.464-3.71-1.886-5.662-3.46-6.66-1.245-.79-2.527-.942-3.336-.971v-.66a1.144 1.144 0 0 0-1.767-.96l-3.994 2.94a1.147 1.147 0 0 0 0 1.946l3.994 2.94a1.144 1.144 0 0 0 1.767-.96v-.667z" /><path d="M5.232 4.293a.5.5 0 0 0-.7-.106L.54 7.127a1.147 1.147 0 0 0 0 1.946l3.994 2.94a.5.5 0 1 0 .593-.805L1.114 8.254a.503.503 0 0 0-.042-.028.147.147 0 0 1 0-.252.5.5 0 0 0 .042-.028l4.012-2.954a.5.5 0 0 0 .106-.699z" /></svg>',
+                'after'         => ''
+            )
+        )
+    );
+
+    printf('<p class="f13 text-gray me-2 mb-0">%s</p>', get_comment_date('d F Y'));
+    echo '</div></div>';
+    echo ' <p class="me-2 f14 mt-1">';
+    edit_comment_link(esc_html__('(ویرایش)', 'theme-text-domain'), ' ');
+    echo '<br/>';
+    echo get_comment_text();
+
+    if ($comment->comment_approved == '0') {
+        echo '<br/>';
+        echo '<em class="comment-awaiting-moderation">' . esc_html__('نظر شما در انتظار تایید است.', 'theme-text-domain') . '</em><br/>';
+    }
+    echo '</p>';
+
+
+    echo '</div></div>';
+}

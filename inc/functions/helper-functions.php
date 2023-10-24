@@ -574,3 +574,37 @@ function i8_show_social_icons($width = 16, $height = 16)
 //     return $content;
 // }
 // add_filter('the_content', 'add_html_to_paragraph');
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Get comment posts
+/*-----------------------------------------------------------------------------------*/
+
+function mytheme_comment($comment, $args, $depth) {
+    $GLOBALS['comment'] = $comment; ?>
+    <li id="<?php comment_class(); ?>">
+    <div class="top_cm" id="comment-<?php comment_ID() ?>">
+    <div class="avatar"><?php echo get_avatar( $comment, 22 ); ?></div>
+    <p><?php printf(__('<a>%s</a>'), get_comment_author_link()) ?></p>
+    <p class="c_date"><?php printf(__('تاریخ : %1$s'), get_comment_date('j - F - Y')) ?></p>
+    
+    <?php
+    if(function_exists('like_counter_c')) { like_counter_c(''); }
+    ?>
+    
+    <?php
+    if(function_exists('dislike_counter_c')) { dislike_counter_c(''); }
+    ?>
+    
+    </div><!-- top_cm -->
+    <div class="comment_box">
+     <?php comment_text() ?>
+     <br />
+      <?php edit_comment_link(__('(Edit)'),' ','') ?>
+      <p class="replay_cm"> <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?></p>
+    </div><!-- comment_box -->
+    </li>
+    <?php
+    
+             }	
