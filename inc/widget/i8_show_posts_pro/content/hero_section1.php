@@ -44,7 +44,7 @@ if ($category_posts->have_posts()) : ?>
       <div class="single-item-data d-flex flex-column gap-0">
         <span class="post-category f16 pt-2"><?php echo i8_primary_category(get_the_ID()) ?></span>
         <!-- <span class="post-subtitle f13 fw-1"><?php $subtitle=get_post_meta(get_the_ID(), '_post_subtitle', true);echo ($subtitle) ? $subtitle :'' ; ?></span> -->
-        <h1 class="post-title f26 fw-5 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h1>
+        <h1 class="post-title f26 fw-5 l1"><a href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 115, '...'); ?></a></h1>
         <?php if ($hide_excerpt != 'on') : ?>
           <p class="post-excerpt f15"><?php i8_limit_text(get_the_excerpt(), 150, '...'); ?></p>
         <?php endif; ?>
