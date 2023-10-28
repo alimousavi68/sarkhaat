@@ -100,12 +100,12 @@ class i8_market_data_btn_box extends WP_Widget
         $instance['sub_title'] = sanitize_text_field($new_instance['sub_title']);
         $instance['hide_title'] = sanitize_text_field($new_instance['hide_title']);
 
-        $instance['market_link_1'] = sanitize_text_field($new_instance['market_link_1']);
-        $instance['market_link_2'] = sanitize_text_field($new_instance['market_link_2']);
-        $instance['market_link_3'] = sanitize_text_field($new_instance['market_link_3']);
-        $instance['market_link_4'] = sanitize_text_field($new_instance['market_link_4']);
-        $instance['market_link_5'] = sanitize_text_field($new_instance['market_link_5']);
-        $instance['market_link_6'] = sanitize_text_field($new_instance['market_link_6']);
+        $instance['market_link_1'] = sanitize_url($new_instance['market_link_1']);
+        $instance['market_link_2'] = sanitize_url($new_instance['market_link_2']);
+        $instance['market_link_3'] = sanitize_url($new_instance['market_link_3']);
+        $instance['market_link_4'] = sanitize_url($new_instance['market_link_4']);
+        $instance['market_link_5'] = sanitize_url($new_instance['market_link_5']);
+        $instance['market_link_6'] = sanitize_url($new_instance['market_link_6']);
 
         // $instance['show_desktop'] = ($new_instance['show_desktop']);
         // $instance['show_mobile'] = ($new_instance['show_mobile']);
