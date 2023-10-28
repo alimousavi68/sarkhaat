@@ -11,10 +11,8 @@ get_header();
         align-items: center;
         justify-content: center;
         margin:  24px;
-        background: #fff;
         color: red;
         font-size: 96px;
-        font-family: 'Fira Mono', monospace;
         letter-spacing: -7px;
     }
 
