@@ -6,7 +6,13 @@ $posttags = get_the_tags();
 // </svg>';
 // $tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dar-primary)');
 $tag_icon= '';
+$reference_icon = '<?xml version="1.0" encoding="UTF-8"?><svg width="32px" height="32px" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M10 12H5a1 1 0 01-1-1V7.5a1 1 0 011-1h4a1 1 0 011 1V12zm0 0c0 2.5-1 4-4 5.5M20 12h-5a1 1 0 01-1-1V7.5a1 1 0 011-1h4a1 1 0 011 1V12zm0 0c0 2.5-1 4-4 5.5" stroke="#000000" stroke-width="1.5" stroke-linecap="round"></path></svg>';
 
+$tag_icon = customizeSVG($tag_icon, 'var(--i8-dark-primary)', 'var(--i8-dark-primary)');
+$reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(--i8-dark-primary)');
+
+$reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
+$reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
 ?>
 <div class="col-md-24 col-sm-24 col-xl-17 d-flex flex-column gap-3 pe-0 ps-0 ps-lg-4 ps-md-0 ps-sm-0 ps-xl-4">
     <?php
@@ -80,7 +86,19 @@ $tag_icon= '';
         </div>
         <div class="bottom-content-bar d-flex flex-xxl-row flex-xl-row flex-lg-row  border-bottom pb-2 justify-content-between flex-column-reverse align-items-start">
             <div class="tags d-flex flex-wrap row-gap-2">
+            <?php
+            if ($reference_name) :
 
+            ?>
+                <div class="reference d-flex flex-wrap align-items-center">
+                    <span>منبع : <a href="<?php echo $reference_link; ?>" target="_blank" rel="nofollow" class="tag-item mb-0" aria-label="article reference"><?php echo $reference_name; ?></a></span>
+                </div>
+
+            <?php
+            endif;
+
+
+            ?>
                 <?php
                 echo $tag_icon;
                 if ($posttags) :
