@@ -20,13 +20,8 @@ $args = array(
         array(
             'taxonomy' => 'post_tag',
             'field' => 'id',
-            'terms' => $post_tags,
-        ),
-        array(
-            'taxonomy' => 'category',
-            'field' => 'id',
-            'terms' => $post_categories,
-        ),
+            'terms' => $post_tags, 
+        )
     ),
 );
 
