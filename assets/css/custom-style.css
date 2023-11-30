@@ -22,8 +22,8 @@
 }
 
 :root {
-  --i8-light-primary: #087DAF;
-  --i8-dark-primary: #087DAF;
+  --i8-light-primary: rgba(20, 50, 96, 1);
+  --i8-dark-primary: rgba(20, 50, 96, 1);
   --i8-light-secondary: #4A4A4A;
   --i8-dark-secondary: #f8f8f8;
   --i8-light-complete-color: #DE424F;
@@ -116,7 +116,7 @@
   line-height: 180%;
 }
 
-f .fw-1 {
+.fw-1 {
   font-weight: 100 !important;
   font-variation-settings: "wght" 100 !important;
 }
@@ -211,8 +211,8 @@ f .fw-1 {
   color: var(--i8-light-secondary);
 }
 
-.bg-blue {
-  background-color: var(--i8-light-primary);
+.bg-i8-light-primary {
+  background-color: var(--i8-light-primary) !important;
 }
 
 .bg-red {
@@ -615,11 +615,11 @@ textarea {
 }
 
 #header {
-  background-color: var(--i8-light-fg-color);
+  background-color: var(--i8-light-bg-color);
 }
 
 #header .header-logo {
-  width: 177px;
+  width: 148px;
   height: auto;
   object-fit: cover;
 }
@@ -919,12 +919,14 @@ ul.dropdown-menu.submenu {
 }
 
 .nav-item a {
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600px;
   color: var(--i8-light-secondary);
 }
 
 .nav-item a.active {
-  font-size: 115px;
+  font-size: 16px;
+  font-weight: 800;
   color: var(--i8-light-primary);
 }
 
@@ -1195,7 +1197,7 @@ blockquote p::before {
   fill: var(--i8-dark-complete-color);
 } */
 .round-icon:hover {
-  background-color: var(--i8-dark-complete-color);
+  background-color: var(--i8-light-primary);
   color: var(--i8-light-fg-color);
 }
 
@@ -1592,6 +1594,10 @@ body.bg-main.dark-mode a:hover,
 .dark-mode .social-share a,
 .social-share a {
   border: none !important;
+}
+
+.dark-btn:hover svg {
+ fill: var(--i8-dark-complete-color) !important;
 }
 
 /* yekta-net custom */

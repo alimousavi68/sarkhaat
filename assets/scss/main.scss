@@ -2,22 +2,22 @@ $grid-columns: 24 !default;
 $container-max-widths: (
   sm: 570px,
   md: 820px,  
-  lg: 960px, 
+  lg: 960px,      
   xl: 1280px 
 ) ; 
 // $primary:       var(--bs-p rimary) !default;   
 $primary:       #087DAF !default; 
 $secondary:     #4A4A4A !default;   
-$info:          #205D86 !default;
+$info:          #205D86 !default; 
 $body-color: #373a3d;
- 
+  
 $display-font-sizes: ( 
   1: 2.0000rem,   
   2: 1.5625rem,  
   3: 1.3125rem,
   4: 1.125rem,
-  5: 0.9375rem,
-  6: 0.8125rem 
+  5: 0.9375rem,  
+  6: 0.8125rem   
 ); 
 // $display-font-weight: 300; 
 

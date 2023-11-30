@@ -31,7 +31,7 @@
 
     <div class="container p-3 ">
       <div class="row d-flex text-center text-lg-end text-md-end text-sm-center gap-row-3 flex-wrap-reverse">
-        <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی رصد روز می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
+        <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی اندیشه معاصر می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
         <div class="col-24 col-lg-4 col-sm-24 col-md-4">
           <div class="d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
             <span class="f13" >طراحی و تولید: <a href="https://ihasht.ir/" class="text-white"  title="هشت بهشت" alt="Website designer: Hasht Behesht professional website design site" target="_blank">هشت بهشت</a> </span>
