@@ -33,7 +33,7 @@
 
         .row {
             margin: 0px !important;
-            padding: 0px !important;
+            /* padding: 0px !important; */
         }
 
         .round-icon {
@@ -45,7 +45,7 @@
 
         .i8-main-menu {
             display: flex;
-            max-width: 1280px;
+            max-width: 1300px;
             height: 50px;
             padding: 7px;
             justify-content: space-between;

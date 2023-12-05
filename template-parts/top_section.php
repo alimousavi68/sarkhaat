@@ -20,9 +20,9 @@ $two_post_query_args = array(
 $two_post_query = new WP_Query($two_post_query_args);
 ?>
 
-<div class="row">
+<div class="row box p-3">
     <!--  top-right-sidebar -->
-    <div class="col-24 col-xl-18 col-lg-18 col-md-24 main-slider-2 d-flex px-0 gap-0 ">
+    <div class="col-24 col-xl-18 col-lg-18 col-md-24 main-slider-2 d-flex px-0 gap-0">
         <div class="row">
         <?php
             dynamic_sidebar('top_section_right');
