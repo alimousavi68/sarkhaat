@@ -38,9 +38,9 @@ echo $sub_title_print . '</div>';
       while ($category_posts2->have_posts()) {
         $category_posts2->the_post();
         ?>
-        <div class="multi-item d-flex flex-column gap-2 border-bottom">
-          <a href="<?php the_permalink(); ?>">
-            <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+        <div class="multi-item d-flex flex-column gap-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
+          <a href="<?php the_permalink(); ?>" class="image_frame" >
+            <?php echo i8_the_thumbnail('i8-md-219-140', 'hover multi-item-thumb w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
           </a>
           <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
@@ -83,7 +83,7 @@ echo $sub_title_print . '</div>';
         $category_posts->the_post();
         ?>
 
-        <div class="multi-items d-flex flex-column gap-2 border-bottom">
+        <div class="multi-items d-flex flex-column gap-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
           <div class="single-item-data d-flex flex-column gap-1 justify-content-between">
             <div class="title-box">
               <span class="post-category f15">

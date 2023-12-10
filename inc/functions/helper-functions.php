@@ -282,7 +282,7 @@ function build_custom_menu_by_location($location, $style_type = 'row')
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column' : 'flex-row';
         $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex ' . $type_class . ' g-2  px-0 ' . $gap . ' ">';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex  ' . $type_class . ' overflow-hidden flex-wrap gap-2  px-0 ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }
@@ -413,13 +413,17 @@ function i8_mobile_menu($location)
 }
 
 
+/**
+ * 
+ * 
+ * Show Mobile Menu button and list 
+ * 
+ * 
+ */
 function print_mobile_menu($all_items, $parent_items_level)
 {
-    //  var_dump($items);
-    //  wp_die( 'end');
-
-    foreach ($parent_items_level as $item) {
-        // var_dump($items);
+   foreach ($parent_items_level as $item) {
+ 
         // بررسی وجود زیرمنو
         $submenu = get_submenu_items($all_items, $item->ID);
         $menu = '';
@@ -449,9 +453,16 @@ function print_mobile_menu($all_items, $parent_items_level)
         }
     }
 
-    // return $menu;
 }
 
+
+/**
+ * 
+ * 
+ * Customize Svg to my own style
+ * 
+ * 
+ */
 function customizeSVG($svg, $fill = '#000000', $stroke = '#000000', $width = 32, $height = 32, $class = "")
 {
     // Check if the SVG is not empty
@@ -473,6 +484,13 @@ function customizeSVG($svg, $fill = '#000000', $stroke = '#000000', $width = 32,
     return $svg;
 }
 
+/**
+ * 
+ * 
+ * Show Social media link and icons 
+ * 
+ * 
+ */
 function i8_show_social_icons($width = 16, $height = 16)
 {
     // echo get_option('i8_social_link_twitter');
@@ -546,6 +564,7 @@ function i8_show_social_icons($width = 16, $height = 16)
     </div>
 <?php
 }
+
 
 // function add_html_to_paragraph($content)
 // {

@@ -27,7 +27,7 @@
     <?php endif; ?>
     <style>
         .bottom-menu {
-            background: #1171B7;
+            background: var(--i8-light-primary);
             color: white;
         }
 
@@ -67,8 +67,7 @@
 
         <!-- Main header -->
         <div class="row " style="background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%); height: 103px; ">
-            <div
-                class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex align-items- border-bottom">
+            <div class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex align-items- border-bottom">
                 <div class="container d-flex justify-content-center justify-content-between align-items-center px-lg-0">
                     <div class="col-18 col-md-2 d-flex w-auto gap-4">
                         <!-- Logo -->
@@ -86,7 +85,7 @@
                         <div class="d-flex d-lg-none justify-content-end">
                             
                             <a href="#"
-                                class="dark-mode-switch dark-btn  px-1 px-lg-0 px-sm-1 d-flex justify-content-center align-items-center"
+                                class="dark-mode-switch1 dark-btn  px-1 px-lg-0 px-sm-1 d-flex justify-content-center align-items-center"
                                 alt="dark mode button" aria-label="dark mode button">
                                 <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">
@@ -135,8 +134,7 @@
 
                     <!-- Tools Btn -->
                     <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
-                        <a href="#"
-                            class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
+                        <a href="#" class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
                             alt="dark mode button" aria-label="dark mode button">
                             <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">

@@ -45,7 +45,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
 
 
     ?>
-        <a href="<?php the_permalink(); ?>">
+        <a href="<?php the_permalink(); ?>" class="image_frame">
           <?php echo i8_the_thumbnail('i8-xl-632-486', 'object-fit-cover w-100 rounded-15 card-img hover', 486, true, '', false, true); ?>
         </a>
         <div class="card-img-overlay " style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 20.97%, <?php echo $primary_cat_color_transparent; ?> 100%)">
@@ -82,7 +82,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
           $primary_cat_color_transparent = $primary_cat_color . 'c4';
       ?>
           <div class="col-sm-24 position-relative item ">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" class="image_frame">
               <?php echo i8_the_thumbnail('i8-lg-464-340', 'object-fit-cover w-100 rounded-15 card-img hover', 231, true, '', false, true); ?>
             </a>
             <div class="card-img-overlay " style="background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 20.97%, <?php echo $primary_cat_color_transparent; ?> 100%)">
@@ -124,7 +124,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
     ?>
         <div class="mini-article bigger-img d-flex mb-0 align-items-center  col-xl-24 col-lg-8 col-md-12 col-sm-12">
           <div class="position-relative item">
-            <a href="<?php the_permalink(); ?>">
+            <a href="<?php the_permalink(); ?>" class="image_frame">
               <?php echo i8_the_thumbnail('i8-sm-130-88', 'object-fit-cover rounded-15 card-img hover', 67, true, '', false, true); ?>
             </a>
             <div class="card-img-overlay w-100 " style="border-radius:10px;background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 20.97%, <?php echo $primary_cat_color_transparent; ?> 100%)">

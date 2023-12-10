@@ -29,11 +29,11 @@ $category_posts = new WP_Query(
   )
 );
 ?>
-<div class="d-flex flex-column gap-1 pe-0">
+<div class="d-flex flex-column gap-1 pe-xl-0 pe-lg-0 px-0">
 
   <!-- End post number 1 - big post -->
-  <div class="row pb-3">
-    <div class="col-18 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-0">
+  <div class="row  pb-3 ">
+    <div class="col-24 col-lg-18 col-md-18 col-sm-24 col-xl-18 d-flex flex-column-reverse flex-lg-row flex-md-row flex-sm-row flex-xl-row mx-0 pb-0 pb-md-0 pb-sm-4 px-0 row-gap-0">
       <?php if ($category_posts->have_posts()): ?>
         <?php
         while ($category_posts->have_posts()):
@@ -59,8 +59,8 @@ $category_posts = new WP_Query(
               <?php the_date() ?>
             </p>
           </div>
-          <div class="col-xl-15 col-lg-16 col-md-16 col-sm-12 col-24 px-0 px-xl-2 px-sm-2 px-lg-2">
-            <a href="<?php the_permalink(); ?>">
+          <div class="col-xl-15 col-lg-15 col-md-15 col-sm-12 col-24 px-0 px-xl-2 px-sm-2 px-lg-2">
+            <a href="<?php the_permalink(); ?>" class="image_frame">
               <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 object-fit-cover i8-h-md-100', $size = array('width' => 420, 'height' => 310), true, 'max-height:255px;', false, true); ?>
             </a>
           </div>
@@ -70,7 +70,7 @@ $category_posts = new WP_Query(
     <!-- End post number 1 - big post -->
 
     <!-- post number 2 -->
-    <div class="col-6 d-flex px-0 gap-1">
+    <div class="col-24 col-lg-6 col-md-6 col-sm-24 col-xl-6 d-flex gap-1 px-2">
       <?php
       $category_posts2 = new WP_Query(
         array(
@@ -86,8 +86,8 @@ $category_posts = new WP_Query(
         while ($category_posts2->have_posts()):
           $category_posts2->the_post();
           ?>
-          <div class="multi-item d-flex flex-column gap-2">
-            <a href="<?php the_permalink(); ?>">
+          <div class="d-flex flex-column flex-md-column flex-sm-row gap-2 multi-item">
+            <a href="<?php the_permalink(); ?>" class="image_frame">
               <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
             </a>
             <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
@@ -134,8 +134,8 @@ $category_posts = new WP_Query(
       while ($category_posts3->have_posts()):
         $category_posts3->the_post();
         ?>
-        <div class="col-24 col-lg-6 col-md-6 col-sm-24 d-flex flex-column gap-2 px-2">
-          <a href="<?php the_permalink(); ?>">
+        <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2">
+          <a href="<?php the_permalink(); ?>" class="image_frame">
             <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
           </a>
           <div class="single-item-data d-flex flex-column gap-0 justify-content-between">

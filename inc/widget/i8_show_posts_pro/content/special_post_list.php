@@ -26,11 +26,16 @@ if ($category_posts->have_posts()) {
     if (($category_posts->current_post + 1) === 1):
       ?>
       <div
-        class="news-card col-xl-13 col-md-13 col-sm-24 text-center text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 ">
-        <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
-        <a class="post-title display-3 fw-7 l1" href="<?php echo get_the_permalink(); ?>">
-          <?php i8_limit_text(get_the_title(), 120, '...'); ?>
+        class="news-card col-xl-13 col-md-13 col-sm-24 text-center text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame">
+        <a href="<?php the_permalink(); ?>" class="image_frame">
+          <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
         </a>
+        <h1 class="post-title display-3 fw-7 l1">
+                <a href="<?php echo get_the_permalink(); ?>">
+                  <?php i8_limit_text(get_the_title(), 120, '...'); ?>
+                </a>
+              </h1>
+
         <p class="post-publish-date f12 text-end text-subtitle my-0">
           <?php the_date() ?>
         </p>
@@ -39,17 +44,27 @@ if ($category_posts->have_posts()) {
       <?php endif;
     if (($category_posts->current_post + 1) > 1):
       ?>
-        <div class="<?php echo $col; ?>  mini-article d-flex align-items-center  border-bottom pb-3 mb-3 px-0">
-        <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover', $dimenition = array('width' => 100, 'height' => 75), true, '', false, true); ?>
+        <div
+          class="<?php echo $col; ?>  mini-article d-flex align-items-center  <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-3 mb-3 px-0 ">
+          <div width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>">
 
-          <a class="me-2 l22-05 post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
-            href="<?php echo get_the_permalink(); ?>">
-            <?php i8_limit_text(get_the_title(), 72, '...'); ?>
-            <p class="post-publish-date f12 text-end text-subtitle my-0">
+            <a href="<?php the_permalink(); ?>" class="image_frame">
+              <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover', $dimenition = array('width' => 100, 'height' => 75), true, '', false, true); ?>
+            </a>
+
+          </div>
+          <div class="d-flex flex-column ">
+            <h4 class="me-2 l22-05 post-title">
+              <a class=" <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
+                href="<?php echo get_the_permalink(); ?>">
+                <?php i8_limit_text(get_the_title(), 72, '...'); ?>
+              </a>
+            </h4>
+            <p class="post-publish-date f12 text-end text-subtitle my-0 me-2">
               <?php the_date() ?>
             </p>
-          </a>
-          
+          </div>
+
         </div>
         <?php
     endif;
@@ -62,4 +77,3 @@ echo '</div>';
 echo $args['after_widget'];
 
 ?>
-

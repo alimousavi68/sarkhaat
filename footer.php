@@ -2,15 +2,18 @@
 //footer
 ?>
 <!-- footer -->
-<footer id="footer" class="mt-3 border-top">
-  <div class="container py-3">
-    <div class="row ">
-      <div class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start order-md-1">
+<footer id="footer" class="footer-dark" >
+
+
+<div class="container">
+    <?php if (is_active_sidebar('fr-sidebar') || is_active_sidebar('fc-sidebar') || is_active_sidebar('fl-sidebar')) : ?>
+      <div class="row border-bottom py-3">
+      <div class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start ">
         <?php
         dynamic_sidebar('fr-sidebar');
         ?>
-
       </div>
+
       <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row gap-3">
         <div class="row w-100">
           <?php
@@ -18,12 +21,15 @@
           ?>
         </div>
       </div>
+
       <div class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end order-md-2">
         <?php
         dynamic_sidebar('fl-sidebar');
         ?>
       </div>
+
     </div>
+    <?php endif; ?>
   </div>
 
   <!-- footer menu -->
@@ -48,6 +54,7 @@
 <script>
   // darkmode
   const darkModeSwitch = document.querySelector(".dark-mode-switch");
+  const darkModeSwitch1 = document.querySelector(".dark-mode-switch1");
 
   // بررسی وضعیت دارک مود از LocalStorage
   const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -55,9 +62,17 @@
   // تنظیم وضعیت اولیه بر اساس وضعیت ذخیره شده
   document.body.classList.toggle("dark-mode", isDarkMode);
   darkModeSwitch.classList.toggle("active", isDarkMode);
+  darkModeSwitch1.classList.toggle("active", isDarkMode);
 
   darkModeSwitch.addEventListener("click", () => {
     const isActive = darkModeSwitch.classList.toggle("active");
+    document.body.classList.toggle("dark-mode", isActive);
+
+    // ذخیره وضعیت دارک مود در LocalStorage
+    localStorage.setItem("darkMode", isActive);
+  });
+  darkModeSwitch1.addEventListener("click", () => {
+    const isActive = darkModeSwitch1.classList.toggle("active");
     document.body.classList.toggle("dark-mode", isActive);
 
     // ذخیره وضعیت دارک مود در LocalStorage

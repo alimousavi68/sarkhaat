@@ -4,7 +4,7 @@ echo $args['before_widget'];
 echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
 if ($hide_title != 'on') {
     // echo $args['before_title'] . $title . $args['after_title'];
-    echo $args['before_title'] . $icon_print . $title  .  $args['after_title'];
+    echo $args['before_title'] . $icon_print . $title . $args['after_title'];
 }
 echo $sub_title_print . '</div>';
 
@@ -46,22 +46,26 @@ $category_posts = new WP_Query(
     )
 );
 
+
 if ($category_posts->have_posts()) {
     while ($category_posts->have_posts()) {
         $category_posts->the_post();
         ?>
         <?php if ($hide_thumb != 'on'): ?>
-            <div class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start px-0 px-lg-2 px-md-2 px-sm-0">
-                <a href="<?php the_permalink(); ?>">
-                    <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover ' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>
-                </a>
-                <div class="d-flex flex-column gap-1 post-title">
+            <div
+                class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start px-0 px-lg-2 px-md-2 px-sm-0 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-4 px-4">
+                <div  width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>" >
+                    <a href="<?php the_permalink(); ?>" class="image_frame">
+                        <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover ' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>
+                    </a>
+                </div>
+                <div class=" post-title">
                     <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal"
                         href="<?php echo get_the_permalink(); ?>">
                         <?php i8_limit_text(get_the_title(), 150, '...'); ?>
                     </a>
                     <?php if ($hide_excerpt != 'on'): ?>
-                        <p class="lead text-gray mb-0 d-lg-block d-md-block d-none lead mb-0 text-gray">
+                        <p class="lead text-gray mb-0 d-lg-block d-md-block d-none lead mb-0 text-gray pt-1">
                             <?php i8_limit_text(get_the_excerpt(), 200, '...'); ?>
                         </p>
                     <?php endif; ?>

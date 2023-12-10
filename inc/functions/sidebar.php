@@ -130,7 +130,7 @@ function i8_add_custom_sidebar()
         'id'             => 'hf-sidebar',
         'class'          => 'hf-sidebar',
         'description'    => 'این ستون در صفحه اصلی و در زیر همه بخش ها و بالای فوتر قرار میگیرد.',
-        'before_widget'  => '<div class="widget ">',
+        'before_widget'  => '<div class="widget multimdeia-dark-bg">',
         'after_widget'   => '</div>',
         'before_title'   => '',
         'after_title'    => '',

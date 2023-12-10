@@ -19,6 +19,8 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش به صورت هیرو باکس مدل ۲' => 'mod9',
         'نمایش به صورت تک عکس و بقیه متن' => 'mod10',
         '۲نمایش  به صورت افقی' => 'mod11',
+        'نمایش به صورت گالری ۲' => 'mod12',
+        'نمایش به صورت تایم لاین'=> 'mod13',
 
 
     );
@@ -146,6 +148,7 @@ class i8_show_posts_pro extends WP_Widget
 
         return $instance;
     }
+
     // متد نمایش محتویات ویجت 
     function widget($args, $instance)
     {
@@ -261,6 +264,18 @@ class i8_show_posts_pro extends WP_Widget
                 require('content/simple_post_list_vertical2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/simple_post_list_vertical2.php');
+            }
+        }elseif ($display_style == $values[11]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/gallery_post2.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/gallery_post2.php');
+            }
+        } elseif ($display_style == $values[12]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/simple_post_list_timeline.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/simple_post_list_timeline.php');
             }
         }
     }

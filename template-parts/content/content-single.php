@@ -73,7 +73,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-24 px-0 px-xl-2 px-sm-2 px-lg-2">
-                <a href="<?php the_permalink(); ?>"> <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 rounded-1 object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?></a>
+                <a href="<?php the_permalink(); ?>" class="image_frame"> <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 rounded-1 object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?></a>
             </div>
         </div>
     </div>

@@ -104,6 +104,8 @@ class i8_menu extends WP_Widget
             echo '<div class="text-title box-title box-title-mini display-4">';
             echo $args['before_title']  . $title  .  $args['after_title'];
             echo $sub_title_print . '</div>';
+        } else {
+            echo '<div class="text-title box-title box-title-mini display-4 py-4"></div>';
         }
     ?>
 
