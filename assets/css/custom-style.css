@@ -37,6 +37,9 @@
   --i8-flip-box-hover: #F44336;
   --i8-light-title-color: #505050;
 }
+.i8-light-primary-color {
+   color : var(--i8-light-primary);
+  }
 
 :root,
 [data-bs-theme=light] {
@@ -315,7 +318,7 @@ body a {
 
 
 
-a {
+a.i8-blink { 
     padding-bottom: 0px;
     background: -webkit-gradient(linear, right top, left top, from(var(--i8-dark-complete-color)), to(var(--i8-dark-complete-color)));
     background: linear-gradient(to left, var(--i8-dark-complete-color) 0%, var(--i8-dark-complete-color) 40%);
@@ -328,7 +331,7 @@ a {
     padding: 0;
     color: inherit !important;
 }
-a:hover {
+a.i8-blink:hover {
   background-size: 100% 10%;
 }
 
@@ -550,7 +553,19 @@ header #headContact:hover #headAssistants {
 }
 
 span.page-numbers.current {
-  background-color: var(--i8-light-primary);
+  background-color: var(--i8-light-primary-light);
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 50px;
+}
+a.page-numbers {
+  border: 2px solid #dee2e6;
+  padding: 5px 10px;
+  color: var(--i8-light-primary-light);
+  border-radius: 50px;
+}
+a.page-numbers:hover{
+  background-color: var(--i8-light-complete-color);
   padding: 5px 10px;
   color: #fff;
   border-radius: 50px;
@@ -1754,6 +1769,9 @@ body.bg-main.dark-mode a:hover,
   padding: 12px 0;
   color: var(--i8-light-primary);
   font-variation-settings: "wght" 700, "DOTS" 5 !important;
+}
+.breadcrumb > .current{
+  color: var(--i8-dark-complete-color);
 }
 
 footer .box-title {

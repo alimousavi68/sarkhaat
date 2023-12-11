@@ -36,7 +36,7 @@ if ($related_posts->have_posts()) {
 ?>
         <div class="mini-article d-flex col-md-12 col-sm-24 mb-3">
             <a href="<?php the_permalink(); ?>" class="image_frame"><?php echo i8_the_thumbnail('hover i8-sm-130-88', 'ms-2'); ?></a>
-            <a  class="f17 l2 me-2 l22-05 text-grey " href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a>
+            <a  class="f17 l2 me-2 l22-05 text-grey i8-blink" href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a>
         </div>
 <?php
     }

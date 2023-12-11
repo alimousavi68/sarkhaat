@@ -36,11 +36,11 @@ if ($category_posts->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-xl-632-486', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 651, "height" => 486)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link "></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link i8-blink "></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="f31 post-flip-box-link l1 fw-7 fd-7  text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="f31 post-flip-box-link l1 fw-7 fd-7  text-white i8-blink" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>
@@ -63,11 +63,11 @@ if ($category_posts2->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-lg-464-340', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 231)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link i8-blink"></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1  fw-3 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="<?php echo $title_font_size; ?> post-flip-box-link l1  i8-blink fw-3 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>

@@ -67,10 +67,14 @@ echo $sub_title_print . '</div>';
             ?>
             <!-- //echo wordpress post date in this template : 6min ago -->
 
-            <div class="timeline-item" date-is='<?php echo human_time_diff( get_the_time('U'), current_time('timestamp') ) . ' پیش'; ?>'>
-                <a class="<?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
+            <div class="timeline-item"
+                date-is='<?php echo human_time_diff(get_the_time('U'), current_time('timestamp')) . ' پیش'; ?>'>
+                <a class="i8-blink <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
                     href="<?php echo get_the_permalink(); ?>">
-                    <?php i8_limit_text(get_the_title(), 100, '...'); ?>
+                    <?php
+                    show_post_structure_related_icon(get_the_ID());
+                    i8_limit_text(get_the_title(), 100, '...'); ?>
+                    
                 </a>
                 <?php if ($hide_excerpt != 'on'): ?>
                     <p>

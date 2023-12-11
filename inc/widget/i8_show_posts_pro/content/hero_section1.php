@@ -47,7 +47,7 @@ $category_posts = new WP_Query(
               <?php echo $sub_title; ?>
             </p>
             <h1 class="f24 fw-7 text-center text-xl-end text-lg-end text-md-end text-sm-center l1">
-              <a href="<?php echo get_the_permalink(); ?>">
+              <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                 <?php i8_limit_text(get_the_title(), 90, '...'); ?>
               </a>
             </h1>
@@ -93,7 +93,7 @@ $category_posts = new WP_Query(
             <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
               <div class="title-box">
                 <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
-                  <a href="<?php echo get_the_permalink(); ?>">
+                  <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                     <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                   </a>
                 </h1>
@@ -117,7 +117,7 @@ $category_posts = new WP_Query(
 
   <!-- end top Item -->
 
-  <div class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
+  <div class="row w-100 mx-0 d-flex  flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
     <?php
     $category_posts3 = new WP_Query(
       array(
@@ -134,14 +134,14 @@ $category_posts = new WP_Query(
       while ($category_posts3->have_posts()):
         $category_posts3->the_post();
         ?>
-        <div class="col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2">
+        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2">
           <a href="<?php the_permalink(); ?>" class="image_frame">
             <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
           </a>
           <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
             <div class="title-box">
               <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
-                <a href="<?php echo get_the_permalink(); ?>">
+                <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                 </a>
               </h1>

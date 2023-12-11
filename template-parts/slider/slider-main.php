@@ -55,7 +55,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
               <p class="f13 mb-0"><?php echo i8_primary_category($post->ID); ?></p>
             </div>
           <?php endif; ?>
-          <h5><a class="card-title text-center f31 fw-6 text-white l1" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h5>
+          <h5><a class="card-title i8-blink text-center f31 fw-6 text-white l1" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a></h5>
         </div>
     <?php
       }
@@ -92,7 +92,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
                   <p class="f12 mb-0"><?php echo i8_primary_category($post->ID); ?></p>
                 </div>
               <?php endif; ?>
-              <a class="card-title text-center f18 l1 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+              <a class="card-title text-center f18 l1 text-white i8-blink" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
             </div>
           </div>
       <?php
@@ -131,7 +131,7 @@ $multi_post_query = new WP_Query($multi_post_query_args);
 
             </div>
           </div>
-          <a class="f15 me-2 l22-05 mb-0 text-grey" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 74, '...'); ?></a>
+          <a class="f15 me-2 l22-05 mb-0 text-grey i8-blink" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 74, '...'); ?></a>
         </div>
     <?php
       }

@@ -1,7 +1,7 @@
 <?php
 echo $args['before_widget'];
 
-echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7 m-0 me-lg-2 me-md-2">';
+echo '<div class="text-title box-title  ' . $head_font_size . ' fw-7  m-0">';
 if ($hide_title != 'on') {
     // echo $args['before_title'] . $title . $args['after_title'];
     echo $args['before_title'] . $icon_print . $title . $args['after_title'];
@@ -23,16 +23,13 @@ if ($category_posts->have_posts()) {
         <li
             class="col-24 col-lg-24 col-md-12 col-sm-12 pb-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
             <article class="numeric-list ">
-                <div class="numeric-list-item d-flex justify-content-center align-items-top ">
-                    <!-- <div class="list-number fw-4 d-flex justify-content-center align-items-top">
-                        <span><?php  //echo sprintf('%02d', $category_posts->current_post + 1); ?>.</span>
-                    </div> -->
-                    <div class="list-title">
+                <div class="numeric-list-item d-flex justify-content-start align-items-top ">
+                    <div class="list-title-none">
                         <span class="post-category f14 fw-4">
                             <?php echo i8_primary_category(get_the_ID()) ?>
                         </span>
                         <a href="<?php the_permalink(); ?>"
-                            class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>">
+                            class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> i8-blink">
                             <?php i8_limit_text(get_the_title(), 55, '...'); ?>
                         </a>
                     </div>

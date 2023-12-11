@@ -34,7 +34,7 @@ if ($category_posts->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-lg-464-340', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link "></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-center">
                     <h2 class="post-flip-box-title">

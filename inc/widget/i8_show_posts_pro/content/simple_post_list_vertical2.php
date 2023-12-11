@@ -9,7 +9,7 @@ if ($hide_title != 'on') { ?>
             <?php echo $sub_title_print; ?>
         </p>
         <p class="display-5 fw-4 mb-2">
-            <a class="cat_btn_link" href="<?php echo '/category' . '/' . $cat ?>">دیدن همه</a>
+            <a class="cat_btn_link i8-blink" href="<?php echo '/category' . '/' . $cat ?>">دیدن همه</a>
         </p>
     </div>
 <?php } ?>
@@ -37,7 +37,8 @@ if ($category_posts->have_posts()) {
             </a>
             <div class="single-item-data d-flex flex-column gap-1">
                 <div class="title-box">
-                    <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>  l1"><a href="<?php echo get_the_permalink(); ?>">
+                    <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>  l1">
+                    <a href="<?php echo get_the_permalink(); ?>" class="i8-blink" >
                             <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                         </a></h1>
                 </div>

@@ -60,7 +60,7 @@ if ($category_posts->have_posts()) {
                     </a>
                 </div>
                 <div class=" post-title">
-                    <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal"
+                    <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal"
                         href="<?php echo get_the_permalink(); ?>">
                         <?php i8_limit_text(get_the_title(), 150, '...'); ?>
                     </a>
@@ -77,7 +77,7 @@ if ($category_posts->have_posts()) {
                 <div class="bullet-border">
                     <?php echo customizeSVG($icon_list_bullet, '#fff', '#fff', 30, 30, ''); ?>
                 </div>
-                <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
+                <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
                     href="<?php echo get_the_permalink(); ?>">
                     <?php i8_limit_text(get_the_title(), 72, '...'); ?>
                 </a>
@@ -90,7 +90,7 @@ if ($category_posts->have_posts()) {
             </li>
         <?php else: ?>
             <li class="<?php echo $col; ?> mb-1">
-                <a class="<?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
+                <a class="i8-blink <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l22-05 text-normal cursor-pointer text-grey"
                     href="<?php echo get_the_permalink(); ?>">
                     <?php i8_limit_text(get_the_title(), 72, '...'); ?>
                 </a>

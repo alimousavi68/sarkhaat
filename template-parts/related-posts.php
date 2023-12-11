@@ -31,7 +31,7 @@ if ($related_query->have_posts()) {
     echo '<ul>';
     while ($related_query->have_posts()) {
         $related_query->the_post();
-        echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+        echo '<li><a class="i8-blink" href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
     }
     echo '</ul>';
     wp_reset_postdata();

@@ -31,7 +31,7 @@ if ($category_posts->have_posts()) {
           <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
         </a>
         <h1 class="post-title display-3 fw-7 l1">
-                <a href="<?php echo get_the_permalink(); ?>">
+                <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                   <?php i8_limit_text(get_the_title(), 120, '...'); ?>
                 </a>
               </h1>
@@ -55,8 +55,8 @@ if ($category_posts->have_posts()) {
           </div>
           <div class="d-flex flex-column ">
             <h4 class="me-2 l22-05 post-title">
-              <a class=" <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
-                href="<?php echo get_the_permalink(); ?>">
+              <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
+                href="<?php echo get_the_permalink(); ?>" >
                 <?php i8_limit_text(get_the_title(), 72, '...'); ?>
               </a>
             </h4>

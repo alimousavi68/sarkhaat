@@ -30,11 +30,11 @@ if ($category_posts2->have_posts()) {
                 <?php echo i8_the_thumbnail('i8-lg-464-340', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 190)); ?>
 
                 <div class="post-flip-box-link-wrapper">
-                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link"></a>
+                    <a href="<?php echo get_the_permalink(); ?>" class="post-flip-box-link i8-blink"></a>
                 </div>
                 <div class="post-flip-box-overlay d-flex align-items-end">
                     <h2 class="post-flip-box-title0">
-                        <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> post-flip-box-link l1 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
+                        <a class="<?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> i8-blink post-flip-box-link l1 fd-7 text-white" href="<?php echo get_the_permalink(); ?>"><?php i8_limit_text(get_the_title(), 72, '...'); ?></a>
                     </h2>
                 </div>
             </div>
