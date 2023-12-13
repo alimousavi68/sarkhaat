@@ -14,7 +14,7 @@
         the_archive_description('<p>', '</p>');
         ?>
       </div>
-      <div class="breadcrumb col-md-12 col-sm-24 mb-0 d-flex flex-row align-items-center  justify-content-center justify-content-md-end text-gray f14 " aria-label="breadcrumb">
+      <div class="i8-breadcrumb col-md-12 col-sm-24 mb-0 d-flex flex-row align-items-center  justify-content-center justify-content-md-end text-gray f14 " aria-label="breadcrumb">
         <?php i8_breadcrumb(); ?>
       </div>
     </div>

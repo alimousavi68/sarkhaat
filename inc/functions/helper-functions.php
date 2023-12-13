@@ -124,7 +124,7 @@ add_action('save_post', 'save_post_subtitle');
 add_action('add_meta_boxes', 'add_primary_category_meta_box');
 function add_primary_category_meta_box()
 {
-    add_meta_box('primary_category_meta_box', 'دسته بندی اصلی', 'render_primary_category_meta_box', 'post', 'side', 'high');
+    add_meta_box('primary_category_meta_box', 'داشبورد ویژه'  , 'render_primary_category_meta_box', 'post', 'side', 'high');
 }
 
 // نمایش متا باکس دسته بندی اصلی
@@ -173,7 +173,8 @@ function render_primary_category_meta_box($post)
 
 
     ?>
-    <div class="misc-pub-section"><label for="hasht-primary-category">
+    <!-- نوع پست -->
+    <div class="misc-pub-section"><label for="hasht-primary-category" >
             <label for="i8_post_structure">نوع پست</label>
             <select name="i8_post_structure" id="i8_post_structure" class="widefat">
                 <option value="text" <?php echo ($selected_post_structure == 'text') ? 'selected' : ''; ?>>ساده</option>
@@ -183,12 +184,42 @@ function render_primary_category_meta_box($post)
             </select>
     </div>
 
+    <!-- لینک ویدیو -->
+    <div id="hasht-video-link-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?> >
+        <label for="hasht-video-link">لینک ویدیو:</label>
+        <input type="text" name="hasht-video-link" id="hasht-video-link" class="widefat"
+            value="<?php echo get_post_meta($post->ID, 'hasht-video-link', true); ?>">
+    </div>
+
     <?php
     $i8_hide_date = (get_post_meta($post->ID, 'i8_hide_date', true) == 'on') ? ' checked' : '';
     // فیلد مخفی سازی تاریخ دلخواه
     echo '<div class="misc-pub-section"><label  for="i8_hide_date"> مخفی سازی تاریخ ';
     echo '<input type="checkbox" class="widefat" name="i8_hide_date" id="i8_hide_date" ' . $i8_hide_date . '>';
     echo '</label></div>';
+    ?>
+    
+    <script>
+        jQuery(document).ready(function($) {
+            // هنگام تغییر در selectbox
+            $("#i8_post_structure").change(function () {
+                var selectedValue = $(this).val();
+
+                // اگر گزینه مشخص شده "option2" باشد
+                if (selectedValue === "video") {
+                    // نمایش input باکس
+                    $("#hasht-video-link-sec").show();
+                } else {
+                    // پنهان کردن input باکس
+                    $("#hasht-video-link-sec").hide();
+                }
+
+            });
+        });
+    </script>
+   
+
+<?php
 }
 
 
@@ -221,6 +252,10 @@ function save_primary_category_meta_data($post_id)
 
     if (isset($_POST['i8_post_structure'])) {
         update_post_meta($post_id, 'i8_post_structure', sanitize_text_field($_POST['i8_post_structure']));
+    }
+
+    if (isset($_POST['hasht-video-link'])) {
+        update_post_meta($post_id, 'hasht-video-link', sanitize_text_field($_POST['hasht-video-link']));
     }
 
     // print and show $_POST value in consle

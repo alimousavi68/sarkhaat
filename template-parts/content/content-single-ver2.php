@@ -30,7 +30,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                         <h1 class="single-title h-fs-8 mt-md-3 text-center"><?php the_title(); ?></h1>
                     </div>
                 </div>
-                <div class="breadcrumb col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 " aria-label="breadcrumb">
+                <div class="i8-breadcrumb col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 " aria-label="breadcrumb">
                     <?php i8_breadcrumb(); ?>
                 </div>
                 <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center align-item-center justify-content-xl-end justify-content-lg-end justify-content-md-end text-gray f14">

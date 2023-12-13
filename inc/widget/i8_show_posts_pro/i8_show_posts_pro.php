@@ -20,7 +20,8 @@ class i8_show_posts_pro extends WP_Widget
         'نمایش به صورت تک عکس و بقیه متن' => 'mod10',
         '۲نمایش  به صورت افقی' => 'mod11',
         'نمایش به صورت گالری ۲' => 'mod12',
-        'نمایش به صورت تایم لاین'=> 'mod13',
+        'نمایش به صورت تایم لاین' => 'mod13',
+        'نمایش به صورت عکس و متن زیر هم ' => 'mod14',
 
 
     );
@@ -157,7 +158,7 @@ class i8_show_posts_pro extends WP_Widget
         $hide_excerpt = $instance['hide_excerpt'];
         $title = apply_filters('wp_widget_title', $instance['title']);
         $sub_title = $instance['sub_title'];
-        $sub_title_print = (!empty($sub_title)) ?  $sub_title  : '';
+        $sub_title_print = (!empty($sub_title)) ? $sub_title : '';
         $cat = $instance['cat'];
         $num = $instance['num'];
         $thumb_width = $instance['thumb_width'];
@@ -259,13 +260,13 @@ class i8_show_posts_pro extends WP_Widget
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/special_post_list_3.php');
             }
-        }elseif ($display_style == $values[10]) {
+        } elseif ($display_style == $values[10]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
                 require('content/simple_post_list_vertical2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/simple_post_list_vertical2.php');
             }
-        }elseif ($display_style == $values[11]) {
+        } elseif ($display_style == $values[11]) {
             if ((wp_is_mobile() && $show_mobile == 'on')) {
                 require('content/gallery_post2.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
@@ -276,6 +277,12 @@ class i8_show_posts_pro extends WP_Widget
                 require('content/simple_post_list_timeline.php');
             } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
                 require('content/simple_post_list_timeline.php');
+            }
+        } elseif ($display_style == $values[13]) {
+            if ((wp_is_mobile() && $show_mobile == 'on')) {
+                require('content/special_post_list_4.php');
+            } elseif ((!wp_is_mobile() && $show_desktop == 'on')) {
+                require('content/special_post_list_4.php');
             }
         }
     }

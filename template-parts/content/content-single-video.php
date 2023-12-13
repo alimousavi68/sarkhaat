@@ -31,6 +31,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
         <div
             class="d-xl-flex d-lg-flex d-md-flex  col-md-12 col-sm-24 mb-0 flex-row  justify-content-center justify-content-md-end text-gray f14">
             <div class="d-flex justify-content-center gap-3 gap-lg-2 gap-sm-1">
+
                 <?php if (get_post_meta(get_the_ID(), 'i8_hide_date', true) != 'on'): ?>
                     <div class="d-flex align-items-center gap-2">
                         <p class="text-gray f14 m-0" style="line-height: 100%;padding-top: 5px;">
@@ -47,6 +48,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                         </svg>
                     </div>
                 <?php endif; ?>
+
                 <a class="p-0 p-lg-0 p-sm-1" href="#share-btn" alt="copy page link button"
                     aria-label="copy page link button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="none" stroke-width="1.5"
@@ -82,32 +84,259 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-row justify-content-between box p-4 mt">
-        <div
-            class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
-            <div
-                class="col-xl-13 col-lg-13 col-md-13 col-sm-13 col-24 ps-lg-2 mb-4 mb-md-4 px-0 px-md-2 px-sm-2 pe-lg-0">
-                <?php
-                $sub_title = get_post_meta(get_the_ID(), '_post_subtitle', true);
-                ?>
-                <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0">
-                    <?php echo $sub_title; ?>
-                </p>
-                <h1 class="single-title fw-7 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center">
-                    <?php the_title(); ?>
-                </h1>
+    <div class="article d-flex flex-column gap-3 justify-content-between box p-4 mt">
+        <div id="55503031048"><script type="text/JavaScript" src="https://www.aparat.com/embed/UQO9P?data[rnddiv]=55503031048&data[responsive]=yes"></script></div>
+        <?php
+        $video_url = get_post_meta(get_the_ID(), 'hasht-video-link', true);
+        // تشخیص نوع فایل ویدیو
+        $file_extension = pathinfo($video_url, PATHINFO_EXTENSION);
+        $is_video = in_array($file_extension, array('mp4', 'webm', 'ogg'));
+
+        // کد HTML برای المان ویدیو پلیر
+        $video_player_code = ' <video controls width="100%" height="auto" poster="http://localhost:8888/core/wp-content/uploads/2023/12/pstc10240821527996780b17a0e23-1686-4672-9e32-90380fc9f5ec.webp">
+                            <source src="' . esc_url($video_url) . '" type="video/' . esc_attr($file_extension) . '" >
+                            Your browser does not support the video tag.
+                         </video>';
+        // چاپ کد المان ویدیو پلیر
+        echo $video_player_code;
+        ?>
+        <div class="row">
+            <?php
+            $sub_title = get_post_meta(get_the_ID(), '_post_subtitle', true);
+            ?>
+            <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0">
+                <?php echo $sub_title; ?>
+            </p>
+            <h1 class="single-title fw-7 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center">
+                <?php the_title(); ?>
+            </h1>
                 <p class="f15 text-gray text-justify">
-                    <?php i8_limit_text(get_the_excerpt(), 238, '...'); ?>
+                    <?php i8_limit_text(get_the_excerpt(), 350, '...'); ?>
                 </p>
-
-
-            </div>
-            <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-24 px-0 px-sm-2 ps-lg-0">
-                <a href="<?php the_permalink(); ?>" class="image_frame">
-                    <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100  object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?>
-                </a>
-            </div>
         </div>
+
+        <!-- download box -->
+        <style>
+            .faq-container {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            details {
+                font-size: 1rem;
+                background: var(--i8-dark-secondary);
+                border-radius: 0;
+                border-right: 7px solid var(--i8-light-complete-color);
+                transition: border-color 0.3s ease-in-out;
+            }
+
+            details:hover {
+                border-color: var(--i8-light-primary-light);
+            }
+
+            summary {
+                user-select: none;
+                cursor: pointer;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                padding: 1em;
+            }
+
+            summary::-webkit-details-marker {
+                display: none;
+            }
+
+            .faq-title {
+                color: #1C2035;
+                flex-grow: 1;
+                opacity: 0.65;
+                transition: opacity 250ms ease-in-out;
+            }
+
+            summary:hover .faq-title {
+                opacity: 1;
+            }
+
+            .faq-content {
+                color: #303651;
+                padding: 0.2em 1em 1em 1em;
+                font-weight: 300;
+                line-height: 1.5;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+
+            details[open] .faq-content {
+                max-height: 1000px;
+            }
+
+            .expand-icon {
+                margin-left: auto;
+                transition: transform 150ms ease-out;
+            }
+
+            details[open] .icon-tabler-circle-plus {
+                display: none;
+            }
+
+            details:not([open]) .icon-tabler-circle-minus {
+                display: none;
+            }
+        </style>
+        <div class="row mx-0 px-0">
+            <section class="faq-container px-0" aria-label="download links">
+                <details>
+                    <summary>
+                        <span class="faq-title">
+                            <svg class="ms-2" width="24px" height="24px" stroke-width="1.5" viewBox="0 0 24 24"
+                                fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                                <path d="M12 13V22M12 22L15.5 18.5M12 22L8.5 18.5" stroke="#000000" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path
+                                    d="M20 17.6073C21.4937 17.0221 23 15.6889 23 13C23 9 19.6667 8 18 8C18 6 18 2 12 2C6 2 6 6 6 8C4.33333 8 1 9 1 13C1 15.6889 2.50628 17.0221 4 17.6073"
+                                    stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                </path>
+                            </svg>
+                            لینک های دانلود
+                        </span>
+                        <!-- Plus Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-circle-plus expand-icon" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="#303651" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                            <path d="M9 12l6 0"></path>
+                            <path d="M12 9l0 6"></path>
+                        </svg>
+                        <!-- Minus Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="icon icon-tabler icon-tabler-circle-minus expand-icon" width="24" height="24"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="#303651" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" style="display: none;">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+                            <path d="M9 12l6 0"></path>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <ul>
+                            <li><a href="#">دانلود سایز بزرگ</a></li>
+                            <li><a href="#">دانلود سایز بزرگ</a></li>
+                            <li><a href="#">دانلود سایز بزرگ</a></li>
+                            <li><a href="#">دانلود سایز بزرگ</a></li>
+                            <li><a href="#">دانلود سایز بزرگ</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+
+
+
+            </section>
+        </div>
+        <script>
+            function toggleIcon(expandIconPlus, expandIconMinus, isOpen) {
+                if (isOpen) {
+                    expandIconPlus.style.display = 'none';
+                    expandIconMinus.style.display = 'block';
+                } else {
+                    expandIconPlus.style.display = 'block';
+                    expandIconMinus.style.display = 'none';
+                }
+            }
+
+            function createAccordion(el) {
+                let animation = null;
+                let isClosing = false;
+                let isExpanding = false;
+                const summary = el.querySelector('summary');
+                const content = el.querySelector('.faq-content');
+                const expandIconPlus = summary.querySelector('.icon-tabler-circle-plus');
+                const expandIconMinus = summary.querySelector('.icon-tabler-circle-minus');
+
+                function onClick(e) {
+                    e.preventDefault();
+                    el.style.overflow = 'hidden';
+                    if (isClosing || !el.open) {
+                        open();
+                    } else if (isExpanding || el.open) {
+                        shrink();
+                    }
+                }
+
+                function shrink() {
+                    isClosing = true;
+                    const startHeight = `${el.offsetHeight}px`;
+                    const endHeight = `${summary.offsetHeight}px`;
+                    if (animation) {
+                        animation.cancel();
+                    }
+                    animation = el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 400,
+                        easing: 'ease-out'
+                    });
+                    animation.onfinish = () => {
+                        toggleIcon(expandIconPlus, expandIconMinus, false);
+                        onAnimationFinish(false);
+                    };
+                    animation.oncancel = () => {
+                        toggleIcon(expandIconPlus, expandIconMinus, false);
+                        isClosing = false;
+                    };
+                }
+
+                function open() {
+                    el.style.height = `${el.offsetHeight}px`;
+                    el.open = true;
+                    window.requestAnimationFrame(expand);
+                }
+
+                function expand() {
+                    isExpanding = true;
+                    const startHeight = `${el.offsetHeight}px`;
+                    const endHeight = `${summary.offsetHeight + content.offsetHeight}px`;
+                    if (animation) {
+                        animation.cancel();
+                    }
+                    animation = el.animate({
+                        height: [startHeight, endHeight]
+                    }, {
+                        duration: 350,
+                        easing: 'ease-out'
+                    });
+                    animation.onfinish = () => {
+                        toggleIcon(expandIconPlus, expandIconMinus, true);
+                        onAnimationFinish(true);
+                    };
+                    animation.oncancel = () => {
+                        toggleIcon(expandIconPlus, expandIconMinus, true);
+                        isExpanding = false;
+                    };
+                }
+
+                function onAnimationFinish(open) {
+                    el.open = open;
+                    animation = null;
+                    isClosing = false;
+                    isExpanding = false;
+                    el.style.height = el.style.overflow = '';
+                }
+
+                summary.addEventListener('click', onClick);
+            }
+
+            document.querySelectorAll('details').forEach(createAccordion);
+
+        </script>
+        <!-- end sownload box -->
+
+
     </div>
 
     <!-- body -->
@@ -236,7 +465,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
         }
         ?>
 
-    </section>
 
+    </section>
 </div>
 <!--section 1-->
