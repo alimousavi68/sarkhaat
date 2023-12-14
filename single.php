@@ -4,13 +4,22 @@ get_header();
 ?>
 <div class="container px-0">
     <div class="row mx-0">
+
         <?php
+        $post_structure = get_post_meta(get_the_ID(), 'i8_post_structure', true);
+        echo '<script> console.log("' . $is_image_gallery . '") </script>';
+
         $video_url = get_post_meta(get_the_ID(), 'hasht-video-link', true);
+        $video_emebed = get_post_meta(get_the_ID(), 'hasht-video-embbed', true);
+
         // تشخیص نوع فایل ویدیو
         $file_extension = pathinfo($video_url, PATHINFO_EXTENSION);
         $is_video = in_array($file_extension, array('mp4', 'webm', 'ogg'));
+
         // اگر URL یک فایل ویدیویی است
-        if ($is_video):
+        if ($post_structure == 'image'):
+            get_template_part('template-parts/content/content-single-gallery');
+        elseif ($post_structure == 'video' && ($is_video || $video_emebed)):
             get_template_part('template-parts/content/content-single-video');
         else:
             get_template_part('template-parts/content/content-single');

@@ -124,7 +124,7 @@ add_action('save_post', 'save_post_subtitle');
 add_action('add_meta_boxes', 'add_primary_category_meta_box');
 function add_primary_category_meta_box()
 {
-    add_meta_box('primary_category_meta_box', 'داشبورد ویژه'  , 'render_primary_category_meta_box', 'post', 'side', 'high');
+    add_meta_box('primary_category_meta_box', 'داشبورد ویژه', 'render_primary_category_meta_box', 'post', 'side', 'high');
 }
 
 // نمایش متا باکس دسته بندی اصلی
@@ -153,28 +153,21 @@ function render_primary_category_meta_box($post)
         <input type="text" name="hasht-reference-name" id="hasht-reference-name" class="widefat"
             value="<?php echo get_post_meta($post->ID, 'hasht-reference-name', true); ?>">
     </div>
+
     <!-- لینک منبع -->
     <div class="misc-pub-section">
         <label for="hasht-reference-link">لینک منبع:</label>
         <input type="text" name="hasht-reference-link" id="hasht-reference-link" class="widefat"
             value="<?php echo get_post_meta($post->ID, 'hasht-reference-link', true); ?>">
     </div>
+
+    <!-- نوع پست -->
     <?php
-    $array_post_structure = array(
-        'video',
-        'imgae',
-        'text',
-        'hot'
-    );
+    $array_post_structure = array('video', 'imgae', 'text', 'hot');
     $selected_post_structure = get_post_meta($post->ID, 'i8_post_structure', true);
     $selected_post_structure = ($selected_post_structure == '') ? 'text' : $selected_post_structure;
-    // echo '<script> console.log("' . $selected_post_structure . '") </script>';
-
-
-
     ?>
-    <!-- نوع پست -->
-    <div class="misc-pub-section"><label for="hasht-primary-category" >
+    <div class="misc-pub-section"><label for="hasht-primary-category">
             <label for="i8_post_structure">نوع پست</label>
             <select name="i8_post_structure" id="i8_post_structure" class="widefat">
                 <option value="text" <?php echo ($selected_post_structure == 'text') ? 'selected' : ''; ?>>ساده</option>
@@ -185,12 +178,36 @@ function render_primary_category_meta_box($post)
     </div>
 
     <!-- لینک ویدیو -->
-    <div id="hasht-video-link-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?> >
+
+    <!-- لینک امبد -->
+    <div id="hasht-video-embbed-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-video-embbed">کد امبد:</label>
+        <input type="text" name="hasht-video-embbed" id="hasht-video-embbed" class="widefat"
+            value="<?php echo esc_attr(get_post_meta($post->ID, 'hasht-video-embbed', true)); ?>">
+    </div>
+
+    <!-- لینک مستقیم -->
+    <div id="hasht-video-link-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?>>
         <label for="hasht-video-link">لینک ویدیو:</label>
         <input type="text" name="hasht-video-link" id="hasht-video-link" class="widefat"
             value="<?php echo get_post_meta($post->ID, 'hasht-video-link', true); ?>">
     </div>
 
+    <!-- کیفیت زیاد - لینک مستقیم -->
+    <div id="hasht-video-link-high-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-video-link-high">لینک ویدیو(کیفیت بالا)</label>
+        <input type="text" name="hasht-video-link-high" id="hasht-video-link-high" class="widefat"
+            value="<?php echo get_post_meta($post->ID, 'hasht-video-link-high', true); ?>">
+    </div>
+    <!-- کیفیت کم - لینک مستقیم -->
+    <div id="hasht-video-link-low-sec" class="misc-pub-section " <?php echo ($selected_post_structure != 'video') ? ' style="display:none;" ' : ''; ?>>
+        <label for="hasht-video-link-low">لینک ویدیو(کیفیت پایین)</label>
+        <input type="text" name="hasht-video-link-low" id="hasht-video-link-low" class="widefat"
+            value="<?php echo get_post_meta($post->ID, 'hasht-video-link-low', true); ?>">
+    </div>
+
+
+    <!-- نمایش تاریخ  -->
     <?php
     $i8_hide_date = (get_post_meta($post->ID, 'i8_hide_date', true) == 'on') ? ' checked' : '';
     // فیلد مخفی سازی تاریخ دلخواه
@@ -198,9 +215,9 @@ function render_primary_category_meta_box($post)
     echo '<input type="checkbox" class="widefat" name="i8_hide_date" id="i8_hide_date" ' . $i8_hide_date . '>';
     echo '</label></div>';
     ?>
-    
+
     <script>
-        jQuery(document).ready(function($) {
+        jQuery(document).ready(function ($) {
             // هنگام تغییر در selectbox
             $("#i8_post_structure").change(function () {
                 var selectedValue = $(this).val();
@@ -209,17 +226,19 @@ function render_primary_category_meta_box($post)
                 if (selectedValue === "video") {
                     // نمایش input باکس
                     $("#hasht-video-link-sec").show();
+                    $("#hasht-video-embbed-sec").show();
                 } else {
                     // پنهان کردن input باکس
                     $("#hasht-video-link-sec").hide();
+                    $("#hasht-video-embbed-sec").hide();
                 }
 
             });
         });
     </script>
-   
 
-<?php
+
+    <?php
 }
 
 
@@ -257,6 +276,20 @@ function save_primary_category_meta_data($post_id)
     if (isset($_POST['hasht-video-link'])) {
         update_post_meta($post_id, 'hasht-video-link', sanitize_text_field($_POST['hasht-video-link']));
     }
+
+    if (isset($_POST['hasht-video-embbed'])) {
+        update_post_meta($post_id, 'hasht-video-embbed', $_POST['hasht-video-embbed']);
+    }
+
+    if (isset($_POST['hasht-video-link-high'])) {
+        update_post_meta($post_id, 'hasht-video-link-high', sanitize_text_field($_POST['hasht-video-link-high']));
+    }
+
+    if (isset($_POST['hasht-video-link-low'])) {
+        update_post_meta($post_id, 'hasht-video-link-low', sanitize_text_field($_POST['hasht-video-link-low']));
+    }
+
+
 
     // print and show $_POST value in consle
     // if (!empty($_POST)) {
@@ -415,7 +448,7 @@ function build_custom_menu_by_location($location, $style_type = 'row')
     if ($menu_items) {
         $type_class = ($style_type == 'column') ? 'flex-column' : 'flex-row';
         $gap = ($style_type == 'column') ? 'gap-0' : 'gap-3';
-        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex  ' . $type_class . ' overflow-hidden flex-wrap gap-2  px-0 ' . $gap . ' ">';
+        echo '<ul class="navbar-nav mb-lg-0 menu-list d-flex  ' . $type_class . ' flex-wrap gap-2  px-0 ' . $gap . ' ">';
         echo build_custom_menu($menu_items);
         echo '</ul>';
     }
@@ -734,4 +767,357 @@ function i8_show_social_icons($width = 16, $height = 16)
 
 
 
+/**
+ * 
+ * 
+ * Add Image gallery style And js to pages with gallery tag
+ * 
+ * 
+ */
 
+add_filter('post_gallery', 'custom_gallery_format', 10, 2);
+function custom_gallery_format($output, $attr)
+{
+    // Parse the gallery shortcode attributes
+    $gallery_atts = shortcode_atts(array(
+        'ids' => '',
+        'columns' => 3,
+        'size' => 'thumbnail',
+        'link' => 'file'
+    ), $attr);
+
+    // Get the image IDs from the gallery shortcode
+    $image_ids = explode(',', $gallery_atts['ids']);
+
+    // Initialize the output variable
+    $gallery_output = '<section class="photo-gallery mb-4"><div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 gallery-grid">';
+
+
+    // Loop through each image ID
+    foreach ($image_ids as $image_id) {
+        // Get the image URL
+        $image_url = wp_get_attachment_url($image_id);
+
+        // Get the image alt text
+        $image_alt = get_post_meta($image_id, '_wp_attachment_image_alt', true);
+
+        // Generate the HTML for the image
+        $gallery_output .= '<div class="col">
+                    <a class="gallery-item" href="' . $image_url . '">
+                        <img src="' . $image_url . '" class="img-fluid"
+                            alt="' . $image_alt . '">
+                    </a>
+                </div>';
+
+        // Add any other desired modifications to the image HTML here
+    }
+    $gallery_output .= '</div></section>';
+
+
+    // Return the modified gallery output
+    return $gallery_output;
+}
+
+
+
+function custom_lightbox_gallery()
+{
+    $post_structure = get_post_meta(get_the_ID(), 'i8_post_structure', true);
+    if (is_singular('post') && $post_structure == 'image'):
+
+        global $post;
+
+        if (has_shortcode($post->post_content, 'gallery')) {
+            ?>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+            <style>
+                :root {
+                    --lightbox: rgb(0 0 0 / 0.75);
+                    --carousel-text: #fff;
+                }
+
+                @keyframes zoomin {
+                    0% {
+                        transform: scale(1);
+                    }
+
+                    50% {
+                        transform: scale(1.05);
+                    }
+
+                    100% {
+                        transform: scale(1);
+                    }
+                }
+
+                .gallery-item {
+                    display: block;
+                }
+
+                .gallery-item img {
+                    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+                    transition: box-shadow 0.2s;
+                }
+
+                .gallery-item:hover img {
+                    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
+                }
+
+                .lightbox-modal .modal-content {
+                    background-color: var(--lightbox);
+                }
+
+                .lightbox-modal .btn-close {
+                    position: absolute;
+                    top: 1.25rem;
+                    right: 1.25rem;
+                    font-size: 1.25rem;
+                    z-index: 10;
+                    filter: invert(1) grayscale(100);
+                }
+
+                .lightbox-modal .modal-body {
+                    display: flex;
+                    align-items: center;
+                    padding: 0;
+                }
+
+                .lightbox-modal .lightbox-content {
+                    width: 100%;
+                }
+
+                .lightbox-modal .carousel-indicators {
+                    margin-bottom: 0;
+                }
+
+                .lightbox-modal .carousel-indicators [data-bs-target] {
+                    background-color: var(--carousel-text) !important;
+                }
+
+                .lightbox-modal .carousel-inner {
+                    width: 75%;
+                }
+
+                .lightbox-modal .carousel-inner img {
+                    animation: zoomin 10s linear infinite;
+                }
+
+                .lightbox-modal .carousel-item .carousel-caption {
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    padding-bottom: 2rem;
+                    background-color: var(--lightbox);
+                    color: var(--carousel-text) !important;
+                }
+
+                .lightbox-modal .carousel-control-prev,
+                .lightbox-modal .carousel-control-next {
+                    width: auto;
+                }
+
+                .lightbox-modal .carousel-control-prev {
+                    left: 1.25rem;
+                }
+
+                .lightbox-modal .carousel-control-next {
+                    right: 1.25rem;
+                }
+
+                @media (min-width: 1400px) {
+                    .lightbox-modal .carousel-inner {
+                        max-width: 60%;
+                    }
+                }
+
+                [data-bs-theme="dark"] .lightbox-modal .carousel-control-next-icon,
+                [data-bs-theme="dark"] .lightbox-modal .carousel-control-prev-icon {
+                    filter: none;
+                }
+
+                .btn-fullscreen-enlarge,
+                .btn-fullscreen-exit {
+                    position: absolute;
+                    top: 1.25rem;
+                    right: 3.5rem;
+                    z-index: 10;
+                    border: 0;
+                    background: transparent;
+                    opacity: 0.6;
+                    font-size: 1.25rem;
+                }
+
+            </style>
+
+            <div class="modal fade lightbox-modal" id="lightbox-modal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                    <div class="modal-content">
+                        <button type="button" class="btn-fullscreen-enlarge" aria-label="Enlarge fullscreen">
+                            <svg class="bi">
+                                <use href="#enlarge"></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn-fullscreen-exit d-none" aria-label="Exit fullscreen">
+                            <svg class="bi">
+                                <use href="#exit"></use>
+                            </svg>
+                        </button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-body">
+                            <div class="lightbox-content">
+                                <!-- JS content here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+
+                document.addEventListener("DOMContentLoaded", () => {
+                    // --- Create LightBox
+                    const galleryGrid = document.querySelector(".gallery-grid");
+                    const links = galleryGrid.querySelectorAll("a");
+                    const imgs = galleryGrid.querySelectorAll("img");
+                    const lightboxModal = document.getElementById("lightbox-modal");
+                    const bsModal = new bootstrap.Modal(lightboxModal);
+                    const modalBody = lightboxModal.querySelector(".lightbox-content");
+
+                    function createCaption(caption) {
+                        return `<div class="carousel-caption d-none d-md-block">
+                                    <h4 class="m-0">${caption}</h4>
+                                  </div>`;
+                    }
+
+                    function createIndicators(img) {
+                        let markup = "",
+                            i,
+                            len;
+
+                        const countSlides = links.length;
+                        const parentCol = img.closest(".col");
+                        const curIndex = [...parentCol.parentElement.children].indexOf(parentCol);
+
+                        for (i = 0, len = countSlides; i < len; i++) {
+                            markup += `
+                                    <button type="button" data-bs-target="#lightboxCarousel"
+                                      data-bs-slide-to="${i}"
+                                      ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                      aria-label="Slide ${i + 1}">
+                                    </button>`;
+                        }
+
+                        return markup;
+                    }
+
+                    function createSlides(img) {
+                        let markup = "";
+                        const currentImgSrc = img.closest(".gallery-item").getAttribute("href");
+
+                        for (const img of imgs) {
+                            const imgSrc = img.closest(".gallery-item").getAttribute("href");
+                            const imgAlt = img.getAttribute("alt");
+
+                            markup += `
+                                    <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                      <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                      ${imgAlt ? createCaption(imgAlt) : ""}
+                                    </div>`;
+                        }
+
+                        return markup;
+                    }
+
+                    function createCarousel(img) {
+                        const markup = `
+                                  <!-- Lightbox Carousel -->
+                                  <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                    <!-- Indicators/dots -->
+                                    <div class="carousel-indicators">
+                                      ${createIndicators(img)}
+                                    </div>
+                                    <!-- Wrapper for Slides -->
+                                    <div class="carousel-inner justify-content-center mx-auto">
+                                      ${createSlides(img)}
+                                    </div>
+                                    <!-- Controls/icons -->
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="visually-hidden">Next</span>
+                                    </button>
+                                  </div>
+                                  `;
+
+                        modalBody.innerHTML = markup;
+                    }
+
+                    for (const link of links) {
+                        link.addEventListener("click", function (e) {
+                            e.preventDefault();
+                            const currentImg = link.querySelector("img");
+                            const lightboxCarousel = document.getElementById("lightboxCarousel");
+
+                            if (lightboxCarousel) {
+                                const parentCol = link.closest(".col");
+                                const index = [...parentCol.parentElement.children].indexOf(parentCol);
+
+                                const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
+                                bsCarousel.to(index);
+                            } else {
+                                createCarousel(currentImg);
+                            }
+
+                            bsModal.show();
+                        });
+                    }
+
+                    // --- Support Fullscreen
+                    const fsEnlarge = document.querySelector(".btn-fullscreen-enlarge");
+                    const fsExit = document.querySelector(".btn-fullscreen-exit");
+
+                    function enterFS() {
+                        lightboxModal
+                            .requestFullscreen()
+                            .then({})
+                            .catch((err) => {
+                                alert(
+                                    `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
+                                );
+                            });
+                        fsEnlarge.classList.toggle("d-none");
+                        fsExit.classList.toggle("d-none");
+                    }
+
+                    function exitFS() {
+                        document.exitFullscreen();
+                        fsExit.classList.toggle("d-none");
+                        fsEnlarge.classList.toggle("d-none");
+                    }
+
+                    fsEnlarge.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        enterFS();
+                    });
+
+                    fsExit.addEventListener("click", (e) => {
+                        e.preventDefault();
+                        exitFS();
+                    });
+                });
+
+            </script>
+
+            <?php
+
+
+        }
+    endif;
+}
+add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
+
+
+// End Image gallery

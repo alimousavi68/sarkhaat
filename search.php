@@ -57,7 +57,7 @@ get_header();
 </style>
 
 <!-- main section -->
-<div class="container mt-4">
+<div class="container px-0 mb-4">
     <?php get_template_part( 'template-parts/content/content-search'); ?>
 </div>
 <!-- main section -->
