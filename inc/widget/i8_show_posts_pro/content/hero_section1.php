@@ -39,14 +39,14 @@ $category_posts = new WP_Query(
         while ($category_posts->have_posts()):
           $category_posts->the_post();
           ?>
-          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-24 ps-lg-2 px-0 px-md-2 px-sm-2 px-lg-2">
+          <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-24 ps-lg-2 px-0 px-md-2 px-sm-2 px-lg-2 py-3 py-xl-0 py-lg-0 py-md-0">
             <?php
             $sub_title = get_post_meta(get_the_ID(), '_post_subtitle', true);
             ?>
-            <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0">
+            <p class="display-6 fw-1 text-xl-end text-lg-end text-md-end text-sm-center mb-0">
               <?php echo $sub_title; ?>
             </p>
-            <h1 class="f24 fw-7 text-center text-xl-end text-lg-end text-md-end text-sm-center l1">
+            <h1 class="f24 fw-7 text-xl-end text-lg-end text-md-end text-sm-center l1">
               <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                 <?php i8_limit_text(get_the_title(), 90, '...'); ?>
               </a>
@@ -70,7 +70,7 @@ $category_posts = new WP_Query(
     <!-- End post number 1 - big post -->
 
     <!-- post number 2 -->
-    <div class="col-24 col-lg-6 col-md-6 col-sm-24 col-xl-6 d-flex gap-1 px-2">
+    <div class="col-24 col-lg-6 col-md-6 col-sm-24 col-xl-6 gap-1 px-2">
       <?php
       $category_posts2 = new WP_Query(
         array(

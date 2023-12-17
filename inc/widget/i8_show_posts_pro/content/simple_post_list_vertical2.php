@@ -1,14 +1,14 @@
 <?php
 echo $args['before_widget'];
 if ($hide_title != 'on') { ?>
-    <div class="col-4 d-flex flex-column px-0 gap-0 align-items-start">
+    <div class="col-24 col-xl-4 col-lg-4 col-md-4  d-flex flex-column px-0 gap-0 align-items-start px-2 px-xl-0 px-lg-0 px-md-0 ">
         <p class="box-title <?php echo $head_font_size; ?> fw-7 mb-1">
             <?php echo $args['before_title'] . $icon_print . $title . $args['after_title']; ?>
         </p>
         <p class=" f14 fw-4 text-grey mb-3">
             <?php echo $sub_title_print; ?>
         </p>
-        <p class="display-5 fw-4 mb-2">
+        <p class="display-5 fw-4 mb-2 d-none d-xl-block d-lg-block d-md-block ">
             <a class="cat_btn_link i8-blink" href="<?php echo '/category' . '/' . $cat ?>">دیدن همه</a>
         </p>
     </div>
@@ -25,7 +25,7 @@ $category_posts = new WP_Query(
     )
 );
 
-echo '<div class="col-20 d-flex flex-row flex-wrap px-0">';
+echo '<div class="col-24 col-xl-20 col-lg-20 col-md-20 d-flex flex-row flex-wrap px-0">';
 echo '<div class="row">';
 if ($category_posts->have_posts()) {
     while ($category_posts->have_posts()) {

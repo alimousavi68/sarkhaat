@@ -8,7 +8,7 @@ if ($hide_title != 'on') {
 }
 echo $sub_title_print . '</div>';
 
-echo '<ul class="numeric-list-content d-flex flex-wrap">';
+echo '<ul class="numeric-list-content d-flex flex-wrap mb-0">';
 // نمایش محتویات ویجت- نمایش پست ها
 $category_posts = new WP_Query(array(
     'posts_per_page' => $num,
@@ -21,7 +21,7 @@ if ($category_posts->have_posts()) {
         ?>
 
         <li
-            class="col-24 col-lg-24 col-md-12 col-sm-12 pb-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
+            class="col-24 col-lg-24 col-md-12 col-sm-12 py-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
             <article class="numeric-list ">
                 <div class="numeric-list-item d-flex justify-content-start align-items-top ">
                     <div class="list-title-none">

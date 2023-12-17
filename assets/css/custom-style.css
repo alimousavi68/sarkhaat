@@ -1738,13 +1738,13 @@ body.bg-main.dark-mode a:hover,
 
 }
 
-.numeric-list-content li {
+/* .numeric-list-content li {
   margin: 12px 0;
 }
 
 .numeric-list-content li:first-child {
   margin: 0;
-}
+} */
 
 .list-title {
   width: 85%;

@@ -26,7 +26,7 @@ if ($category_posts->have_posts()) {
     if (($category_posts->current_post + 1) === 1):
       ?>
       <div
-        class="news-card col-xl-13 col-md-13 col-sm-24 text-center text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame">
+        class="news-card col-xl-13 col-md-13 col-sm-24 text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame">
         <a href="<?php the_permalink(); ?>" class="image_frame">
           <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
         </a>
@@ -45,7 +45,7 @@ if ($category_posts->have_posts()) {
     if (($category_posts->current_post + 1) > 1):
       ?>
         <div
-          class="<?php echo $col; ?>  mini-article d-flex align-items-center  <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-3 mb-3 px-0 ">
+          class="<?php echo $col; ?>  mini-article d-flex   <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-3 mb-3 px-0 ">
           <div width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>">
 
             <a href="<?php the_permalink(); ?>" class="image_frame">
