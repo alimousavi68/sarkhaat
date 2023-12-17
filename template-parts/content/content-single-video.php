@@ -84,7 +84,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-column gap-3 justify-content-between box p-4 order-1 order-xl-2 order-lg-2 ">
+    <div class="article d-flex flex-column gap-3 justify-content-between box p-xl-4 p-lg-4 p-md-4 p-0 order-1 order-xl-2 order-lg-2 ">
 
         <?php
         // echo emmebd code
