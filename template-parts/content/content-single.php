@@ -23,7 +23,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     }
     ?>
     <!-- breadcrumb -->
-    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2">
+    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 justify-content-between align-items-center ">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -82,7 +82,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- intro -->
-    <div class="article d-flex flex-row justify-content-between box p-4 mt">
+    <div class="article d-flex flex-row justify-content-between box p-4 mt order-1 order-xl-2 order-lg-2 ">
         <div
             class="row w-100 mx-0 d-flex flex-column-reverse flex-xl-row flex-lg-row flex-md-row flex-sm-row row-gap-3">
             <div
@@ -111,7 +111,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     </div>
 
     <!-- body -->
-    <section class="d-flex flex-column row-gap-3 box p-4 mt-2">
+    <section class="d-flex flex-column row-gap-3 box p-4 mt-2 order-3 order-xl-3 order-lg-3 ">
 
         <div class="l2 content-entry text-justify border-bottom ">
             <?php the_content(); ?>
