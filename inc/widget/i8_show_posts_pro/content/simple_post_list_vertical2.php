@@ -33,7 +33,7 @@ if ($category_posts->have_posts()) {
         ?>
         <div class="<?php echo $col; ?> d-flex flex-column multi-item px-2 gap-2">
             <a href="<?php the_permalink(); ?>" class="image_frame">
-                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 160), true, '', false, true); ?>
+                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 'auto'), true, '', false, true); ?>
             </a>
             <div class="single-item-data d-flex flex-column gap-1">
                 <div class="title-box">

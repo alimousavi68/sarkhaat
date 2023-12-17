@@ -28,7 +28,7 @@ if ($category_posts->have_posts()) {
       <div
         class="news-card col-xl-13 col-md-13 col-sm-24 text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame px-1 px-xl-3 px-lg-3 px-md-3 ">
         <a href="<?php the_permalink(); ?>" class="image_frame">
-          <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
+          <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 'auto'), true, '', false, true); ?>
         </a>
         <h1 class="post-title display-3 fw-7 l1">
                 <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">

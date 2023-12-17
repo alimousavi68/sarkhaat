@@ -25,7 +25,7 @@ if ($category_posts2->have_posts()) {
         // $primary_cat_color = get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat[0], 'i8_CustomTerm_color', true) : '#000000';
         // $primary_cat_color_transparent = $primary_cat_color . 'c4';
     ?>
-        <div class=' <?php echo $col; ?>'>
+        <div class='<?php echo $col; ?> px-0 px-xl-2 px-lg-2 px-md-2'>
             <div class="post-flip-box-container" class="image_frame">
                 <?php echo i8_the_thumbnail('i8-lg-464-340', 'post-flip-box-image object-fit-cover' . $thumb_radius, array("width" => 290, "height" => 190)); ?>
 

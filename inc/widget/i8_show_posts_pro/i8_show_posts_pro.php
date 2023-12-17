@@ -179,12 +179,16 @@ class i8_show_posts_pro extends WP_Widget
         $display_column_num_tablet = $instance['display_column_num_tablet'];
         $display_column_num_mobile = $instance['display_column_num_mobile'];
 
-        $cat_color = get_term_meta($cat, 'i8_CustomTerm_color', true) ? get_term_meta($cat, 'i8_CustomTerm_color', true) : 'var(--i8-light-complete-color)';
+        //with cat color 
+        // $cat_color = get_term_meta($cat, 'i8_CustomTerm_color', true) ? get_term_meta($cat, 'i8_CustomTerm_color', true) : 'var(--i8-light-complete-color)';
+        
+        // with out cat color 
+        $cat_color = 'var(--i8-light-complete-color)';
         $cat_icon = get_term_meta($cat, 'i8_CustomTerm_icon', true) ? get_term_meta($cat, 'i8_CustomTerm_icon', true) : '';
 
         $anime_class = ($icon_animate) ? 'icon_animate' : '';
         $icon_print = '';
-        $icon_print = ($cat_icon) ? customizeSVG($cat_icon, $cat_color, $cat_color, 30, 30, $anime_class) : $icon_print;
+        $icon_print = ($cat_icon) ? customizeSVG($cat_icon, $cat_color, $cat_color , 30, 30, $anime_class) : $icon_print;
         $icon_print = ($icon) ? customizeSVG($icon, $cat_color, $cat_color, 30, 30, $anime_class) : $icon_print;
         $icon_print = (empty($icon) && !empty($icon_img)) ? '<img src="' . $icon_img . '" class="' . $anime_class . '"  />' : $icon_print;
 
