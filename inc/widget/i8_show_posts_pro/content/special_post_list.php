@@ -26,7 +26,7 @@ if ($category_posts->have_posts()) {
     if (($category_posts->current_post + 1) === 1):
       ?>
       <div
-        class="news-card col-xl-13 col-md-13 col-sm-24 text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame">
+        class="news-card col-xl-13 col-md-13 col-sm-24 text-xl-end text-lg-end text-md-end text-sm-center d-flex flex-column row-gap-2 image_frame px-1 px-xl-3 px-lg-3 px-md-3 ">
         <a href="<?php the_permalink(); ?>" class="image_frame">
           <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 446, 'height' => 300), true, '', false, true); ?>
         </a>
@@ -40,7 +40,7 @@ if ($category_posts->have_posts()) {
           <?php the_date() ?>
         </p>
       </div>
-      <div class="col-xl-11 col-md-11 col-sm-24 row">
+      <div class="col-xl-11 col-md-11 col-sm-24 row px-1 px-xl-2 px-lg-2 px-md-2 ">
       <?php endif;
     if (($category_posts->current_post + 1) > 1):
       ?>

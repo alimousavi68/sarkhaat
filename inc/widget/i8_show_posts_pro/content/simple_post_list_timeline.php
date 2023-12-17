@@ -49,7 +49,7 @@ echo $sub_title_print . '</div>';
         border-image: linear-gradient(to bottom, rgba(229, 229, 229, 1) 60%, rgba(229, 229, 229, 0)) 1 100%;
     }
 </style>
-<div class="timeline_list p-3 pe-4">
+<div class="timeline_list pe-3 pe-lg-4 pe-xl-4 pe-md-4 ">
     <?php
     // نمایش محتویات ویجت- نمایش پست ها
     $category_posts = new WP_Query(

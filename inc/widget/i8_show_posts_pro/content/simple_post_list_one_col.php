@@ -53,7 +53,7 @@ if ($category_posts->have_posts()) {
         ?>
         <?php if ($hide_thumb != 'on'): ?>
             <div
-                class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start px-0 px-lg-2 px-md-2 px-sm-0 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-4 px-4">
+                class="<?php echo $col; ?> d-flex mb-3 align-items-start gap-2 align-items-start  px-xl-3 px-lg-3 px-md-3 px-sm-1 px-1  pb-4 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
                 <div  width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>" >
                     <a href="<?php the_permalink(); ?>" class="image_frame">
                         <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover ' . $thumb_radius, array("width" => $thumb_width, "height" => $thumb_height)); ?>

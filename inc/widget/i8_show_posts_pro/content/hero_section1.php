@@ -70,7 +70,7 @@ $category_posts = new WP_Query(
     <!-- End post number 1 - big post -->
 
     <!-- post number 2 -->
-    <div class="col-24 col-lg-6 col-md-6 col-sm-24 col-xl-6 gap-1 px-2">
+    <div class="col-24 col-lg-6 col-md-6 col-sm-24 col-xl-6 gap-1 px-xl-2 px-lg-2 px-md-2 px-0  ">
       <?php
       $category_posts2 = new WP_Query(
         array(
@@ -88,7 +88,7 @@ $category_posts = new WP_Query(
           ?>
           <div class="d-flex flex-column flex-md-column flex-sm-row gap-2 multi-item">
             <a href="<?php the_permalink(); ?>" class="image_frame">
-              <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
+              <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 'auto'), true, '', false, true); ?>
             </a>
             <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
               <div class="title-box">
@@ -133,8 +133,9 @@ $category_posts = new WP_Query(
       <?php
       while ($category_posts3->have_posts()):
         $category_posts3->the_post();
+        $even_odd_items_padding_in_wraped_mode =  (($category_posts3->current_post + 1) % 2) == 0 ? 'ps-0' : 'pe-0';
         ?>
-        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2">
+        <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2 px-xl-2 px-lg-2 <?php echo $even_odd_items_padding_in_wraped_mode; ?>">
           <a href="<?php the_permalink(); ?>" class="image_frame">
             <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
           </a>

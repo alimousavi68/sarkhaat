@@ -21,7 +21,7 @@ if ($category_posts->have_posts()) {
         ?>
 
         <li
-            class="col-24 col-lg-24 col-md-12 col-sm-12 py-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
+            class="col-24 col-lg-24 col-md-12 col-sm-12 py-3 py-lg-2 py-md-2 py-xl-2 <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?>">
             <article class="numeric-list ">
                 <div class="numeric-list-item d-flex justify-content-start align-items-top ">
                     <div class="list-title-none">
