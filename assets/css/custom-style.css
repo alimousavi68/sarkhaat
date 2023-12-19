@@ -1644,7 +1644,7 @@ body.bg-main.dark-mode {
   background-color: var(--i8-dark-bg-color) !important;
 }
 
-.dark-mode #header {
+.dark-mode #header , .dark-mode .header-container {
   background-color: var(--i8-dark-fg-color) !important;
 }
 
