@@ -37,9 +37,10 @@
   --i8-flip-box-hover: #F44336;
   --i8-light-title-color: #505050;
 }
+
 .i8-light-primary-color {
-   color : var(--i8-light-primary);
-  }
+  color: var(--i8-light-primary);
+}
 
 :root,
 [data-bs-theme=light] {
@@ -54,6 +55,7 @@
 .f10 {
   font-size: 10px;
 }
+
 .f11 {
   font-size: 11px;
 }
@@ -261,6 +263,7 @@
 .bg-main {
   background-color: var(--i8-light-bg-color);
 }
+
 .cat_btn_link {
   color: var(--i8-light-complete-color);
   padding: 2px;
@@ -285,7 +288,7 @@ body * {
   font-family: iransansx;
   outline: none;
   list-style: none;
-  
+
 }
 
 @supports (font-variation-settings: normal) {
@@ -299,17 +302,17 @@ body * {
   }
 }
 
-.box{
+.box {
   background: #FFF;
   box-shadow: 0px 2px 5px 0px rgb(181 181 181 / 10%);
-  
+
 }
 
 body a {
   text-decoration: none !important;
 }
 
-.image_frame{
+.image_frame {
   width: 100%;
   display: block;
   height: 100%;
@@ -318,20 +321,23 @@ body a {
 
 
 
-a.i8-blink , .content-entry a { 
-    padding-bottom: 0px;
-    background: -webkit-gradient(linear, right top, left top, from(var(--i8-dark-complete-color)), to(var(--i8-dark-complete-color)));
-    background: linear-gradient(to left, var(--i8-dark-complete-color) 0%, var(--i8-dark-complete-color) 40%);
-    background-size: 0px 15%;
-    background-repeat: no-repeat;
-    background-position: right 100%;
-    -webkit-transition-duration: 1.2s;
-    transition-duration: background-size 1.2s;
-    font-weight: inherit;
-    padding: 0;
-    color: inherit !important;
+a.i8-blink,
+.content-entry a {
+  padding-bottom: 0px;
+  background: -webkit-gradient(linear, right top, left top, from(var(--i8-dark-complete-color)), to(var(--i8-dark-complete-color)));
+  background: linear-gradient(to left, var(--i8-dark-complete-color) 0%, var(--i8-dark-complete-color) 40%);
+  background-size: 0px 15%;
+  background-repeat: no-repeat;
+  background-position: right 100%;
+  -webkit-transition-duration: 1.2s;
+  transition-duration: background-size 1.2s;
+  font-weight: inherit;
+  padding: 0;
+  color: inherit !important;
 }
-a.i8-blink:hover , .content-entry a:hover{
+
+a.i8-blink:hover,
+.content-entry a:hover {
   background-size: 100% 10%;
 }
 
@@ -351,6 +357,11 @@ body a:hover {
 /* Global  */
 
 /* header  */
+.header-container {
+  background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%);
+  height: 103px !important;
+}
+
 header nav#mainNav a {
   color: #848484 !important;
 }
@@ -513,9 +524,11 @@ header #headContact:hover #headAssistants {
     stroke-dashoffset: 1000;
   }
 }
-.btn{
+
+.btn {
   border-radius: 0px !important;
 }
+
 .btn-main {
   color: #fff !important;
   background-color: var(--i8-light-primary) !important;
@@ -560,13 +573,15 @@ span.page-numbers.current {
   color: #fff;
   border-radius: 50px;
 }
+
 a.page-numbers {
   border: 2px solid #dee2e6;
   padding: 5px 10px;
   color: var(--i8-light-primary-light);
   border-radius: 50px;
 }
-a.page-numbers:hover{
+
+a.page-numbers:hover {
   background-color: var(--i8-light-complete-color);
   padding: 5px 10px;
   color: #fff;
@@ -653,11 +668,13 @@ textarea {
 .pagination .active .page-link {
   background-color: var(--i8-light-primary) !important;
 }
-footer{
+
+footer {
   background-color: var(--i8-light-primary);
 }
-.footer-dark *{
-  color: var(--i8-light-fg-color) ;
+
+.footer-dark * {
+  color: var(--i8-light-fg-color);
 }
 
 #footer ul .active {
@@ -703,14 +720,14 @@ footer{
   max-height: 27px;
 }
 
-.reference{
-    color: #202020;
-    text-align: right;
-    font-size: 14px!important;
-    font-weight: 200;
-    margin-top: 2px;
-    padding: 0 5px;
-    border-right: 4px solid var(--i8-dark-complete-color);
+.reference {
+  color: #202020;
+  text-align: right;
+  font-size: 14px !important;
+  font-weight: 200;
+  margin-top: 2px;
+  padding: 0 5px;
+  border-right: 4px solid var(--i8-dark-complete-color);
 }
 
 .eslr-buttons {
@@ -1077,7 +1094,7 @@ ul.dropdown-menu.submenu {
 
 /* end menu style  */
 
-img.hover{
+img.hover {
   -webkit-filter: brightness(100%);
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
@@ -1193,6 +1210,7 @@ img.hover:hover {
   line-height: 180%;
   padding-bottom: 11px;
 }
+
 .content-entry ul li::marker {
   color: var(--i8-dark-complete-color);
   font-size: 150%;
@@ -1256,11 +1274,13 @@ img.hover:hover {
   /* align-items: center; */
   /* margin: 30px auto; */
 }
-.wp-caption{
+
+.wp-caption {
   width: 100% !important;
   padding: 1%;
 }
-p.wp-caption-text{
+
+p.wp-caption-text {
   color: #202020;
   text-align: right;
   font-size: 14px !important;
@@ -1283,14 +1303,14 @@ p.wp-caption-text{
 
 blockquote p,
 blockquote p i {
-  margin: 0!important;
-  font-style: normal!important;
+  margin: 0 !important;
+  font-style: normal !important;
   border-right: 7px solid var(--i8-dark-complete-color);
   padding-right: 15px;
 }
 
 
-.page-bottom-sidebar{
+.page-bottom-sidebar {
   background-color: var(--i8-light-primary-light);
 }
 
@@ -1352,6 +1372,8 @@ tr th:last-child {
 
 
 @media (min-width: 768px) {
+
+
   .i8-sticky {
     position: sticky;
     top: 10px;
@@ -1409,6 +1431,14 @@ tr th:last-child {
 }
 
 @media (max-width: 768px) {
+  .image_frame {
+    height: auto !important;
+  }
+
+  .single-item-data {
+    height: auto !important;
+  }
+
   .h-fs-1 {
     font-size: 11px;
     line-height: 170%;
@@ -1605,6 +1635,10 @@ tr th:last-child {
 
 
 /* Dark Mode */
+.dark-mode a {
+  color: var(--i8-dark-complete-color);
+}
+
 body.bg-main.dark-mode {
   color: #d5d5d5 !important;
   background-color: var(--i8-dark-bg-color) !important;
@@ -1614,33 +1648,56 @@ body.bg-main.dark-mode {
   background-color: var(--i8-dark-fg-color) !important;
 }
 
+.dark-mode .i8-main-menu-frame {
+  background-color: var(--i8-dark-bg-color) !important;
+}
+
 .dark-mode .sub-header {
   background-color: transparent !important;
 }
 
 .dark-mode .nav-item a {
-  color: var(--i8-dark-secondary);
+  color: var(--i8-light-primary) !important;
 }
 
 .dark-mode .text-grey {
-  color: #e5e5e5;
+  color: #e5e5e5 !important;
 }
 
-.dark-mode .text-gray {
-  color: #c2c2c2;
+.dark-mode footer .nav-item a {
+  color: white !important;
 }
 
-.dark-mode .text-title {
-  color: white;
+.dark-mode .page-bottom-sidebar.py-3.mt-3 {
+  background-color: var(--i8-dark-fg-color) !important;
+}
+
+.dark-mode .text-gray,
+.dark-mode .timeline-item {
+  color: #c2c2c2 !important;
+}
+
+.dark-mode .timeline-item::after {
+  background-color: var(--i8-dark-fg-color);
+
+}
+
+.dark-mode .text-title,
+.dark-mode .box-title {
+  color: white !important;
 }
 
 .dark-mode .post-title a,
 .dark-mode .list-title a,
 .dark-mode .text-subtitle {
-  color: var(--i8-dark-secondary);
+  color: var(--i8-dark-secondary) !important;
 }
 
 .dark-mode .post-title a:hover {}
+
+.dark-mode .single-title {
+  color: var(--i8-dark-complete-color) !important;
+}
 
 .dark-mode .bg-grey {
   background-color: var(--i8-dark-primary) !important;
@@ -1650,6 +1707,13 @@ body.bg-main.dark-mode {
   color: var(--i8-dark-complete-color);
 }
 
+.dark-mode .reference {
+  color: var(--i8-dark-compelete-color) !important;
+}
+
+.dark-mode .tag-item {
+  color: var(--i8-dark-complete-color) !important;
+}
 
 .dark-mode .card {
   background-color: transparent !important;
@@ -1663,6 +1727,8 @@ body.bg-main.dark-mode {
   color: var(--i8-light-primary);
   line-height: 150%;
 }
+
+
 
 body.bg-main.dark-mode a:hover,
 .dark-mode .content-entry h1,
@@ -1680,14 +1746,14 @@ body.bg-main.dark-mode a:hover,
 }
 
 .dark-mode .content-entry blockquote {
-  background-color: #0071a4 !important;
+  background-color: var(--i8-light-primary) !important;
   color: #ffffff;
-  border: 1px dashed #ffffff !important;
 }
 
-.dark-mode blockquote p::before {
-  color: #ffffff !important;
+.dark-mode .social-icons svg {
+  fill: var(--i8-light-complete-color) !important;
 }
+
 
 .i8-breadcrumb a,
 .dark-mode .i8-breadcrumb a,
@@ -1697,7 +1763,7 @@ body.bg-main.dark-mode a:hover,
 }
 
 .dark-btn:hover svg {
- fill: var(--i8-dark-complete-color) !important;
+  fill: var(--i8-dark-complete-color) !important;
 }
 
 /* yekta-net custom */
@@ -1798,21 +1864,24 @@ body.bg-main.dark-mode a:hover,
   color: var(--i8-light-primary);
   font-variation-settings: "wght" 700, "DOTS" 5 !important;
 }
-.i8-breadcrumb > .current{
+
+.i8-breadcrumb>.current {
   color: var(--i8-dark-complete-color);
 }
 
 footer .box-title {
   color: var(--i8-light-complete-color);
 }
-footer .nav-item a{
+
+footer .nav-item a {
   color: #fff;
 }
-footer .nav-item a:hover{
+
+footer .nav-item a:hover {
   color: var(--i8-dark-complete-color) !important;
 }
 
-.multimdeia-dark-bg .box-title{
+.multimdeia-dark-bg .box-title {
   color: var(--i8-light-fg-color);
 }
 
@@ -2189,7 +2258,7 @@ h2.post-flip-box-title {
 
 .container-share-button {
   margin: 0 auto;
-  width: 300px;
+  /* width: 300px; */
 }
 
 .notification-button {

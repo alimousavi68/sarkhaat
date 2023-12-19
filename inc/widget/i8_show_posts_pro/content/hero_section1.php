@@ -61,7 +61,7 @@ $category_posts = new WP_Query(
           </div>
           <div class="col-xl-15 col-lg-15 col-md-15 col-sm-12 col-24 px-0 px-xl-2 px-sm-2 px-lg-2">
             <a href="<?php the_permalink(); ?>" class="image_frame">
-              <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 object-fit-cover i8-h-md-100', $size = array('width' => 420, 'height' => 310), true, 'max-height:255px;', false, true); ?>
+              <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100 object-fit-cover i8-h-md-100', $size = array('width' => 420, 'height' => 230), true, 'max-height:255px;', false, true); ?>
             </a>
           </div>
         </div>
@@ -136,9 +136,11 @@ $category_posts = new WP_Query(
         $even_odd_items_padding_in_wraped_mode =  (($category_posts3->current_post + 1) % 2) == 0 ? 'ps-0' : 'pe-0';
         ?>
         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2 px-xl-2 px-lg-2 <?php echo $even_odd_items_padding_in_wraped_mode; ?>">
+
           <a href="<?php the_permalink(); ?>" class="image_frame">
             <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 128), true, '', false, true); ?>
           </a>
+
           <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
             <div class="title-box">
               <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
@@ -150,8 +152,8 @@ $category_posts = new WP_Query(
                 <?php the_date() ?>
               </p>
             </div>
-
           </div>
+
         </div>
 
         <?php

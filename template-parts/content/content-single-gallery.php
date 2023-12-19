@@ -23,7 +23,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     }
     ?>
     <!-- breadcrumb -->
-    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 justify-content-between align-items-center">
+    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -130,7 +130,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
         </div>
 
         <div
-            class="bottom-content-bar d-flex flex-xxl-row flex-xl-row flex-lg-row  border-bottom pb-2 justify-content-between flex-column-reverse align-items-start">
+            class="bottom-content-bar d-flex flex-xxl-row flex-xl-row flex-lg-row  border-bottom pb-2 justify-content-between flex-column align-items-start gap-4">
             <div class="tags d-flex flex-wrap row-gap-2">
 
 

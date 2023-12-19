@@ -66,8 +66,8 @@
 
 
         <!-- Main header -->
-        <div class="row " style="background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%); height: 103px; ">
-            <div class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex align-items- border-bottom">
+        <div class="row header-container">
+            <div class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex ">
                 <div class="container d-flex justify-content-center justify-content-between align-items-center px-lg-0">
                     <div class="col-18 col-md-2 d-flex w-auto gap-4">
                         <!-- Logo -->
@@ -126,8 +126,8 @@
 
 
         </div>
-        <div class="row">
-            <div class="container d-flex justify-content-center   px-lg-0">
+        <div class="row i8-main-menu-frame">
+            <div class="container d-flex justify-content-center px-lg-0">
                 <!-- Main Menu -->
                 <div class="d-none d-lg-flex i8-main-menu col-24 d-flex flex-column justify-content-end ">
                     <?php build_custom_menu_by_location('primary'); ?>

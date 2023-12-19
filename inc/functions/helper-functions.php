@@ -385,7 +385,7 @@ function build_custom_menu($items, $parent_id = 0)
                 $menu .= '<a class="nav-link hasht-dropdown-toggle " id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="' . esc_url($item->url) . '">' . esc_html($item->title) . '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down mx-1" viewBox="0 0 16 16">
                 <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
               </svg>' . '</a>';
-                $menu .= '<ul class="dropdown-menu submenu box py-2" aria-labelledby="navbarDropdown">';
+                $menu .= '<ul class="dropdown-menu submenu py-2" aria-labelledby="navbarDropdown">';
                 $menu .= build_custom_menu($submenu, $item->ID); // فراخوانی بازگشایی
                 $menu .= '</ul>';
             } else {
@@ -492,9 +492,9 @@ function i8_breadcrumb(
 
     global $post;
     if (is_home() || is_front_page()) {
-        echo '<a class="text-grey" href="' . home_url() . '">' . $home . '</a>';
+        echo '<a class="text-grey br-home" href="' . home_url() . '">' . $home . '</a>';
     } else {
-        echo '<a class="text-grey" href="' . home_url() . '">' . $home . '</a>' . $delimiter;
+        echo '<a class="text-grey br-home" href="' . home_url() . '">' . $home . '</a>' . $delimiter;
         if (is_single()) {
             if ($primary_cat = i8_primary_category(get_the_ID(), true)):
                 $cat_color = get_term_meta($primary_cat['cat_id'], 'i8_CustomTerm_color', true) ? get_term_meta($primary_cat['cat_id'], 'i8_CustomTerm_color', true) : 'var(--bs-secondary)';
@@ -946,7 +946,6 @@ function custom_lightbox_gallery()
                     opacity: 0.6;
                     font-size: 1.25rem;
                 }
-
             </style>
 
             <div class="modal fade lightbox-modal" id="lightbox-modal" tabindex="-1">
@@ -985,8 +984,8 @@ function custom_lightbox_gallery()
 
                     function createCaption(caption) {
                         return `<div class="carousel-caption d-none d-md-block">
-                                    <h4 class="m-0">${caption}</h4>
-                                  </div>`;
+                                                <h4 class="m-0">${caption}</h4>
+                                              </div>`;
                     }
 
                     function createIndicators(img) {
@@ -1000,11 +999,11 @@ function custom_lightbox_gallery()
 
                         for (i = 0, len = countSlides; i < len; i++) {
                             markup += `
-                                    <button type="button" data-bs-target="#lightboxCarousel"
-                                      data-bs-slide-to="${i}"
-                                      ${i === curIndex ? 'class="active" aria-current="true"' : ""}
-                                      aria-label="Slide ${i + 1}">
-                                    </button>`;
+                                                <button type="button" data-bs-target="#lightboxCarousel"
+                                                  data-bs-slide-to="${i}"
+                                                  ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                                  aria-label="Slide ${i + 1}">
+                                                </button>`;
                         }
 
                         return markup;
@@ -1019,10 +1018,10 @@ function custom_lightbox_gallery()
                             const imgAlt = img.getAttribute("alt");
 
                             markup += `
-                                    <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-                                      <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-                                      ${imgAlt ? createCaption(imgAlt) : ""}
-                                    </div>`;
+                                                <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                                  <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                                  ${imgAlt ? createCaption(imgAlt) : ""}
+                                                </div>`;
                         }
 
                         return markup;
@@ -1030,27 +1029,27 @@ function custom_lightbox_gallery()
 
                     function createCarousel(img) {
                         const markup = `
-                                  <!-- Lightbox Carousel -->
-                                  <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-                                    <!-- Indicators/dots -->
-                                    <div class="carousel-indicators">
-                                      ${createIndicators(img)}
-                                    </div>
-                                    <!-- Wrapper for Slides -->
-                                    <div class="carousel-inner justify-content-center mx-auto">
-                                      ${createSlides(img)}
-                                    </div>
-                                    <!-- Controls/icons -->
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                      <span class="visually-hidden">Next</span>
-                                    </button>
-                                  </div>
-                                  `;
+                                              <!-- Lightbox Carousel -->
+                                              <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                                <!-- Indicators/dots -->
+                                                <div class="carousel-indicators">
+                                                  ${createIndicators(img)}
+                                                </div>
+                                                <!-- Wrapper for Slides -->
+                                                <div class="carousel-inner justify-content-center mx-auto">
+                                                  ${createSlides(img)}
+                                                </div>
+                                                <!-- Controls/icons -->
+                                                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                  <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                  <span class="visually-hidden">Next</span>
+                                                </button>
+                                              </div>
+                                              `;
 
                         modalBody.innerHTML = markup;
                     }
