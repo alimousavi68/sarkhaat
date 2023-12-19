@@ -2,8 +2,8 @@
 <div class="row mx-0">
   <div class="col-xl-17 col-md-24 col-sm-24 d-flex flex-column box px-3 ">
 
-    <div class="row d-flex align-content-center border-bottom">
-      <div class="col-md-12 col-sm-24  box-title text-center text-md-end">
+    <div class="row d-flex align-content-center border-bottom justigy-content-around">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  box-title text-center text-sm-end">
         <?php
         $cat = get_queried_object();
         // $cat_color   =   get_term_meta($cat->term_id, 'i8_CustomTerm_color', true) ? get_term_meta($cat->term_id, 'i8_CustomTerm_color', true) : '#000';
@@ -14,7 +14,7 @@
         the_archive_description('<p>', '</p>');
         ?>
       </div>
-      <div class="i8-breadcrumb col-md-12 col-sm-24 mb-0 d-flex flex-row align-items-center  justify-content-center justify-content-md-end text-gray f14 " aria-label="breadcrumb">
+      <div class="i8-breadcrumb col-md-12 col-sm-12 mb-0 d-flex flex-row align-items-center  justify-content-center justify-content-sm-end text-gray f14 " aria-label="breadcrumb">
         <?php i8_breadcrumb(); ?>
       </div>
     </div>

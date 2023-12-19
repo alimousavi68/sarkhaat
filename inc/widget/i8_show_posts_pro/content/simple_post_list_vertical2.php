@@ -10,9 +10,14 @@ if ($hide_title != 'on') { ?>
             <?php echo $sub_title_print; ?>
         </p>
         <p class="display-5 fw-4 mb-2 ">
-            <a class="cat_btn_link i8-blink" href="<?php echo '/category' . '/' . $cat ?>">دیدن همه</a>
+            <a class="cat_btn_link i8-blink" href="<?php echo get_category_link($cat); ?>">دیدن همه</a>
         </p>
     </div>
+
+
+
+
+    
 <?php } ?>
 
 <?php
@@ -34,7 +39,7 @@ if ($category_posts->have_posts()) {
         ?>
         <div class="<?php echo $col; ?> col-12 d-flex flex-column gap-2 px-2 px-xl-2 px-lg-2">
             <a href="<?php the_permalink(); ?>" class="image_frame">
-                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => 120), true, '', false, true); ?>
+                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => '150'), true, '', false, true); ?>
             </a>
             
             <div class="single-item-data d-flex flex-column gap-1">

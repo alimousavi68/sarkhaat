@@ -23,7 +23,8 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
     }
     ?>
     <!-- breadcrumb -->
-    <div class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
+    <div
+        class=" d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
         <div class="col-md-12 col-sm-24 mb-0 d-flex flex-row  justify-content-center justify-content-md-start text-gray f14 "
             aria-label="breadcrumb">
             <?php i8_breadcrumb(); ?>
@@ -90,10 +91,10 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <?php
                 $sub_title = get_post_meta(get_the_ID(), '_post_subtitle', true);
                 ?>
-                <p class="display-6 fw-1 text-center text-xl-end text-lg-end text-md-end text-sm-center mb-0">
+                <p class="display-6 fw-1 text-justify text-xl-end text-lg-end text-md-end text-sm-justify mb-0">
                     <?php echo $sub_title; ?>
                 </p>
-                <h1 class="single-title fw-7 h-fs-8 text-center text-xl-end text-lg-end text-md-end text-sm-center">
+                <h1 class="single-title fw-7 h-fs-8 text-justify text-xl-end text-lg-end text-md-end text-sm-justify">
                     <?php the_title(); ?>
                 </h1>
                 <p class="f15 text-gray text-justify">
@@ -102,7 +103,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 
 
             </div>
-           
+
         </div>
     </div>
 
