@@ -137,7 +137,7 @@ $category_posts = new WP_Query(
         ?>
         <div class="col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex flex-column gap-2 px-2 px-xl-2 px-lg-2 <?php echo $even_odd_items_padding_in_wraped_mode; ?>">
 
-          <a href="<?php the_permalink(); ?>" class="image_frame">
+          <a href="<?php the_permalink(); ?>" class="image_frame_2">
             <?php echo i8_the_thumbnail('i8-lg-290-163', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 222, 'height' => 130), true, '', false, true); ?>
           </a>
 
