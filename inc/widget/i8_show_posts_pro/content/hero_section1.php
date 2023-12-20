@@ -87,7 +87,7 @@ $category_posts = new WP_Query(
           $category_posts2->the_post();
           ?>
           <div class="d-flex flex-column flex-md-column flex-sm-row gap-2 multi-item">
-            <a href="<?php the_permalink(); ?>" class="image_frame2">
+            <a href="<?php the_permalink(); ?>" class="image_frame_2">
               <?php echo i8_the_thumbnail('i8-lg-290-163', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 222, 'height' => 130), true, '', false, true); ?>
             </a>
             <div class="d-flex flex-column gap-0 justify-content-between">
