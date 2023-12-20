@@ -41,11 +41,16 @@ add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
 /**
  * define Custom Image size
  */
+add_image_size('i8-xl-430-242', 430 , 242 , true);  //  , 
+add_image_size('i8-lg-290-163', 290 , 163 , true);  //  , 
+add_image_size('i8-md-182-102', 182 , 102 , true);  //  , 
+add_image_size('i8-sm-100-75' , 100 , 75  , true);  //  , 
+
 // add_image_size('i8-xl-632-486', 632, 486, true);
-add_image_size('i8-xl-632-486', 632 , 486 , true);  // gallery bif post , 
-add_image_size('i8-lg-464-340', 453 , 255 , true);  // hero big post, special post box, 
-add_image_size('i8-md-219-140', 220 , 128 , true);  // hero box small items , special list post 2
-add_image_size('i8-sm-130-88' , 130 , 88  , true);  // sidebar most visitor  
+// add_image_size('i8-xl-632-486', 430 , 242 , true);  // gallery bif post , 
+// add_image_size('i8-lg-464-340', 453 , 255 , true);  // hero big post, special post box, 
+// add_image_size('i8-md-219-140', 220 , 128 , true);  // hero box small items , special list post 2
+// add_image_size('i8-sm-130-88' , 130 , 88  , true);  // sidebar most visitor  
 // add_image_size('i8-xsm-90-75' , 90  , 75  , true);  // sidebar most visitor
 
 

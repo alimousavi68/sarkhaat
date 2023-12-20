@@ -39,7 +39,7 @@ if ($category_posts->have_posts()) : ?>
       $category_posts->the_post();
     ?>
       <a href="<?php the_permalink(); ?>">
-        <?php echo i8_the_thumbnail('i8-lg-464-340', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 462, 'height' => 340), true, '', false, true); ?>
+        <?php echo i8_the_thumbnail('i8-xl-430-242', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 430, 'height' => 242), true, '', false, true); ?>
       </a>
       <div class="single-item-data d-flex flex-column gap-0">
         <span class="post-category f16 pt-2"><?php echo i8_primary_category(get_the_ID()) ?></span>
@@ -75,7 +75,7 @@ if ($category_posts->have_posts()) : ?>
           ?>
             <div class="multi-item d-flex flex-column gap-2">
               <a href="<?php the_permalink(); ?>">
-                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+                <?php echo i8_the_thumbnail('i8-lg-290-163', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 222, 'height' => 130), true, '', false, true); ?>
               </a>
               <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
                 <div class="title-box">
@@ -109,7 +109,7 @@ if ($category_posts->have_posts()) : ?>
             ?>
               <div class="multi-item d-flex flex-column gap-2">
                 <a href="<?php the_permalink(); ?>">
-                  <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 231, 'height' => 140), true, '', false, true); ?>
+                  <?php echo i8_the_thumbnail('i8-lg-290-163', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 222, 'height' => 130), true, '', false, true); ?>
                 </a>
                 <div class="single-item-data d-flex flex-column gap-0 justify-content-between">
                   <div class="title-box">

@@ -78,7 +78,7 @@
                 <div width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>">
 
                     <a href="<?php the_permalink(); ?>" class="image_frame">
-                        <?php echo i8_the_thumbnail('i8-sm-130-88', 'hover', $dimenition = array('width' => 100, 'height' => 75), true, '', false, true); ?>
+                        <?php echo i8_the_thumbnail('i8-sm-100-75', 'hover', $dimenition = array('width' => 100, 'height' => 75), true, '', false, true); ?>
                     </a>
 
                 </div>

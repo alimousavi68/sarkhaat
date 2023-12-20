@@ -318,7 +318,11 @@ body a {
   height: 100%;
   overflow: hidden;
 }
-
+.image_frame_2 {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
 
 
 a.i8-blink,
@@ -1136,8 +1140,7 @@ img.hover:hover {
   }
 
   .simple-list img {
-    width: 90px !important;
-    height: 70px !important;
+    width: 140px !important;
   }
 
   .simple-list .display-4 {
@@ -1431,7 +1434,7 @@ tr th:last-child {
 }
 
 @media (max-width: 768px) {
-  .image_frame {
+  .image_frame,.image_frame img,.image_frame_2 img {
     height: auto !important;
   }
 

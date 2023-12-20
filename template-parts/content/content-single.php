@@ -105,7 +105,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
             </div>
             <div class="col-xl-11 col-lg-11 col-md-11 col-sm-11 col-24 px-0 px-sm-2 ps-lg-0">
                 <span class="image_frame">
-                    <?php echo i8_the_thumbnail('i8-lg-464-340', 'hover w-100  object-fit-cover i8-h-md-100', $size = array('width' => 440, 'height' => 310), true, 'max-height:275px;', false, true); ?>
+                    <?php echo i8_the_thumbnail('i8-xl-430-242', 'hover w-100  object-fit-cover i8-h-md-100', $size = array('width' => 410, 'height' => 242), true, 'max-height:275px;', false, true); ?>
                 </span>
             </div>
         </div>

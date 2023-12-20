@@ -2,7 +2,7 @@
 echo $args['before_widget'];
 if ($hide_title != 'on') { ?>
     <div
-        class="col-24 col-lg-4 col-md-4 col-xl-4 d-flex flex-row flex-xl-column flex-lg-column flex-md-column gap-0 justify-content-between justify-content-xl-start justify-content-lg-start justify-content-md-start px-0 px-2 px-lg-0 px-md-0 px-xl-0 align-items-center align-items-start">
+        class="col-24 col-lg-4 col-md-4 col-xl-4 d-flex flex-row flex-xl-column flex-lg-column flex-md-column gap-0 justify-content-between justify-content-xl-start justify-content-lg-start justify-content-md-start px-0 px-2 px-lg-0 px-md-0 px-xl-0  align-items-start">
         <p class="box-title <?php echo $head_font_size; ?> fw-7 mb-1">
             <?php echo $args['before_title'] . $icon_print . $title . $args['after_title']; ?>
         </p>
@@ -31,22 +31,22 @@ $category_posts = new WP_Query(
     )
 );
 
-echo '<div class="col-24 col-xl-20 col-lg-20 col-md-20 d-flex flex-row flex-wrap px-0">';
+echo '<div class="col-24 col-xl-20 col-lg-20 col-md-20 d-flex flex-row flex-wrap px-0 py-2">';
 echo '<div class="row">';
 if ($category_posts->have_posts()) {
     while ($category_posts->have_posts()) {
         $category_posts->the_post();
         ?>
         <div class="<?php echo $col; ?> col-12 d-flex flex-column gap-2 px-2 px-xl-2 px-lg-2">
-            <a href="<?php the_permalink(); ?>" class="image_frame">
-                <?php echo i8_the_thumbnail('i8-md-219-140', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => 220, 'height' => '150'), true, '', false, true); ?>
+            <a href="<?php the_permalink(); ?>" class="image_frame_2">
+                <?php echo i8_the_thumbnail('i8-lg-290-163', 'multi-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => $thumb_width , 'height' => $thumb_height), true, '', false, true); ?>
             </a>
             
-            <div class="single-item-data d-flex flex-column gap-1">
+            <div class="d-flex flex-column gap-1">
                 <div class="title-box">
                     <h1 class="post-title <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?>  l1">
                         <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
-                            <?php i8_limit_text(get_the_title(), 82, '...'); ?>
+                            <?php i8_limit_text(get_the_title(), 75, '...'); ?>
                         </a>
                     </h1>
                 </div>
