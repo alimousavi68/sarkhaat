@@ -396,7 +396,7 @@ function build_custom_menu($items, $parent_id = 0)
                 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
                 $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
                 if ($url == $item->url) {
-                    $menu .= ' active fw-bold f15';
+                    $menu .= ' active fw-bold';
                 }
                 $menu .= '" href="' . esc_url($item->url) . '">' . esc_html($item->title) . '</a>';
             }
