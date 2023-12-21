@@ -105,7 +105,7 @@
                             <?php i8_mobile_menu('mobile'); ?>
                         </div>
 
-                        <div class="d-md-none d-sm-none">
+                        <div class="">
                             <?php i8_show_social_icons(21, 21); ?>
                         </div>
                         <div class="d-flex f14 justify-content-end">
