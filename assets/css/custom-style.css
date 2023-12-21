@@ -53,22 +53,27 @@
 }
 
 
-.display-1{
+.display-1 {
   font-size: clamp(29px, 2vw, 32px) !important;
 }
-.display-2{
+
+.display-2 {
   font-size: clamp(22px, 2vw, 25px) !important;
 }
-.display-3{
+
+.display-3 {
   font-size: clamp(18px, 2vw, 21px) !important;
 }
-.display-4{
+
+.display-4 {
   font-size: clamp(15px, 2vw, 18px) !important;
 }
-.display-5{
+
+.display-5 {
   font-size: clamp(13px, 2vw, 15px) !important;
 }
-.display-6{
+
+.display-6 {
   font-size: clamp(11px, 2vw, 13px) !important;
 }
 
@@ -113,7 +118,7 @@
 }
 
 .f26 {
-  font-size: clamp(22px, 2vw, 26px); 
+  font-size: clamp(22px, 2vw, 26px);
   line-height: 150%;
 }
 
@@ -338,6 +343,7 @@ body a {
   height: 100%;
   overflow: hidden;
 }
+
 .image_frame_2 {
   width: 100%;
   display: block;
@@ -1163,6 +1169,10 @@ img.hover:hover {
     width: 140px !important;
   }
 
+  .mini-article.simple-list .image_frame>img {
+    max-width: 120px;
+  }
+
   .i8-sticky {
     position: inherit !important;
   }
@@ -1450,7 +1460,10 @@ tr th:last-child {
 }
 
 @media (max-width: 768px) {
-  .image_frame,.image_frame img,.image_frame_2 img {
+
+  .image_frame,
+  .image_frame img,
+  .image_frame_2 img {
     height: auto !important;
   }
 
@@ -1931,7 +1944,7 @@ footer .nav-item a:hover {
 }
 
 @media (max-width: 768px) {
-  
+
 
   .container,
   .container-md,
@@ -1941,10 +1954,11 @@ footer .nav-item a:hover {
 }
 
 @media (max-width: 576px) {
-  
+
   .archive-thumb img {
     height: 50vw !important;
   }
+
   .container,
   .container-sm {
     max-width: 99% !important;
