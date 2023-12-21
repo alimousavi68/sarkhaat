@@ -112,6 +112,9 @@
 .f18 {
   font-size: clamp(15px, 2vw, 18px);
 }
+.f22 {
+  font-size: clamp(19px, 2vw, 22px);
+}
 
 .f24 {
   font-size: clamp(20px, 2vw, 24px);

@@ -92,7 +92,7 @@ $category_posts = new WP_Query(
             </a>
             <div class="d-flex flex-column gap-0 justify-content-between">
               <div class="title-box">
-                <h1 class="post-title <?php echo $title_font_size; ?>  <?php echo $title_font_weight; ?> l1 ">
+                <h1 class="post-title f22 <?php echo $title_font_weight; ?> l1 ">
                   <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
                     <?php i8_limit_text(get_the_title(), 82, '...'); ?>
                   </a>
