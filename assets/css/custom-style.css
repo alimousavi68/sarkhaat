@@ -1041,9 +1041,8 @@ ul.dropdown-menu.submenu {
 }
 
 .nav-item a.active {
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--i8-light-primary-light) !important;
+  font-weight: 600;
+  /* color: var(--i8-light-complete-color) !important; */
 }
 
 .nav-item a:hover {
