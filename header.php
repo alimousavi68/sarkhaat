@@ -43,6 +43,12 @@
             color: white;
         }
 
+        .i8-main-menu-frame {
+            background: linear-gradient(to bottom, var(--i8-light-primary) 50%, var(--i8-light-bg-color) 50%);
+            transition: top 0.6s ease;
+
+        }
+
         .i8-main-menu {
             display: flex;
             max-width: 1300px;
@@ -52,22 +58,42 @@
             flex-shrink: 0;
             position: relative;
             background-color: var(--i8-light-fg-color);
-            top: -25px;
             box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.10);
             align-content: space-between;
             flex-wrap: wrap;
         }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        #mini-logo {
+
+            width:0px;
+            overflow: hidden;
+            transition: width 0.5s ease ;
+        }
+
+        .i8-show {
+            width: 122px !important;
+            transition: width 0.5s ease ;
+        }
     </style>
+
 </head>
 
 <body dir="rtl" class="bg-main">
     <!-- header -->
-    <header id="header">
+    <header id="header" class="mb-4">
 
 
         <!-- Main header -->
-        <div class="row header-container">
-            <div class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex ">
+        <div id="header-container" class="row header-container">
+            <div
+                class="col-24 d-flex flex-column justify-content-center justify-content-lg-between white-shadow py-2 px-0 d-flex ">
                 <div class="container d-flex justify-content-center justify-content-between align-items-center px-lg-0">
                     <div class="col-18 col-md-2 d-flex w-auto gap-4">
                         <!-- Logo -->
@@ -83,7 +109,7 @@
                     <div
                         class="col-auto py-2 d-flex flex-column justify-content-between gap-2 gap-lg-2 gap-sm-2 text-white">
                         <div class="d-flex d-lg-none justify-content-end">
-                            
+
                             <a href="#"
                                 class="dark-mode-switch1 dark-btn  px-1 px-lg-0 px-sm-1 d-flex justify-content-center align-items-center"
                                 alt="dark mode button" aria-label="dark mode button">
@@ -126,15 +152,23 @@
 
 
         </div>
-        <div class="row i8-main-menu-frame">
+        <div id="i8-main-menu-frame" class="row i8-main-menu-frame">
             <div class="container d-flex justify-content-center px-lg-0">
+
                 <!-- Main Menu -->
                 <div class="d-none d-lg-flex i8-main-menu col-24 d-flex flex-column justify-content-end ">
-                    <?php build_custom_menu_by_location('primary'); ?>
+                    <div class="d-flex flex-row">
+                        <a id="mini-logo" class="sticky-logo ms-2">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/global/mini-logo-andishe.webp" alt="logo"  />
+                        </a>
+                        <?php build_custom_menu_by_location('primary'); ?>
+                    </div>
+                    
 
                     <!-- Tools Btn -->
                     <div class="d-flex justify-content-end align-items-center gap-2 gap-lg-2 gap-sm-2">
-                        <a href="#" class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
+                        <a href="#"
+                            class="dark-mode-switch  px-1 px-lg-0 px-sm-1 round-icon d-flex justify-content-center align-items-center"
                             alt="dark mode button" aria-label="dark mode button">
                             <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">

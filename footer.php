@@ -2,33 +2,35 @@
 //footer
 ?>
 <!-- footer -->
-<footer id="footer" class="footer-dark" >
+<footer id="footer" class="footer-dark">
 
 
-<div class="container">
-    <?php if (is_active_sidebar('fr-sidebar') || is_active_sidebar('fc-sidebar') || is_active_sidebar('fl-sidebar')) : ?>
+  <div class="container">
+    <?php if (is_active_sidebar('fr-sidebar') || is_active_sidebar('fc-sidebar') || is_active_sidebar('fl-sidebar')): ?>
       <div class="row border-bottom py-3">
-      <div class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start ">
-        <?php
-        dynamic_sidebar('fr-sidebar');
-        ?>
-      </div>
-
-      <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row gap-3">
-        <div class="row w-100">
+        <div
+          class="align-items-center align-items-xl-start col-md-12 col-sm-24 col-xl-5 d-flex flex-column justify-content-center justify-content-lg-start ">
           <?php
-          dynamic_sidebar('fc-sidebar');
+          dynamic_sidebar('fr-sidebar');
           ?>
         </div>
-      </div>
 
-      <div class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end order-md-2">
-        <?php
-        dynamic_sidebar('fl-sidebar');
-        ?>
-      </div>
+        <div class="col-24 col-lg-14 col-md-14 col-md-24 col-sm-24 col-xl-14 d-flex flex-row gap-3">
+          <div class="row w-100">
+            <?php
+            dynamic_sidebar('fc-sidebar');
+            ?>
+          </div>
+        </div>
 
-    </div>
+        <div
+          class="col-lg-5 col-md-12 col-md-5 col-sm-24 col-xl-5 d-flex justify-content-center justify-content-lg-end order-md-2">
+          <?php
+          dynamic_sidebar('fl-sidebar');
+          ?>
+        </div>
+
+      </div>
     <?php endif; ?>
   </div>
 
@@ -37,10 +39,14 @@
 
     <div class="container p-3 ">
       <div class="row d-flex text-center text-lg-end text-md-end text-sm-center row-gap-3 flex-wrap-reverse">
-        <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری تحلیلی اندیشه معاصر می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
+        <span class="col-24 col-lg-20 col-md-20 col-sm-24 f13">تمامی حقوق مادی و معنوی این وبسایت متعلق به پایگاه خبری
+          تحلیلی اندیشه معاصر می باشد و هرگونه کپی برداری با ذکر منبع بلامانع است.</span>
         <div class="col-24 col-lg-4 col-sm-24 col-md-4">
-          <div class="d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
-            <span class="f13" >طراحی و تولید: <a href="https://ihasht.ir/" class="text-white i8-blink"  title="هشت بهشت" alt="Website designer: Hasht Behesht professional website design site" target="_blank">هشت بهشت</a> </span>
+          <div
+            class="d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links justify-content-center align-items-center">
+            <span class="f13">طراحی و تولید: <a href="https://ihasht.ir/" class="text-white i8-blink" title="هشت بهشت"
+                alt="Website designer: Hasht Behesht professional website design site" target="_blank">هشت بهشت</a>
+            </span>
           </div>
         </div>
       </div>
@@ -79,17 +85,17 @@
     localStorage.setItem("darkMode", isActive);
   });
 </script>
-<?php if (is_singular()) : ?>
+<?php if (is_singular()): ?>
   <!-- shared button -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // cache dom
       var shareBtn = document.querySelector('.share-btn-mini');
       var shareBtn = document.querySelector('.share-btn');
       var shareUrl = document.querySelector('.share-url');
       var shareContainer = document.querySelector('.share-container');
       var notificationButton = document.querySelector('.notification-button');
-      
+
       // set data
       var url = '<?php echo bloginfo('url'); ?>/?p=<?php the_ID(); ?>';
       var shared = false;
@@ -152,7 +158,7 @@
 
 
     // print button
-    document.getElementById('printButton').addEventListener('click', function() {
+    document.getElementById('printButton').addEventListener('click', function () {
       window.print();
     });
   </script>
@@ -160,6 +166,40 @@
 
 
 <?php endif; ?>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var mini_logo = document.getElementById("mini-logo");
+    var windowWidth = window.innerWidth;
+
+    window.onscroll = function () {
+      var headerHeight = document.getElementById("header-container").offsetHeight;
+      var header = document.getElementById("i8-main-menu-frame");
+
+      // Get the offset position of the navbar
+      var sticky = header.offsetTop;
+      console.log('value:' + window.pageYOffset);
+
+      // Add the "sticky" class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+        mini_logo.classList.add("i8-show");
+      }
+
+      if (window.pageYOffset < headerHeight) {
+        header.classList.remove("sticky");
+        mini_logo.classList.remove("i8-show");
+      }
+
+      // Calculate the position from right based on the scroll position
+      var positionFromRight = windowWidth - scroll;
+      mini_logo.style.right = positionFromRight + 'px';
+
+
+    };
+  });
+
+</script>
 </body>
 
 </html>

@@ -391,8 +391,8 @@ body a:hover {
 
 /* header  */
 .header-container {
-  background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%);
-  height: 103px !important;
+  /* background: linear-gradient(270deg, #0C2955 5.52%, #143260 64.33%); */
+  background-color: var(--i8-light-primary);
 }
 
 header nav#mainNav a {
