@@ -49,6 +49,12 @@
 
         }
 
+        .dark-mode .i8-main-menu-frame {
+            background: linear-gradient(to bottom, var(--i8-dark-fg-color) 50%, var(--i8-dark-bg-color) 50%);
+            transition: top 0.6s ease;
+
+        }
+
         .i8-main-menu {
             display: flex;
             max-width: 1300px;

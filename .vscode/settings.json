@@ -3,5 +3,5 @@
     "cSpell.words": [
         "immididally"
     ],
-    "editor.inlineSuggest.showToolbar": "onHover"
+    "editor.inlineSuggest.showToolbar": "always"
 }

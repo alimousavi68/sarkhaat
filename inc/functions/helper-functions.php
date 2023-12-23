@@ -6,7 +6,7 @@
  */
 function i8_the_thumbnail($size_name, $class = '', $dimension = array("width" => 70, "height" => 70), $default_img = true, $style = '', $lazy_load = true, $decoding_async = false)
 {
-    $default_thumbnail_url = get_template_directory_uri() . '/images/global/no-image.png';
+    $default_thumbnail_url = get_template_directory_uri() . '/images/global/no-image.webp';
     $lazyLoad = ($lazy_load) ? ' loading="lazy" ' : '';
     $decodingAsync = ($decoding_async) ? 'decoding="async"' : '';
 

@@ -200,6 +200,171 @@
   });
 
 </script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    "use strict";
+
+    // Switch dark/light
+    var switchElement = document.querySelector(".switch");
+    if (switchElement) {
+      switchElement.addEventListener('click', function () {
+        var body = document.body;
+        if (body.classList.contains("light")) {
+          body.classList.remove("light");
+          switchElement.classList.remove("switched");
+        } else {
+          body.classList.add("light");
+          switchElement.classList.add("switched");
+        }
+      });
+    }
+
+    // Scroll back to top
+    var progressPath = document.querySelector('.progress-wrap path');
+    if (progressPath) {
+      var pathLength = progressPath.getTotalLength();
+      progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+      progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+      progressPath.style.strokeDashoffset = pathLength;
+      progressPath.getBoundingClientRect();
+      progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+
+      var updateProgress = function () {
+        var scroll = window.scrollY || document.documentElement.scrollTop;
+        var height = (document.documentElement.scrollHeight || document.body.scrollHeight) - window.innerHeight;
+        var progress = pathLength - (scroll * pathLength) / height;
+        progressPath.style.strokeDashoffset = progress;
+      };
+
+      updateProgress();
+      window.addEventListener('scroll', updateProgress);
+
+      var offset = 50;
+      var duration = 550;
+      window.addEventListener('scroll', function () {
+        var progressWrap = document.querySelector('.progress-wrap');
+        if (window.scrollY > offset) {
+          progressWrap.classList.add('active-progress');
+        } else {
+          progressWrap.classList.remove('active-progress');
+        }
+      });
+
+      document.querySelector('.progress-wrap').addEventListener('click', function (event) {
+        event.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      });
+    }
+  });
+
+</script>
+
+<style>
+  :root {
+    --prgc-main: var(--i8-light-complete-color);
+    --prgc-arrow: var(--i8-light-complete-color);
+    --prgc-arrow2: var(--i8-light-complete-color);
+    --prgc-line: rgb(255, 153, 0 / 20%);
+  }
+
+  /* #Progress
+================================================== */
+
+  .progress-wrap {
+    position: fixed;
+    right: 10px;
+    bottom: 50px;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50px;
+    box-shadow: inset 0 0 0 2px #c4c4c482;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    /* background-color: #ffffff; */
+  }
+
+  .progress-wrap.active-progress {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .progress-wrap::after {
+    position: absolute;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="orange" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+    text-align: center;
+    line-height: 46px;
+    font-size: 20px;
+    color: var(--i8-light-complete-color);
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 1;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+  }
+
+  .progress-wrap:hover::after {
+    opacity: 0;
+  }
+
+  .progress-wrap::before {
+    position: absolute;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="orange" class="bi bi-arrow-up-short" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 12a.5.5 0 0 0 .5-.5V5.707l2.146 2.147a.5.5 0 0 0 .708-.708l-3-3a.5.5 0 0 0-.708 0l-3 3a.5.5 0 1 0 .708.708L7.5 5.707V11.5a.5.5 0 0 0 .5.5"/></svg>');
+    text-align: center;
+    line-height: 46px;
+    font-size: 20px;
+    opacity: 0;
+    background-image: linear-gradient(298deg, var(--prgc-arrow), var(--prgc-arrow2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    left: 0;
+    top: 0;
+    height: 46px;
+    width: 46px;
+    cursor: pointer;
+    display: block;
+    z-index: 2;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+  }
+
+  .progress-wrap:hover::before {
+    opacity: 1;
+  }
+
+  .progress-wrap svg path {
+    fill: none;
+  }
+
+  .progress-wrap svg.progress-circle path {
+    stroke: var(--prgc-main);
+    stroke-width: 4;
+    box-sizing: border-box;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+  }
+</style>
+
+<div class="progress-wrap">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
+</div>
+
 </body>
 
 </html>
