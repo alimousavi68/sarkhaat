@@ -762,7 +762,7 @@ function i8_show_social_icons($width = 16, $height = 16)
                 </a>
 
             <?php endif; ?>
-            <?php if ($eitta): ?>
+            <?php if ($eitta): ?> 
                 <a class="p-0 p-lg-0 p-sm-1 dark-btn" target="_blank" href="<?php echo $eitta; ?>" alt="eitta share button"
                     aria-label="eitta share button">
 
