@@ -117,7 +117,7 @@
                         <div class="d-flex d-lg-none justify-content-end">
 
                             <a href="#"
-                                class="dark-mode-switch1 dark-btn  px-1 px-lg-0 px-sm-1 d-flex justify-content-center align-items-center"
+                                class="dark-mode-switch1 dark-btn  px-1 px-lg-0 px-sm-1 gap-2 d-flex justify-content-center align-items-center"
                                 alt="dark mode button" aria-label="dark mode button">
                                 <svg class="" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                     fill="var(--i8-light-fg-color)" class="bi bi-brightness-high" viewBox="0 0 16 16">
