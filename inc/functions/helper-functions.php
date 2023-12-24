@@ -676,6 +676,9 @@ function i8_show_social_icons($width = 16, $height = 16)
     $aparat = sanitize_url(get_theme_mod('i8_social_link_aparat'));
     $whatsapp = sanitize_url(get_theme_mod('i8_social_link_whatsapp'));
     $facebook = sanitize_url(get_theme_mod('i8_social_link_facebook'));
+    $eitta = sanitize_url(get_theme_mod('i8_social_link_eitta'));
+    $bale = sanitize_url(get_theme_mod('i8_social_link_bale'));
+    $rubika = sanitize_url(get_theme_mod('i8_social_link_rubika'));
     ?>
     <div class="d-flex">
         <div class="d-none d-xl-flex d-lg-flex d-md-flex justify-content-center gap-2 social-links ">
@@ -754,6 +757,55 @@ function i8_show_social_icons($width = 16, $height = 16)
                             <path
                                 d="M12.001 1.594c-9.27-.003-13.913 11.203-7.36 17.758a10.403 10.403 0 0 0 17.76-7.355c0-5.744-4.655-10.401-10.4-10.403zM6.11 6.783c.501-2.598 3.893-3.294 5.376-1.103 1.483 2.19-.422 5.082-3.02 4.582A2.97 2.97 0 0 1 6.11 6.783zm4.322 8.988c-.504 2.597-3.897 3.288-5.377 1.096-1.48-2.192.427-5.08 3.025-4.579a2.97 2.97 0 0 1 2.352 3.483zm1.26-2.405c-1.152-.223-1.462-1.727-.491-2.387.97-.66 2.256.18 2.04 1.334a1.32 1.32 0 0 1-1.548 1.053zm6.198 3.838c-.501 2.598-3.893 3.293-5.376 1.103-1.484-2.191.421-5.082 3.02-4.583a2.97 2.97 0 0 1 2.356 3.48zm-1.967-5.502c-2.598-.501-3.293-3.896-1.102-5.38 2.19-1.483 5.081.422 4.582 3.02a2.97 2.97 0 0 1-3.48 2.36zM13.59 23.264l2.264.61a3.715 3.715 0 0 0 4.543-2.636l.64-2.402a11.383 11.383 0 0 1-7.448 4.428zm7.643-19.665L18.87 2.97a11.376 11.376 0 0 1 4.354 7.62l.65-2.459A3.715 3.715 0 0 0 21.231 3.6zM.672 13.809l-.541 2.04a3.715 3.715 0 0 0 2.636 4.543l2.107.562a11.38 11.38 0 0 1-4.203-7.145zM10.357.702 8.15.126a3.715 3.715 0 0 0-4.547 2.637l-.551 2.082A11.376 11.376 0 0 1 10.358.702z">
                             </path>
+                        </g>
+                    </svg>
+                </a>
+
+            <?php endif; ?>
+            <?php if (eitta): ?>
+                <a class="p-0 p-lg-0 p-sm-1 dark-btn" target="_blank" href="<?php echo $eitta; ?>" alt="eitta share button"
+                    aria-label="eitta share button">
+
+                    <svg fill="var(--i8-light-fg-color)" width="<?php echo $width; ?>" height="<?php echo $height; ?>"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="m5.968 23.942a6.624 6.624 0 0 1 -2.332-.83c-1.62-.929-2.829-2.593-3.217-4.426-.151-.717-.17-1.623-.15-7.207.019-6.009.005-5.699.291-6.689.142-.493.537-1.34.823-1.767 1.055-1.57 2.607-2.578 4.53-2.943.384-.073.94-.08 6.056-.08 6.251 0 6.045-.009 7.066.314a6.807 6.807 0 0 1 4.314 4.184c.33.937.346 1.087.369 3.555l.02 2.23-.391.268c-.558.381-1.29 1.06-2.316 2.15-1.182 1.256-2.376 2.42-2.982 2.907-1.309 1.051-2.508 1.651-3.726 1.864-.634.11-1.682.067-2.302-.095-.553-.144-.517-.168-.726.464a6.355 6.355 0 0 0 -.318 1.546l-.031.407-.146-.03c-1.215-.241-2.419-1.285-2.884-2.5a3.583 3.583 0 0 1 -.26-1.219l-.016-.34-.309-.284c-.644-.59-1.063-1.312-1.195-2.061-.212-1.193.34-2.542 1.538-3.756 1.264-1.283 3.127-2.29 4.953-2.68.658-.14 1.818-.177 2.403-.075 1.138.198 2.067.773 2.645 1.639.182.271.195.31.177.555a.812.812 0 0 1 -.183.493c-.465.651-1.848 1.348-3.336 1.68-2.625.585-4.294-.142-4.033-1.759.026-.163.04-.304.031-.313-.032-.032-.293.104-.575.3-.479.334-.903.984-1.05 1.607-.036.156-.05.406-.034.65.02.331.053.454.192.736.092.186.275.45.408.589l.24.251-.096.122a4.845 4.845 0 0 0 -.677 1.217 3.635 3.635 0 0 0 -.105 1.815c.103.461.421 1.095.739 1.468.242.285.797.764.886.764.024 0 .044-.048.044-.106.001-.23.184-.973.326-1.327.423-1.058 1.351-1.96 2.82-2.74.245-.13.952-.47 1.572-.757 1.36-.63 2.103-1.015 2.511-1.305 1.176-.833 1.903-2.065 2.14-3.625.086-.57.086-1.634 0-2.207-.368-2.438-2.195-4.096-4.818-4.37-2.925-.307-6.648 1.953-8.942 5.427-1.116 1.69-1.87 3.565-2.187 5.443-.123.728-.169 2.08-.093 2.75.193 1.704.822 3.078 1.903 4.156a6.531 6.531 0 0 0 1.87 1.313c2.368 1.13 4.99 1.155 7.295.071.996-.469 1.974-1.196 3.023-2.25 1.02-1.025 1.71-1.88 3.592-4.458 1.04-1.423 1.864-2.368 2.272-2.605l.15-.086-.019 3.091c-.018 2.993-.022 3.107-.123 3.561-.6 2.678-2.54 4.636-5.195 5.242l-.468.107-5.775.01c-4.734.008-5.85-.002-6.19-.056z" />
+                    </svg>
+                </a>
+
+            <?php endif; ?>
+            <?php if ($bale): ?>
+                <a class="p-0 p-lg-0 p-sm-1 dark-btn" target="_blank" href="<?php echo $bale; ?>" alt="bale share button"
+                    aria-label="bale share button">
+
+                    <svg fill="var(--i8-light-fg-color)" width="<?php echo $width; ?>" height="<?php echo $height; ?>"
+                        role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M11.425 23.987a12.218 12.218 0 0 1-2.95-.514 6.578 6.578 0 0 0-.336-.116C4.936 22.303 2.22 19.763.913 16.599a11.92 11.92 0 0 1-.9-4.063C.005 12.377.001 10.246 0 6.74 0 .71-.005 1.137.07.903.23.394.673.05 1.224.005c.421-.034.7.088 1.603.699.562.38 1.119.78 1.796 1.289.315.237.353.261.376.247l.35-.23c.58-.381 1.11-.677 1.7-.945A11.913 11.913 0 0 1 9.766.21a11.19 11.19 0 0 1 2.041-.2c1.14-.016 2.077.091 3.152.36 3.55.888 6.538 3.411 8.028 6.78.492 1.113.845 2.43.945 3.522.033.366.039.43.053.611.008.105.015.406.015.669 0 .783-.065 1.57-.169 2.064a5.474 5.474 0 0 0-.046.26c-.056.378-.214.987-.399 1.535-.205.613-.367.999-.684 1.633a11.95 11.95 0 0 1-2.623 3.436c-.44.396-.829.705-1.26 1.003-.647.445-1.307.812-2.039 1.134-.6.265-1.44.539-2.101.686a11.165 11.165 0 0 1-1.178.202 12.28 12.28 0 0 1-2.076.082zm-.61-5.92c.294-.06.678-.209.864-.337.144-.099.428-.376 2.064-2.013a161.8 161.8 0 0 1 1.764-1.753c.017 0 1.687-1.67 1.687-1.689 0-.02 1.64-1.648 1.661-1.648.01 0 .063-.047.118-.106.467-.495.682-.957.716-1.547.026-.433-.06-.909-.217-1.196a2.552 2.552 0 0 0-.983-1.024c-.281-.163-.512-.233-.888-.27-.306-.031-.688 0-.948.075-.243.07-.603.274-.853.481-.042.035-1.279 1.265-2.748 2.733l-2.671 2.67-1.093-1.09c-.6-.6-1.12-1.114-1.155-1.142a2.419 2.419 0 0 0-1.338-.51c-.404-.013-.91.09-1.224.25a2.89 2.89 0 0 0-.659.526c-.108.12-.287.357-.29.385-.003.03-.009.044-.065.16a2.312 2.312 0 0 0-.224.91c-.011.229-.01.265.019.491.045.353.24.781.51 1.115.05.063.97.992 2.044 2.064 1.507 1.505 1.98 1.97 2.074 2.039.327.24.683.388 1.101.456.182.03.5.016.734-.03z" />
+                    </svg>
+                </a>
+
+            <?php endif; ?>
+            <?php if ($rubika): ?>
+                <a class="p-0 p-lg-0 p-sm-1 dark-btn" target="_blank" href="<?php echo $rubika; ?>" alt="rubika share button"
+                    aria-label="rubika share button">
+
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" fill="var(--i8-light-fg-color)" width="<?php echo $width; ?>"
+                        height="<?php echo $height; ?>" viewBox="0 0 412.287 412.287"
+                        style="enable-background:new 0 0 412.287 412.287;" xml:space="preserve">
+                        <g>
+                            <path d="M380.546,110.125L211.552,1.586c-3.293-2.115-7.515-2.115-10.807,0L31.744,110.081c-2.866,1.84-4.6,5.014-4.598,8.42
+        l0.041,180.039c0.002,3.476,1.806,6.699,4.767,8.519l168.961,103.75c1.605,0.986,3.419,1.479,5.233,1.479
+        c1.814,0,3.629-0.491,5.232-1.479L380.352,307.1c2.96-1.818,4.766-5.043,4.767-8.519l0.023-180.039
+        C385.143,115.137,383.409,111.965,380.546,110.125z M206.147,25.627l61.936,39.629l-61.936,39.627l-61.934-39.627L206.147,25.627z
+         M50.197,291.254v-63.938l60.692,36.848l0.01,64.377L50.197,291.254z M110.899,237.623l-60.703-37.285v-64.74l60.703,38.842
+        V237.623z M63.22,116.834l59.186-37.869l59.186,37.869l-59.186,37.869L63.22,116.834z M133.908,174.44l60.705-38.844v64.742
+        l-60.705,37.285V174.44z M133.938,277.927l40.348,25.815l-40.348,24.783V277.927L133.938,277.927z M194.642,379.952l-50.232-30.854
+        l50.232-30.847V379.952z M206.138,297.04l-62.076-38.765l62.076-38.592l62.076,38.733L206.138,297.04z M217.653,379.952v-61.645
+        l50.194,30.812L217.653,379.952z M278.358,328.571l-40.388-24.805l40.388-25.842V328.571z M278.388,237.67l-60.703-37.287v-64.736
+        l60.703,38.842V237.67z M230.708,116.879l59.186-37.867l59.186,37.867l-59.186,37.869L230.708,116.879z M362.104,291.3
+        l-60.705,37.286v-63.17l60.705-37.983V291.3z M362.104,200.383l-60.705,37.287v-63.182l60.705-38.844V200.383z" />
                         </g>
                     </svg>
                 </a>
@@ -984,8 +1036,8 @@ function custom_lightbox_gallery()
 
                     function createCaption(caption) {
                         return `<div class="carousel-caption d-none d-md-block">
-                                                            <h4 class="m-0">${caption}</h4>
-                                                          </div>`;
+                                                                                                                                    <h4 class="m-0">${caption}</h4>
+                                                                                                                                  </div>`;
                     }
 
                     function createIndicators(img) {
@@ -999,11 +1051,11 @@ function custom_lightbox_gallery()
 
                         for (i = 0, len = countSlides; i < len; i++) {
                             markup += `
-                                                            <button type="button" data-bs-target="#lightboxCarousel"
-                                                              data-bs-slide-to="${i}"
-                                                              ${i === curIndex ? 'class="active" aria-current="true"' : ""}
-                                                              aria-label="Slide ${i + 1}">
-                                                            </button>`;
+                                                                                                                                    <button type="button" data-bs-target="#lightboxCarousel"
+                                                                                                                                      data-bs-slide-to="${i}"
+                                                                                                                                      ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                                                                                                                      aria-label="Slide ${i + 1}">
+                                                                                                                                    </button>`;
                         }
 
                         return markup;
@@ -1018,10 +1070,10 @@ function custom_lightbox_gallery()
                             const imgAlt = img.getAttribute("alt");
 
                             markup += `
-                                                            <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-                                                              <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-                                                              ${imgAlt ? createCaption(imgAlt) : ""}
-                                                            </div>`;
+                                                                                                                                    <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                                                                                                                      <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                                                                                                                      ${imgAlt ? createCaption(imgAlt) : ""}
+                                                                                                                                    </div>`;
                         }
 
                         return markup;
@@ -1029,27 +1081,27 @@ function custom_lightbox_gallery()
 
                     function createCarousel(img) {
                         const markup = `
-                                                          <!-- Lightbox Carousel -->
-                                                          <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-                                                            <!-- Indicators/dots -->
-                                                            <div class="carousel-indicators">
-                                                              ${createIndicators(img)}
-                                                            </div>
-                                                            <!-- Wrapper for Slides -->
-                                                            <div class="carousel-inner justify-content-center mx-auto">
-                                                              ${createSlides(img)}
-                                                            </div>
-                                                            <!-- Controls/icons -->
-                                                            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-                                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                              <span class="visually-hidden">Previous</span>
-                                                            </button>
-                                                            <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-                                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                              <span class="visually-hidden">Next</span>
-                                                            </button>
-                                                          </div>
-                                                          `;
+                                                                                                                                  <!-- Lightbox Carousel -->
+                                                                                                                                  <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                                                                                                                    <!-- Indicators/dots -->
+                                                                                                                                    <div class="carousel-indicators">
+                                                                                                                                      ${createIndicators(img)}
+                                                                                                                                    </div>
+                                                                                                                                    <!-- Wrapper for Slides -->
+                                                                                                                                    <div class="carousel-inner justify-content-center mx-auto">
+                                                                                                                                      ${createSlides(img)}
+                                                                                                                                    </div>
+                                                                                                                                    <!-- Controls/icons -->
+                                                                                                                                    <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                                                                                                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                                                                                      <span class="visually-hidden">Previous</span>
+                                                                                                                                    </button>
+                                                                                                                                    <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                                                                                                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                                                                                      <span class="visually-hidden">Next</span>
+                                                                                                                                    </button>
+                                                                                                                                  </div>
+                                                                                                                                  `;
 
                         modalBody.innerHTML = markup;
                     }

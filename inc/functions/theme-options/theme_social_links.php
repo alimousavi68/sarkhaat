@@ -26,6 +26,9 @@ function i8_social_links($wp_customize)
     $wp_customize->add_setting('i8_social_link_facebook',  array('default' => '', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_social_link_youtube',  array('default' => '', 'transport' => 'refresh'));
     $wp_customize->add_setting('i8_social_link_aparat',  array('default' => '', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_social_link_eitta',  array('default' => '', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_social_link_bale',  array('default' => '', 'transport' => 'refresh'));
+    $wp_customize->add_setting('i8_social_link_rubika',  array('default' => '', 'transport' => 'refresh'));
 
     /**
      * Add Controls
@@ -76,5 +79,23 @@ function i8_social_links($wp_customize)
         'section'  => 'i8_theme_social_section',
         'settings' => 'i8_social_link_aparat' ,
         'label' => __('آپارات', 'i8_theme'),
+    ));
+    $wp_customize->add_control('i8_social_links_eitta_control', array(
+        'type' => 'input',
+        'section'  => 'i8_theme_social_section',
+        'settings' => 'i8_social_link_eitta' ,
+        'label' => __('ایتا', 'i8_theme'),
+    ));
+    $wp_customize->add_control('i8_social_links_bale_control', array(
+        'type' => 'input',
+        'section'  => 'i8_theme_social_section',
+        'settings' => 'i8_social_link_bale' ,
+        'label' => __('بله', 'i8_theme'),
+    ));
+    $wp_customize->add_control('i8_social_links_rubika_control', array(
+        'type' => 'input',
+        'section'  => 'i8_theme_social_section',
+        'settings' => 'i8_social_link_rubika' ,
+        'label' => __('روبیکا', 'i8_theme'),
     ));
 }
