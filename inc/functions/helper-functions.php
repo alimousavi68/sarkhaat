@@ -18,7 +18,7 @@ function i8_the_thumbnail($size_name, $class = '', $dimension = array("width" =>
     $style = ($style) ? 'style="' . $style . ' "' : '';
 
     if (has_post_thumbnail() && $thumbnail_src) {
-        return '<img width="' . $dimension["width"] . '" height="' . $dimension["height"] . '" class="' . $class . '" alt="' . esc_attr($thumbnail_alt) . '"  ' . $lazyLoad . ' ' . $decodingAsync . '  src="' . esc_url($thumbnail_src[0]) . '" ' . $style . '  />';
+        return '<img width="' . $dimension["width"] . '" height="' . $dimension["height"] . '" class="' . $class . '" alt="' . esc_attr($thumbnail_alt) . '"  ' . '" aria-label="' . esc_attr($thumbnail_alt) . '"  ' . $lazyLoad . ' ' . $decodingAsync . '  src="' . esc_url($thumbnail_src[0]) . '" ' . $style . '  />';
     } elseif ($default_img) {
         return '<img width="' . $dimension["width"] . '" height="' . $dimension["height"] . '" class="' . $class . '" alt="' . esc_attr(get_the_title()) . '" ' . $lazyLoad . ' ' . $decodingAsync . '  src="' . esc_url($default_thumbnail_url) . '" ' . $style . '  />';
     }
@@ -984,8 +984,8 @@ function custom_lightbox_gallery()
 
                     function createCaption(caption) {
                         return `<div class="carousel-caption d-none d-md-block">
-                                                <h4 class="m-0">${caption}</h4>
-                                              </div>`;
+                                                            <h4 class="m-0">${caption}</h4>
+                                                          </div>`;
                     }
 
                     function createIndicators(img) {
@@ -999,11 +999,11 @@ function custom_lightbox_gallery()
 
                         for (i = 0, len = countSlides; i < len; i++) {
                             markup += `
-                                                <button type="button" data-bs-target="#lightboxCarousel"
-                                                  data-bs-slide-to="${i}"
-                                                  ${i === curIndex ? 'class="active" aria-current="true"' : ""}
-                                                  aria-label="Slide ${i + 1}">
-                                                </button>`;
+                                                            <button type="button" data-bs-target="#lightboxCarousel"
+                                                              data-bs-slide-to="${i}"
+                                                              ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                                              aria-label="Slide ${i + 1}">
+                                                            </button>`;
                         }
 
                         return markup;
@@ -1018,10 +1018,10 @@ function custom_lightbox_gallery()
                             const imgAlt = img.getAttribute("alt");
 
                             markup += `
-                                                <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-                                                  <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-                                                  ${imgAlt ? createCaption(imgAlt) : ""}
-                                                </div>`;
+                                                            <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                                              <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                                              ${imgAlt ? createCaption(imgAlt) : ""}
+                                                            </div>`;
                         }
 
                         return markup;
@@ -1029,27 +1029,27 @@ function custom_lightbox_gallery()
 
                     function createCarousel(img) {
                         const markup = `
-                                              <!-- Lightbox Carousel -->
-                                              <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-                                                <!-- Indicators/dots -->
-                                                <div class="carousel-indicators">
-                                                  ${createIndicators(img)}
-                                                </div>
-                                                <!-- Wrapper for Slides -->
-                                                <div class="carousel-inner justify-content-center mx-auto">
-                                                  ${createSlides(img)}
-                                                </div>
-                                                <!-- Controls/icons -->
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-                                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                  <span class="visually-hidden">Previous</span>
-                                                </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-                                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                  <span class="visually-hidden">Next</span>
-                                                </button>
-                                              </div>
-                                              `;
+                                                          <!-- Lightbox Carousel -->
+                                                          <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                                            <!-- Indicators/dots -->
+                                                            <div class="carousel-indicators">
+                                                              ${createIndicators(img)}
+                                                            </div>
+                                                            <!-- Wrapper for Slides -->
+                                                            <div class="carousel-inner justify-content-center mx-auto">
+                                                              ${createSlides(img)}
+                                                            </div>
+                                                            <!-- Controls/icons -->
+                                                            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                              <span class="visually-hidden">Previous</span>
+                                                            </button>
+                                                            <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                              <span class="visually-hidden">Next</span>
+                                                            </button>
+                                                          </div>
+                                                          `;
 
                         modalBody.innerHTML = markup;
                     }
