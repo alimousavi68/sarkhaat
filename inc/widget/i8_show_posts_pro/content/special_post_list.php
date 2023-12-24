@@ -30,11 +30,11 @@ if ($category_posts->have_posts()) {
         <a href="<?php the_permalink(); ?>" class="image_frame">
           <?php echo i8_the_thumbnail('i8-xl-430-242', 'single-item-thumb hover w-100 i8-img-fit', $dimenition = array('width' => $thumb_width, 'height' => $thumb_height), true, '', false, true); ?>
         </a>
-        <h1 class="post-title display-3 fw-7 l1">
-                <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
-                  <?php i8_limit_text(get_the_title(), 120, '...'); ?>
-                </a>
-              </h1>
+        <h2 class="post-title display-3 fw-7 l1">
+          <a href="<?php echo get_the_permalink(); ?>" class="i8-blink">
+            <?php i8_limit_text(get_the_title(), 120, '...'); ?>
+          </a>
+        </h2>
 
         <p class="post-publish-date f12 text-end text-subtitle my-0">
           <?php the_date() ?>
@@ -46,7 +46,7 @@ if ($category_posts->have_posts()) {
       ?>
         <div
           class="<?php echo $col; ?>  mini-article d-flex   <?php echo ($category_posts->current_post + 1 == $category_posts->post_count) ? '' : 'border-bottom'; ?> pb-3 mb-3 px-0 ">
-          <div >
+          <div>
 
             <a href="<?php the_permalink(); ?>" class="image_frame">
               <?php echo i8_the_thumbnail('i8-sm-100-75', 'hover', $dimenition = array('width' => 100, 'height' => 70), true, '', false, true); ?>
@@ -54,12 +54,12 @@ if ($category_posts->have_posts()) {
 
           </div>
           <div class="d-flex flex-column ">
-            <h4 class="me-2 l22-05 post-title">
+            <h3 class="me-2 l22-05 post-title">
               <a class="i8-blink <?php echo $title_font_size; ?> <?php echo $title_font_weight; ?> l1"
-                href="<?php echo get_the_permalink(); ?>" >
+                href="<?php echo get_the_permalink(); ?>">
                 <?php i8_limit_text(get_the_title(), 72, '...'); ?>
               </a>
-            </h4>
+            </h3>
             <p class="post-publish-date f12 text-end text-subtitle my-0 me-2">
               <?php the_date() ?>
             </p>
