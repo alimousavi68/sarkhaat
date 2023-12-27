@@ -129,10 +129,8 @@
             // Execute the copy command
             var successful = document.execCommand('copy');
             var msg = successful ? 'موفق' : 'ناموفق';
-            console.log('Copy email command was ' + msg);
 
           } catch (err) {
-            console.log('Oops, unable to copy');
           } finally {
             // Remove the temporary textarea
             document.body.removeChild(tempTextArea);
@@ -167,6 +165,7 @@
 
 <?php endif; ?>
 
+
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     var mini_logo = document.getElementById("mini-logo");
@@ -174,28 +173,34 @@
 
     window.onscroll = function () {
       var headerHeight = document.getElementById("header-container").offsetHeight;
-      var header = document.getElementById("i8-main-menu-frame");
+      var header = document.getElementById("header-container");
+      var menu = document.getElementById("i8-main-menu-frame");
 
       // Get the offset position of the navbar
-      var sticky = header.offsetTop;
-      console.log('value:' + window.pageYOffset);
+      var sticky = menu.offsetTop;
 
       // Add the "sticky" class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
       if (window.pageYOffset > sticky) {
-        header.classList.add("sticky");
-        mini_logo.classList.add("i8-show");
+        if (windowWidth < 768) {
+          header.classList.add("sticky");
+        } else {
+          menu.classList.add("sticky");
+          mini_logo.classList.add("i8-show");
+        }
       }
 
       if (window.pageYOffset < headerHeight) {
-        header.classList.remove("sticky");
-        mini_logo.classList.remove("i8-show");
+        if (windowWidth < 768) {
+          header.classList.remove("sticky");
+        } else {
+          menu.classList.remove("sticky");
+          mini_logo.classList.remove("i8-show");
+        }
       }
 
       // Calculate the position from right based on the scroll position
       var positionFromRight = windowWidth - scroll;
       mini_logo.style.right = positionFromRight + 'px';
-
-
     };
   });
 
@@ -204,21 +209,6 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     "use strict";
-
-    // Switch dark/light
-    var switchElement = document.querySelector(".switch");
-    if (switchElement) {
-      switchElement.addEventListener('click', function () {
-        var body = document.body;
-        if (body.classList.contains("light")) {
-          body.classList.remove("light");
-          switchElement.classList.remove("switched");
-        } else {
-          body.classList.add("light");
-          switchElement.classList.add("switched");
-        }
-      });
-    }
 
     // Scroll back to top
     var progressPath = document.querySelector('.progress-wrap path');
