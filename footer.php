@@ -181,7 +181,7 @@
 
       // Add the "sticky" class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position.
       if (window.pageYOffset > sticky) {
-        if (windowWidth < 768) {
+        if (windowWidth > 768) {
           header.classList.add("sticky");
         } else {
           menu.classList.add("sticky");
@@ -190,7 +190,7 @@
       }
 
       if (window.pageYOffset < headerHeight) {
-        if (windowWidth < 768) {
+        if (windowWidth > 768) {
           header.classList.remove("sticky");
         } else {
           menu.classList.remove("sticky");
