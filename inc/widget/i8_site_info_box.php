@@ -248,7 +248,7 @@ class i8_site_info_box extends WP_Widget
             <?php endif; ?>
             <?php if ($hide_description != 'on') : ?>
                 <div class="site-info-description">
-                    <p class="f-14 text-center"><?php echo $description; ?></p>
+                    <p class="f-14 l3 text-center"><?php echo $description; ?></p>
                 </div>
             <?php endif; ?>
             <?php if ($hide_social_box != 'on') : ?>
