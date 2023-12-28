@@ -15,13 +15,7 @@ $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
 ?>
 <div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
-    <?php
-    if (is_active_sidebar('st-sidebar')) {
-        echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
-        dynamic_sidebar('st-sidebar');
-        echo '</div>';
-    }
-    ?>
+
     <!-- breadcrumb -->
     <div
         class="d-flex align-items-top pb-2 mx-0 align-content-center row-gap-3 i8-breadcrumb box p-2 order-2 order-xl-1 order-lg-1 align-items-center  flex-wrap justify-content-around">
@@ -110,6 +104,14 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
             </div>
         </div>
     </div>
+    
+    <?php
+    if (is_active_sidebar('st-sidebar')) {
+        echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
+        dynamic_sidebar('st-sidebar');
+        echo '</div>';
+    }
+    ?>
 
     <!-- body -->
     <section class="d-flex flex-column row-gap-3 box p-4 mt-2 order-3 order-xl-3 order-lg-3 ">
