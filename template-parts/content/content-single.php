@@ -104,7 +104,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
             </div>
         </div>
     </div>
-    
+
     <?php
     if (is_active_sidebar('st-sidebar')) {
         echo '<div class=" row d-flex py-3 mx-0 align-content-center row-gap-3">';
@@ -118,7 +118,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 
         <div class="l2 content-entry text-justify border-bottom ">
             <?php the_content(); ?>
-
+        
             <?php
             if ($reference_name):
                 ?>
@@ -132,6 +132,18 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <?php
             endif;
             ?>
+            <?php if (get_the_author()) { ?>
+                <div class="reference d-flex flex-wrap align-items-center my-4">
+                    <p>نویسنده : <span target="_blank" class="tag-item mb-0" aria-label="article author name">
+                            <?php echo get_the_author(); ?>
+                        </span>
+                    </p>
+                </div>
+            <?php } ?>
+
+
+
+
 
 
         </div>
