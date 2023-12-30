@@ -57,7 +57,7 @@
 </footer>
 <?php wp_footer(); ?>
 <!-- footer -->
-<script>
+<script type="text/javascript" defer>
   // darkmode
   const darkModeSwitch = document.querySelector(".dark-mode-switch");
   const darkModeSwitch1 = document.querySelector(".dark-mode-switch1");
@@ -87,7 +87,7 @@
 </script>
 <?php if (is_singular()): ?>
   <!-- shared button -->
-  <script>
+  <script type="text/javascript" defer>
     document.addEventListener('DOMContentLoaded', function () {
       // cache dom
       var shareBtn = document.querySelector('.share-btn-mini');
@@ -166,7 +166,7 @@
 <?php endif; ?>
 
 
-<script>
+<script type="text/javascript" defer>
   document.addEventListener('DOMContentLoaded', function () {
     var mini_logo = document.getElementById("mini-logo");
     var windowWidth = window.innerWidth;
@@ -210,7 +210,7 @@
 
 </script>
 
-<script>
+<script type="text/javascript" defer>
   document.addEventListener('DOMContentLoaded', function () {
     "use strict";
 
@@ -271,7 +271,7 @@
   .progress-wrap {
     position: fixed;
     right: 10px;
-    bottom: 50px;
+    bottom: 15vh;
     height: 46px;
     width: 46px;
     cursor: pointer;
