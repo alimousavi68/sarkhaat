@@ -163,7 +163,7 @@ function render_primary_category_meta_box($post)
 
     <!-- نوع پست -->
     <?php
-    $array_post_structure = array('video', 'imgae', 'text', 'hot');
+    $array_post_structure = array('video', 'imgae', 'text', 'hot','none-thumbnail');
     $selected_post_structure = get_post_meta($post->ID, 'i8_post_structure', true);
     $selected_post_structure = ($selected_post_structure == '') ? 'text' : $selected_post_structure;
     ?>
@@ -171,6 +171,7 @@ function render_primary_category_meta_box($post)
             <label for="i8_post_structure">نوع پست</label>
             <select name="i8_post_structure" id="i8_post_structure" class="widefat">
                 <option value="text" <?php echo ($selected_post_structure == 'text') ? 'selected' : ''; ?>>ساده</option>
+                <option value="none-thumbnail" <?php echo ($selected_post_structure == 'none-thumbnail') ? 'selected' : ''; ?>>بدون تصویر </option>
                 <option value="image" <?php echo ($selected_post_structure == 'image') ? 'selected' : ''; ?>>تصویری</option>
                 <option value="video" <?php echo ($selected_post_structure == 'video') ? 'selected' : ''; ?>>ویدیو</option>
                 <option value="hot" <?php echo ($selected_post_structure == 'hot') ? 'selected' : ''; ?>>داغ</option>

@@ -21,6 +21,8 @@ get_header();
             get_template_part('template-parts/content/content-single-gallery');
         elseif ($post_structure == 'video' && ($is_video || $video_emebed)):
             get_template_part('template-parts/content/content-single-video');
+        elseif ($post_structure == 'none-thumbnail'):
+            get_template_part('template-parts/content/none-thumbnail');
         else:
             get_template_part('template-parts/content/content-single');
         endif;
