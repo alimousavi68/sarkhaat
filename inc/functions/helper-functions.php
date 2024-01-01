@@ -278,6 +278,10 @@ function save_primary_category_meta_data($post_id)
         update_post_meta($post_id, 'hasht-reference-link', $_POST['hasht-reference-link']);
     }
 
+    if (isset($_POST['hasht-author-name'])) {
+        update_post_meta($post_id, 'hasht-author-name', $_POST['hasht-author-name']);
+    }
+
     if (isset($_POST['i8_post_structure'])) {
         update_post_meta($post_id, 'i8_post_structure', sanitize_text_field($_POST['i8_post_structure']));
     }

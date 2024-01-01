@@ -133,16 +133,15 @@ $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_
                 <?php
             endif;
             ?>
+
             <?php
             if ($author_name):
                 ?>
                 <div class="reference d-flex flex-wrap align-items-center my-4">
                     <p>نویسنده : <span class="tag-item mb-0" aria-label="article auhtor name">
                             <?php echo $author_name; ?>
-                        </span>
-                    </p>
+                        </span></p>
                 </div>
-
                 <?php
             endif;
             ?>
