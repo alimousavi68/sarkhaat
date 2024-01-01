@@ -13,6 +13,7 @@ $reference_icon = customizeSVG($reference_icon, 'var(--i8-dark-primary)', 'var(-
 
 $reference_name = (get_post_meta($post->ID, 'hasht-reference-name', true)) ? get_post_meta($post->ID, 'hasht-reference-name', true) : '';
 $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get_post_meta($post->ID, 'hasht-reference-link', true) : '#';
+$author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_meta($post->ID, 'hasht-author-name', true) : '';
 ?>
 <div class="col-md-17 col-sm-24 col-xl-18 d-flex flex-column gap-2 pe-0 ps-0 ps-xl-3 ps-lg-3 ps-md-2 ps-sm-0">
 
@@ -118,7 +119,7 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
 
         <div class="l2 content-entry text-justify border-bottom ">
             <?php the_content(); ?>
-        
+
             <?php
             if ($reference_name):
                 ?>
@@ -132,14 +133,20 @@ $reference_link = (get_post_meta($post->ID, 'hasht-reference-link', true)) ? get
                 <?php
             endif;
             ?>
-            <?php if (get_the_author()) { ?>
+            <?php
+            if ($author_name):
+                ?>
                 <div class="reference d-flex flex-wrap align-items-center my-4">
-                    <p>نویسنده : <span target="_blank" class="tag-item mb-0" aria-label="article author name">
-                            <?php echo get_the_author(); ?>
+                    <p>نویسنده : <span class="tag-item mb-0" aria-label="article auhtor name">
+                            <?php echo $author_name; ?>
                         </span>
                     </p>
                 </div>
-            <?php } ?>
+
+                <?php
+            endif;
+            ?>
+
 
 
 

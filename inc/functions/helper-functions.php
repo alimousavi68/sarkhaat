@@ -161,6 +161,14 @@ function render_primary_category_meta_box($post)
             value="<?php echo get_post_meta($post->ID, 'hasht-reference-link', true); ?>">
     </div>
 
+    <!-- نام نویسنده -->
+    <div class="misc-pub-section">
+        <label for="hasht-author-name">نام نویسنده:</label>
+        <input type="text" name="hasht-author-name" id="hasht-author-name" class="widefat"
+            value="<?php echo get_post_meta($post->ID, 'hasht-author-name', true); ?>">
+    </div>
+
+
     <!-- نوع پست -->
     <?php
     $array_post_structure = array('video', 'imgae', 'text', 'hot','none-thumbnail');
