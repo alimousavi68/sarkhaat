@@ -161,7 +161,7 @@ class i8_show_ads_pro extends WP_Widget
         } elseif ($file_type == $file_type_values[1]) {
         ?>
             <a href="<?php echo $link_url; ?>" alt="<?php echo ($file_alt) ? $file_alt : ''; ?>" target="_blank">
-                <video class="<?php echo ($class)  ?  $class : ''; echo $thumb_radius ?> " width="<?php echo ($width) ? $width : ''; ?>" height="<?php echo ($height) ? $height : ''; ?>" <?php echo ($load_method == 'async') ? ' decoding="async" ' : ' loading="lazy" '; ?> autoplay loop>
+                <video class="<?php echo ($class)  ?  $class : ''; echo $thumb_radius ?> " width="<?php echo ($width) ? $width : ''; ?>" height="<?php echo ($height) ? $height : ''; ?>"  autoplay loop>
                     <source src="<?php echo ($file_src) ? $file_src : ''; ?> " type="video/mp4" >
                 </video>
             </a>
