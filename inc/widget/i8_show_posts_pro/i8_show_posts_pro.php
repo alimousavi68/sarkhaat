@@ -189,7 +189,8 @@ class i8_show_posts_pro extends WP_Widget
         $anime_class = ($icon_animate) ? 'icon_animate' : '';
         $icon_print = '';
         $icon_print = ($cat_icon) ? customizeSVG($cat_icon, $cat_color, $cat_color , 30, 30, $anime_class) : $icon_print;
-        $icon_print = ($icon) ? customizeSVG($icon, $cat_color, $cat_color, 30, 30, $anime_class) : $icon_print;
+        // $icon_print = ($icon) ? customizeSVG($icon, $cat_color, $cat_color, 12, 6, $anime_class) : $icon_print;
+        $icon_print = ($icon) ? $icon : $icon_print;
         $icon_print = (empty($icon) && !empty($icon_img)) ? '<img src="' . $icon_img . '" class="' . $anime_class . '"  />' : $icon_print;
 
         $grid_col_base = 24;

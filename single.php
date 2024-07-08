@@ -7,7 +7,6 @@ get_header();
 
         <?php
         $post_structure = get_post_meta(get_the_ID(), 'i8_post_structure', true);
-        echo '<script> console.log("' . $is_image_gallery . '") </script>';
 
         $video_url = get_post_meta(get_the_ID(), 'hasht-video-link', true);
         $video_emebed = get_post_meta(get_the_ID(), 'hasht-video-embbed', true);

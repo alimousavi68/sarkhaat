@@ -22,7 +22,7 @@
 }
 
 :root {
-  --i8-light-primary: rgba(20, 50, 96, 1);
+  --i8-light-primary: #001ae1;
   --i8-dark-primary: rgba(20, 50, 96, 1);
   --i8-light-primary-light: #0059B9;
   --i8-light-secondary: #4A4A4A;
@@ -336,7 +336,8 @@ body * {
 
 .box {
   background: #FFF;
-  box-shadow: 0px 2px 5px 0px rgb(181 181 181 / 10%);
+  box-shadow:rgba(0,0,0,.02) 0 4px 5px 0,rgba(0,0,0,.15) 0 2px 21px -7px;
+  
 
 }
 
@@ -730,7 +731,7 @@ footer {
 }
 
 #header .header-logo {
-  width: 148px;
+  width: 210px;
   height: auto;
   object-fit: cover;
 }
@@ -803,8 +804,31 @@ footer {
 }
 
 .text-title svg {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
+.widget .text-title{
+  position: relative;
+  z-index: 2;
+  margin-left: 8px !important;
+}
+.widget .text-title:before {
+  position: relative;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ececec;
+  display: flex;
+  top: 18.75px;
+  left: 0%;
+  z-index: -1;
+}
+.multimdeia-dark-bg .text-title:before {
+    background-color: #004897;
+}
+footer .text-title:before{
+  background-color: transparent !important;
+}
+
 
 .mini-circle {
   display: block;
