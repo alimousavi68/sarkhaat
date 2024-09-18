@@ -191,8 +191,8 @@
                         </div>
                         <div class="d-flex f14 justify-content-end">
                             <?php
-                            $date = new jDateTime(true, true, 'Asia/Tehran');
-                            echo $date->date("H:i - l j F Y "); ?>
+                            // $date = new jDateTime(true, true, 'Asia/Tehran');
+                            // echo $date->date("H:i - l j F Y "); ?>
                         </div>
 
 
