@@ -9,7 +9,7 @@
     <meta name="theme-color" content="<?php echo (get_theme_mod('i8_light_primary_color')) ? get_theme_mod('i8_light_primary_color') : '#383838'; ?>" />
 
     <!-- SEO Meta Tags -->
-    <!-- <title><?php wp_title(' | ', true, 'right'); ?> <?php bloginfo('name'); ?></title> -->
+    <title><?php wp_title(' | ', true, 'right'); ?> </title>
 
     <meta name="keywords" content="<?php
     if (is_single()) {
