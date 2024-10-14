@@ -16,6 +16,14 @@ get_header();
     .inline-related-box a {
         font-size: 15px;
     }
+
+    .inline-related-box {
+        background-color: #ffefeb;
+    }
+
+    h4.releated-head {
+        color: #ec0027 !important;
+    }
 </style>
 
 <div class="container px-0">
@@ -55,7 +63,7 @@ get_header();
 
 <?php
 $num = 1;
-$cat = 2464;
+$cat = 12;
 $args = array(
     'cat' => $cat, // استفاده از شناسه‌های دسته‌بندی
     'post__not_in' => array(get_the_ID()), // عدم دریافت خود پست فعلی
@@ -92,11 +100,9 @@ if ($related_posts->have_posts()) {
 
         <div class="mini-article d-flex px-0 ">
             <div width="<?php echo $thumb_width; ?>" height="<?php echo $thumb_height; ?>">
-
                 <a href="<?php the_permalink(); ?>" class="image_frame">
                     <?php echo i8_the_thumbnail('i8-sm-100-75', 'hover', $dimenition = array('width' => 100, 'height' => 75), true, '', false, true); ?>
                 </a>
-
             </div>
             <div class="d-flex flex-column ">
                 <h4 class="me-2 l22-05 post-title">
@@ -122,7 +128,7 @@ wp_reset_postdata();
         position: fixed;
         right: -350px;
         /* باکس در ابتدا مخفی است */
-        bottom: 200px;
+        bottom: 50px;
         width: 350px;
         background-color: white;
         border: 1px solid #ccc;
@@ -141,7 +147,7 @@ wp_reset_postdata();
     .close-btn {
         background: none;
         border: none;
-        font-size: 20px;
+        font-size: 25px;
         color: #aaa;
         cursor: pointer;
     }
@@ -152,24 +158,37 @@ wp_reset_postdata();
     }
 </style>
 <script>
+    let isBoxClosed = false; // متغیر وضعیت برای بررسی اینکه آیا باکس بسته شده است یا نه
+
     window.addEventListener('scroll', function () {
-        const suggestionBox = document.getElementById('suggestionBox');
-        if (window.scrollY > 600) { // اگر کاربر بیش از 300 پیکسل اسکرول کرده باشد
+        const halfPageHeight = document.body.scrollHeight / 8;
+
+        // بررسی اینکه آیا باکس بسته نشده است
+        if (window.scrollY > halfPageHeight && !isBoxClosed) {
             suggestionBox.classList.add('show'); // باکس را نمایش بده
-        } else {
-            suggestionBox.classList.remove('show'); // باکس را مخفی کن
         }
     });
 
+    let lastScrollY = window.scrollY; // ذخیره موقعیت اسکرول قبلی
+    window.addEventListener('scroll', function () {
+        // موقعیت اسکرول فعلی
+        const currentScrollY = window.scrollY;
 
+        // بررسی اینکه آیا کاربر به سمت بالا اسکرول کرده است
+        if (currentScrollY < lastScrollY) {
+            suggestionBox.classList.remove('show'); // باکس را مخفی کن
+        }
+        // به‌روزرسانی موقعیت اسکرول قبلی
+        lastScrollY = currentScrollY;
+    });
 
     // اضافه کردن عملکرد بستن باکس
     const closeBtn = document.getElementById('closeBtn');
     closeBtn.addEventListener('click', function () {
         const suggestionBox = document.getElementById('suggestionBox');
         suggestionBox.classList.remove('show'); // باکس را مخفی کن
+        isBoxClosed = true; // تغییر وضعیت به بسته شده
     });
-
 </script>
 
 <?php
