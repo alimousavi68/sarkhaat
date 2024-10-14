@@ -63,7 +63,7 @@ get_header();
 
 <?php
 $num = 1;
-$cat = 12;
+$cat = 2464;
 $args = array(
     'cat' => $cat, // استفاده از شناسه‌های دسته‌بندی
     'post__not_in' => array(get_the_ID()), // عدم دریافت خود پست فعلی
