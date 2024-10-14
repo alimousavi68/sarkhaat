@@ -1225,7 +1225,7 @@ function insert_related_post_link_in_content($content)
         }
         if ($paragraphs_count <= 8 && $paragraphs_count > 4) {
             $ads_pos_1 = (ceil(($paragraphs_count / 4)))-1;
-            $ads_pos_2 = (ceil(($paragraphs_count / 2)))-1;
+            $ads_pos_2 = (ceil(($paragraphs_count / 2)))-1; 
         }
         if ($paragraphs_count > 8 ) {
             $ads_pos_1 = (ceil($paragraphs_count / 6))-1;
