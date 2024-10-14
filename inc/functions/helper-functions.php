@@ -1049,8 +1049,8 @@ function custom_lightbox_gallery()
 
                     function createCaption(caption) {
                         return `<div class="carousel-caption d-none d-md-block">
-                                                                                                                                                                                                <h4 class="m-0">${caption}</h4>
-                                                                                                                                                                                              </div>`;
+                                                                                                                                                                                                            <h4 class="m-0">${caption}</h4>
+                                                                                                                                                                                                          </div>`;
                     }
 
                     function createIndicators(img) {
@@ -1064,11 +1064,11 @@ function custom_lightbox_gallery()
 
                         for (i = 0, len = countSlides; i < len; i++) {
                             markup += `
-                                                                                                                                                                                                <button type="button" data-bs-target="#lightboxCarousel"
-                                                                                                                                                                                                  data-bs-slide-to="${i}"
-                                                                                                                                                                                                  ${i === curIndex ? 'class="active" aria-current="true"' : ""}
-                                                                                                                                                                                                  aria-label="Slide ${i + 1}">
-                                                                                                                                                                                                </button>`;
+                                                                                                                                                                                                            <button type="button" data-bs-target="#lightboxCarousel"
+                                                                                                                                                                                                              data-bs-slide-to="${i}"
+                                                                                                                                                                                                              ${i === curIndex ? 'class="active" aria-current="true"' : ""}
+                                                                                                                                                                                                              aria-label="Slide ${i + 1}">
+                                                                                                                                                                                                            </button>`;
                         }
 
                         return markup;
@@ -1083,10 +1083,10 @@ function custom_lightbox_gallery()
                             const imgAlt = img.getAttribute("alt");
 
                             markup += `
-                                                                                                                                                                                                <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-                                                                                                                                                                                                  <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-                                                                                                                                                                                                  ${imgAlt ? createCaption(imgAlt) : ""}
-                                                                                                                                                                                                </div>`;
+                                                                                                                                                                                                            <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
+                                                                                                                                                                                                              <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
+                                                                                                                                                                                                              ${imgAlt ? createCaption(imgAlt) : ""}
+                                                                                                                                                                                                            </div>`;
                         }
 
                         return markup;
@@ -1094,27 +1094,27 @@ function custom_lightbox_gallery()
 
                     function createCarousel(img) {
                         const markup = `
-                                                                                                                                                                                              <!-- Lightbox Carousel -->
-                                                                                                                                                                                              <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-                                                                                                                                                                                                <!-- Indicators/dots -->
-                                                                                                                                                                                                <div class="carousel-indicators">
-                                                                                                                                                                                                  ${createIndicators(img)}
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                                <!-- Wrapper for Slides -->
-                                                                                                                                                                                                <div class="carousel-inner justify-content-center mx-auto">
-                                                                                                                                                                                                  ${createSlides(img)}
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                                <!-- Controls/icons -->
-                                                                                                                                                                                                <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
-                                                                                                                                                                                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                                                                                                                                                                  <span class="visually-hidden">Previous</span>
-                                                                                                                                                                                                </button>
-                                                                                                                                                                                                <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
-                                                                                                                                                                                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                                                                                                                                                                  <span class="visually-hidden">Next</span>
-                                                                                                                                                                                                </button>
-                                                                                                                                                                                              </div>
-                                                                                                                                                                                              `;
+                                                                                                                                                                                                          <!-- Lightbox Carousel -->
+                                                                                                                                                                                                          <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+                                                                                                                                                                                                            <!-- Indicators/dots -->
+                                                                                                                                                                                                            <div class="carousel-indicators">
+                                                                                                                                                                                                              ${createIndicators(img)}
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <!-- Wrapper for Slides -->
+                                                                                                                                                                                                            <div class="carousel-inner justify-content-center mx-auto">
+                                                                                                                                                                                                              ${createSlides(img)}
+                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                            <!-- Controls/icons -->
+                                                                                                                                                                                                            <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
+                                                                                                                                                                                                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                                                                                                                                                                              <span class="visually-hidden">Previous</span>
+                                                                                                                                                                                                            </button>
+                                                                                                                                                                                                            <button class="carousel-control-next" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="next">
+                                                                                                                                                                                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                                                                                                                                                                              <span class="visually-hidden">Next</span>
+                                                                                                                                                                                                            </button>
+                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                          `;
 
                         modalBody.innerHTML = markup;
                     }
@@ -1215,20 +1215,38 @@ function insert_related_post_link_in_content($content)
         $paragraphs = explode('</p>', $content);
         $paragraphs_count = count($paragraphs);
 
-        $ads_pos_1 = ceil($paragraphs_count / 2);
-        $ads_pos_2 = ceil($paragraphs_count / 3);
-        $ads_pos_3 = ceil($paragraphs_count / 4);
+
+        $ads_pos_1 = null;
+        $ads_pos_2 = null;
+        $ads_pos_3 = null;
+
+        if ($paragraphs_count <= 4 && $paragraphs_count >= 1) {
+            $ads_pos_1 = ceil($paragraphs_count / 2);
+        }
+        if ($paragraphs_count <= 8 && $paragraphs_count > 4) {
+            $ads_pos_1 = ceil(($paragraphs_count / 4));
+            $ads_pos_2 = ceil(($paragraphs_count / 2));
+        }
+        if ($paragraphs_count > 8 ) {
+            $ads_pos_1 = ceil($paragraphs_count / 6);
+            $ads_pos_2 = ceil($paragraphs_count / 4);
+            $ads_pos_3 = ceil($paragraphs_count / 2);
+            
+        }
+        // $ads_pos_1 = ceil($paragraphs_count / 2);
+        // $ads_pos_2 = ceil($paragraphs_count / 3);
+        // $ads_pos_3 = ceil($paragraphs_count / 4);
 
 
 
         // لینک اول و دوم را تهیه می‌کنیم
-        if ($first_related_post) {
+        if ($first_related_post && $ads_pos_1 != null) {
             $first_link = '
             <div class="inline-related-box d-flex flex-column gap-2 align-items-start py-3">
                 <h4 class="releated-head ">همچنین بخوانید: </h4>
                 <div class="d-flex flex-row gap-3">
                     <a href="' . get_permalink($first_related_post->ID) . '" class="">'
-                .  get_the_post_thumbnail($first_related_post, 'i8-sm-100-75', array("width" => 100, "height" => 75)) . '
+                . get_the_post_thumbnail($first_related_post, 'i8-sm-100-75', array("width" => 100, "height" => 75)) . '
                     </a>
                     <a href="' . get_permalink($first_related_post->ID) . '" class="border-0" > ' . get_the_title($first_related_post->ID) . '</a>
                 </div>
@@ -1239,7 +1257,7 @@ function insert_related_post_link_in_content($content)
             <?php
             $paragraphs[$ads_pos_1] .= $first_link;
         }
-        if ($second_related_post) {
+        if ($second_related_post && $ads_pos_2 != null) {
             $sec_link = '
             <div class="inline-related-box d-flex flex-column gap-2 align-items-start py-3">
                 <h4 class="releated-head ">همچنین بخوانید: </h4>
@@ -1252,13 +1270,13 @@ function insert_related_post_link_in_content($content)
             </div>';
             $paragraphs[$ads_pos_2] .= $sec_link;
         }
-        if ($third_related_post) {
+        if ($third_related_post && $ads_pos_3 != null ) {
             $third_link = '
             <div class="inline-related-box d-flex flex-column gap-2 align-items-start py-3">
                 <h4 class="releated-head ">همچنین بخوانید: </h4>
                 <div class="d-flex flex-row gap-3">
                     <a href="' . get_permalink($third_related_post->ID) . '" class="">'
-                .  get_the_post_thumbnail($third_related_post, 'i8-sm-100-75', array("width" => 100, "height" => 75)) . '
+                . get_the_post_thumbnail($third_related_post, 'i8-sm-100-75', array("width" => 100, "height" => 75)) . '
                     </a>
                     <a href="' . get_permalink($third_related_post->ID) . '" class="border-0" > ' . get_the_title($third_related_post->ID) . '</a>
                 </div>
