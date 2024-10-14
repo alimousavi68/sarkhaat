@@ -254,9 +254,9 @@ $author_name = (get_post_meta($post->ID, 'hasht-author-name', true)) ? get_post_
         ?>
 
         <?php
-        if (comments_open() || get_comments_number()) {
-            comments_template();
-        }
+        // if (comments_open() || get_comments_number()) {
+        //     comments_template();
+        // }
         ?>
 
     </section>
