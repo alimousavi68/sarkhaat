@@ -1185,3 +1185,72 @@ add_action('wp_footer', 'custom_lightbox_gallery', 10, 1);
 
 
 // End Image gallery
+
+// inline reltead post
+function insert_related_post_link_in_content($content)
+{
+    // دریافت پست‌های مرتبط با برچسب‌های پست فعلی
+    $related_posts = get_posts(
+        array(
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'post_tag', // نوع دسته‌بندی (در اینجا برچسب)
+                    'field' => 'id', // فیلد برای مقایسه (می‌تواند id یا slug باشد)
+                    'terms' => wp_get_post_terms(get_the_ID(), 'post_tag', array("fields" => "ids")), // برچسب‌های پست فعلی
+                ),
+            ),
+            'post__not_in' => array(get_the_ID()),
+            'posts_per_page' => 3, // تعداد پست‌های مرتبط که می‌خواهید نمایش داده شود
+            'ignore_sticky_posts' => 1
+        )
+    );
+
+    // اگر پست‌های مرتبط وجود داشته باشند
+    if ($related_posts) {
+        $first_related_post = $related_posts[0];
+        $second_related_post = isset($related_posts[1]) ? $related_posts[1] : null;
+        $third_related_post = isset($related_posts[2]) ? $related_posts[2] : null;
+
+        // تفکیک محتوا به پاراگراف‌ها
+        $paragraphs = explode('</p>', $content);
+        $paragraphs_count = count($paragraphs);
+        
+        $ads_pos_1 = ceil($paragraphs_count / 2);
+        $ads_pos_2 = ceil($paragraphs_count / 3);
+        $ads_pos_3 = ceil($paragraphs_count / 4);
+
+        
+
+        // لینک اول و دوم را تهیه می‌کنیم
+        if ($first_related_post) {
+            $first_link = '
+            <div class="inline-related-box d-flex flex-row gap-2 align-items-center py-3">
+                <h4 class="releated-head">همچنین بخوانید: </h4>
+                <a href="' . get_permalink($first_related_post->ID) . '"> ' . get_the_title($first_related_post->ID) . '</a>
+            </div>';
+            $paragraphs[$ads_pos_1] .= $first_link;
+        }
+        if ($second_related_post) {
+            $sec_link = '
+            <div class="inline-related-box d-flex flex-row gap-2 align-items-center py-3">
+                <h4 class="releated-head">همچنین بخوانید: </h4>
+                <a href="' . get_permalink($second_related_post->ID) . '"> ' . get_the_title($second_related_post->ID) . '</a>
+            </div>';
+            $paragraphs[$ads_pos_2] .= $sec_link;
+        }
+        if ($third_related_post) {
+            $third_link = '
+            <div class="inline-related-box d-flex flex-row gap-2 align-items-center py-3">
+                <h4 class="releated-head">همچنین بخوانید: </h4>
+                <a href="' . get_permalink($third_related_post->ID) . '"> ' . get_the_title($third_related_post->ID) . '</a>
+            </div>';
+            $paragraphs[$ads_pos_3] .= $third_link;
+        }
+        
+        // ایجاد محتوای جدید با پاراگراف‌های ویرایش شده
+        $content = implode('</p>', $paragraphs);
+    }
+
+    return $content;
+}
+add_filter('the_content', 'insert_related_post_link_in_content');

@@ -2,6 +2,22 @@
 //header
 get_header();
 ?>
+<style>
+    .releated-head {
+        text-align: right;
+        font-size: 16px !important;
+        font-weight: 200;
+        margin: 2px !important;
+        padding: 0 !important;
+        padding-right: 15px !important;
+        border-right: 4px solid var(--i8-dark-complete-color);
+    }
+
+    .inline-related-box a {
+        font-size: 15px;
+    }
+</style>
+
 <div class="container px-0">
     <div class="row mx-0">
 
