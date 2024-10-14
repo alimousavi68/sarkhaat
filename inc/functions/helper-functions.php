@@ -1221,16 +1221,16 @@ function insert_related_post_link_in_content($content)
         $ads_pos_3 = null;
 
         if ($paragraphs_count <= 4 && $paragraphs_count >= 1) {
-            $ads_pos_1 = ceil($paragraphs_count / 2);
+            $ads_pos_1 = (ceil($paragraphs_count / 2))-1;
         }
         if ($paragraphs_count <= 8 && $paragraphs_count > 4) {
-            $ads_pos_1 = ceil(($paragraphs_count / 4));
-            $ads_pos_2 = ceil(($paragraphs_count / 2));
+            $ads_pos_1 = (ceil(($paragraphs_count / 4)))-1;
+            $ads_pos_2 = (ceil(($paragraphs_count / 2)))-1;
         }
         if ($paragraphs_count > 8 ) {
-            $ads_pos_1 = ceil($paragraphs_count / 6);
-            $ads_pos_2 = ceil($paragraphs_count / 4);
-            $ads_pos_3 = ceil($paragraphs_count / 2);
+            $ads_pos_1 = (ceil($paragraphs_count / 6))-1;
+            $ads_pos_2 = (ceil($paragraphs_count / 4)-1);
+            $ads_pos_3 = (ceil($paragraphs_count / 2))-1;
             
         }
         // $ads_pos_1 = ceil($paragraphs_count / 2);
